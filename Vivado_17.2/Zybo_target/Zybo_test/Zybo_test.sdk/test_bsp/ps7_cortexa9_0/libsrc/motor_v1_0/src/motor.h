@@ -12,9 +12,10 @@ extern "C" {
 #include "xstatus.h"
 
 #define MOTOR_S00_AXI_SLV_REG0_OFFSET 0     // OverRide
-#define MOTOR_S00_AXI_SLV_REG1_OFFSET 4     // Rapport
-#define MOTOR_S00_AXI_SLV_REG2_OFFSET 8     // REG2
-#define MOTOR_S00_AXI_SLV_REG3_OFFSET 12    // REG3
+#define MOTOR_S00_AXI_SLV_REG1_OFFSET 4     // Speed (IN  | PS)
+#define MOTOR_S00_AXI_SLV_REG2_OFFSET 8     // Speed (OUT | PL)
+#define MOTOR_S00_AXI_SLV_REG3_OFFSET 12    // Enable
+
 
 /**************************** Type Definitions *****************************/
 /**
@@ -56,7 +57,7 @@ extern "C" {
  */
 #define MOTOR_mReadReg(BaseAddress, RegOffset) \
     Xil_In32((BaseAddress) + (RegOffset))
-    
+
 /************************** Constant Definitions ****************************/
     
 /**
@@ -114,7 +115,10 @@ int Motor_CfgInitialize(Motor *InstancePtr, Motor_Config * Config, UINTPTR Effec
  */
 void Motor_SetOverRide(Motor *InstancePtr, u32 Data);
 u32 Motor_GetOverRide(Motor *InstancePtr);
-u32 Motor_GetRapport(Motor *InstancePtr);
+void Motor_SetSpeed(Motor *InstancePtr, u32 Data);
+u32 Motor_GetSpeed(Motor *InstancePtr);
+void Motor_SetEnable(Motor *InstancePtr, u32 Data);
+u32 Motor_GetEnable(Motor *InstancePtr);
 
 #ifdef _cplusplus
 }

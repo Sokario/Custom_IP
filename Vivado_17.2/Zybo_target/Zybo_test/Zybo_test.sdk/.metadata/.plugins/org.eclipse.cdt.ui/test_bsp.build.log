@@ -1,4 +1,4 @@
-11:40:42 **** Auto Build of project test_bsp ****
+11:55:14 **** Auto Build of project test_bsp ****
 make -k all 
 "Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
 make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
@@ -65,7 +65,7 @@ make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm
 "Compiling gpiops"
 "Running Make libs in ps7_cortexa9_0/libsrc/motor_v1_0/src"
 make -C ps7_cortexa9_0/libsrc/motor_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
-"Compiling motor..."
+"Compiling Motor..."
 motor.c: In function 'Motor_CfgInitialize':
 motor.c:124:61: warning: unused parameter 'Config' [-Wunused-parameter]
  int Motor_CfgInitialize(Motor * InstancePtr, Motor_Config * Config, UINTPTR EffectiveAddr)
@@ -94,19 +94,65 @@ motor.c:139:6: note: declared here
  void Motor_SetOverRide(Motor *InstancePtr, u32 Data)
       ^~~~~~~~~~~~~~~~~
 In file included from motor.c:4:0:
-motor.h:38:4: warning: implicit declaration of function 'Xil_Out32' [-Wimplicit-function-declaration]
+motor.h:39:4: warning: implicit declaration of function 'Xil_Out32' [-Wimplicit-function-declaration]
     Xil_Out32((BaseAddress) + (RegOffset), (u32)(Data))
     ^
 motor.c:145:5: note: in expansion of macro 'MOTOR_mWriteReg'
      MOTOR_mWriteReg(InstancePtr->BaseAddress, MOTOR_S00_AXI_SLV_REG0_OFFSET, Data);
      ^~~~~~~~~~~~~~~
 motor.c: In function 'Motor_GetOverRide':
-motor.h:58:5: warning: implicit declaration of function 'Xil_In32' [-Wimplicit-function-declaration]
+motor.h:59:5: warning: implicit declaration of function 'Xil_In32' [-Wimplicit-function-declaration]
      Xil_In32((BaseAddress) + (RegOffset))
      ^
 motor.c:154:12: note: in expansion of macro 'MOTOR_mReadReg'
      return MOTOR_mReadReg(InstancePtr->BaseAddress, MOTOR_S00_AXI_SLV_REG0_OFFSET);
             ^~~~~~~~~~~~~~
+In file included from motor.h:11:0,
+                 from motor.c:4:
+motor.c: In function 'Motor_SetSpeed':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+motor.c:157:6: note: declared here
+ void Motor_SetSpeed(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~
+In file included from motor.h:11:0,
+                 from motor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+motor.c:157:6: note: declared here
+ void Motor_SetSpeed(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~
+In file included from motor.h:11:0,
+                 from motor.c:4:
+motor.c: In function 'Motor_SetEnable':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+motor.c:175:6: note: declared here
+ void Motor_SetEnable(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from motor.h:11:0,
+                 from motor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+motor.c:175:6: note: declared here
+ void Motor_SetEnable(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
 motor_selftest.c: In function 'MOTOR_Reg_SelfTest':
 motor_selftest.c:52:54: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
     if ( MOTOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
@@ -153,5 +199,5 @@ make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm
 "Compiling xadcps"
 'Finished building libraries'
 
-11:41:02 Build Finished (took 19s.598ms)
+11:55:32 Build Finished (took 18s.251ms)
 

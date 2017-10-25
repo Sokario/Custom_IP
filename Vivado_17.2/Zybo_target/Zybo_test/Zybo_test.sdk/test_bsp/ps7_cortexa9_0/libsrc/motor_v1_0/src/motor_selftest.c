@@ -1,6 +1,6 @@
 
 /***************************** Include Files *******************************/
-#include "motor.h"
+#include "Motor.h"
 #include "xparameters.h"
 #include "stdio.h"
 #include "xil_io.h"

@@ -2,15 +2,19 @@
 #ifndef MOTOR_H
 #define MOTOR_H
 
+#ifdef _cplusplus
+extern "C" {
+#endif
 
 /****************** Include Files ********************/
 #include "xil_types.h"
+#include "xil_assert.h"
 #include "xstatus.h"
 
-#define MOTOR_S00_AXI_SLV_REG0_OFFSET 0
-#define MOTOR_S00_AXI_SLV_REG1_OFFSET 4
-#define MOTOR_S00_AXI_SLV_REG2_OFFSET 8
-#define MOTOR_S00_AXI_SLV_REG3_OFFSET 12
+#define MOTOR_S00_AXI_SLV_REG0_OFFSET 0     // OverRide
+#define MOTOR_S00_AXI_SLV_REG1_OFFSET 4     // Speed (IN  | PS)
+#define MOTOR_S00_AXI_SLV_REG2_OFFSET 8     // Speed (OUT | PL)
+#define MOTOR_S00_AXI_SLV_REG3_OFFSET 12    // Enable
 
 
 /**************************** Type Definitions *****************************/
@@ -54,6 +58,29 @@
 #define MOTOR_mReadReg(BaseAddress, RegOffset) \
     Xil_In32((BaseAddress) + (RegOffset))
 
+/************************** Constant Definitions ****************************/
+    
+/**
+ * This typedef contains configuration information for the device.
+ */
+typedef struct {
+    u16 DeviceId;        /* Unique ID  of device */
+    UINTPTR BaseAddress;    /* Device base address */
+} Motor_Config;
+
+/**
+ * The Motor driver instance data. The user is required to allocate a
+ * variable of this type for every MOTOR device in the system. A pointer
+ * to a variable of this type is then passed to the driver API functions.
+ */
+typedef struct {
+    UINTPTR BaseAddress;    /* Device base address */
+    u32 IsReady;        /* Device is initialized and ready */
+} Motor;
+
+/************************** Variable Definitions ***************************/
+extern Motor_Config Motor_ConfigTable[];
+
 /************************** Function Prototypes ****************************/
 /**
  *
@@ -75,5 +102,26 @@
  *
  */
 XStatus MOTOR_Reg_SelfTest(void * baseaddr_p);
+
+/*
+ * Initialization functions
+ */
+Motor_Config *Motor_LookupConfig(u16 DeviceId);
+int Motor_Initialize(Motor *InstancePtr, u16 DeviceId);
+int Motor_CfgInitialize(Motor *InstancePtr, Motor_Config * Config, UINTPTR EffectiveAddr);
+
+/*
+ * API Basic functions implemented
+ */
+void Motor_SetOverRide(Motor *InstancePtr, u32 Data);
+u32 Motor_GetOverRide(Motor *InstancePtr);
+void Motor_SetSpeed(Motor *InstancePtr, u32 Data);
+u32 Motor_GetSpeed(Motor *InstancePtr);
+void Motor_SetEnable(Motor *InstancePtr, u32 Data);
+u32 Motor_GetEnable(Motor *InstancePtr);
+
+#ifdef _cplusplus
+}
+#endif
 
 #endif // MOTOR_H

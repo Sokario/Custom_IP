@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
 // Date        : Wed Oct 25 11:37:22 2017
 // Host        : LogOut-AsusPro running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_auto_pc_0/Test_auto_pc_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top Test_auto_pc_0 -prefix
+//               Test_auto_pc_0_ Test_auto_pc_0_stub.v
 // Design      : Test_auto_pc_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
