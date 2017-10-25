@@ -2,15 +2,19 @@
 #ifndef ENCODER_H
 #define ENCODER_H
 
+#ifdef _cplusplus
+extern "C" {
+#endif
 
 /****************** Include Files ********************/
 #include "xil_types.h"
+#include "xil_assert.h"
 #include "xstatus.h"
 
-#define ENCODER_S00_AXI_SLV_REG0_OFFSET 0
-#define ENCODER_S00_AXI_SLV_REG1_OFFSET 4
-#define ENCODER_S00_AXI_SLV_REG2_OFFSET 8
-#define ENCODER_S00_AXI_SLV_REG3_OFFSET 12
+#define ENCODER_S00_AXI_SLV_REG0_OFFSET 0   // Increments
+#define ENCODER_S00_AXI_SLV_REG1_OFFSET 4   // REG1
+#define ENCODER_S00_AXI_SLV_REG2_OFFSET 8   // REG2
+#define ENCODER_S00_AXI_SLV_REG3_OFFSET 12  // REG3
 
 
 /**************************** Type Definitions *****************************/
@@ -53,6 +57,29 @@
  */
 #define ENCODER_mReadReg(BaseAddress, RegOffset) \
     Xil_In32((BaseAddress) + (RegOffset))
+    
+/************************** Constant Definitions ****************************/
+    
+/**
+ * This typedef contains configuration information for the device.
+ */
+typedef struct {
+    u16 DeviceId;        /* Unique ID  of device */
+    UINTPTR BaseAddress;    /* Device base address */
+} Encoder_Config;
+
+/**
+ * The Motor driver instance data. The user is required to allocate a
+ * variable of this type for every MOTOR device in the system. A pointer
+ * to a variable of this type is then passed to the driver API functions.
+ */
+typedef struct {
+    UINTPTR BaseAddress;    /* Device base address */
+    u32 IsReady;        /* Device is initialized and ready */
+} Encoder;
+
+/************************** Variable Definitions ***************************/
+extern Encoder_Config Encoder_ConfigTable[];
 
 /************************** Function Prototypes ****************************/
 /**
@@ -75,5 +102,21 @@
  *
  */
 XStatus ENCODER_Reg_SelfTest(void * baseaddr_p);
+
+/*
+ * Initialization functions
+ */
+Encoder_Config *Encoder_LookupConfig(u16 DeviceId);
+int Encoder_Initialize(Encoder *InstancePtr, u16 DeviceId);
+int Encoder_CfgInitialize(Encoder *InstancePtr, Encoder_Config * Config, UINTPTR EffectiveAddr);
+
+/*
+ * API Basic functions implemented
+ */
+u32 Encoder_GetIncrements(Encoder *InstancePtr);
+
+#ifdef _cplusplus
+}
+#endif
 
 #endif // ENCODER_H

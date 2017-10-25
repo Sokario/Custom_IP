@@ -1,6 +1,6 @@
 
 /***************************** Include Files *******************************/
-#include "encoder.h"
+#include "Encoder.h"
 #include "xparameters.h"
 #include "stdio.h"
 #include "xil_io.h"
