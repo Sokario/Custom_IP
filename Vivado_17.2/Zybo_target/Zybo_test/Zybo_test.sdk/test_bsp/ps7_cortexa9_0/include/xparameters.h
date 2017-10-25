@@ -18,8 +18,8 @@
 
 #include "xparameters_ps.h"
 
-#define STDIN_BASEADDRESS 0xE0001000
-#define STDOUT_BASEADDRESS 0xE0001000
+#define STDIN_BASEADDRESS 0xF8800000
+#define STDOUT_BASEADDRESS 0xF8800000
 
 /******************************************************************/
 
@@ -246,6 +246,17 @@
 #define XPAR_XGPIOPS_0_DEVICE_ID XPAR_PS7_GPIO_0_DEVICE_ID
 #define XPAR_XGPIOPS_0_BASEADDR 0xE000A000
 #define XPAR_XGPIOPS_0_HIGHADDR 0xE000AFFF
+
+
+/******************************************************************/
+
+/* Definitions for driver MOTOR */
+#define XPAR_MOTOR_NUM_INSTANCES 1
+
+/* Definitions for peripheral MOTOR_0 */
+#define XPAR_MOTOR_0_DEVICE_ID 0
+#define XPAR_MOTOR_0_S00_AXI_BASEADDR 0x43C00000
+#define XPAR_MOTOR_0_S00_AXI_HIGHADDR 0x43C0FFFF
 
 
 /******************************************************************/
