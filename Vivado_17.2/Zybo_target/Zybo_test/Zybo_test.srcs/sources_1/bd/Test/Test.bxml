@@ -2,9 +2,9 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="Test" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1508925090"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1508925090"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1508925090"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1508933985"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1508933985"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1508933985"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\Test_processing_system7_0_0\Test_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -58,6 +58,14 @@
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\Test_Encoder_0_0\Test_Encoder_0_0.xci" Type="IP">
+        <Instance HierarchyPath="Encoder_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\Test_auto_pc_0\Test_auto_pc_0.xci" Type="IP">

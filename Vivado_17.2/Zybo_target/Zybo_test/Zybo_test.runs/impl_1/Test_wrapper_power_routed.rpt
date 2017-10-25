@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Wed Oct 25 11:53:53 2017
+| Date             : Wed Oct 25 14:22:26 2017
 | Host             : LogOut-AsusPro running 64-bit major release  (build 9200)
 | Command          : report_power -file Test_wrapper_power_routed.rpt -pb Test_wrapper_power_summary_routed.pb -rpx Test_wrapper_power_routed.rpx
 | Design           : Test_wrapper
@@ -50,13 +50,13 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.004 |        3 |       --- |             --- |
-| Slice Logic             |     0.001 |     1982 |       --- |             --- |
-|   LUT as Logic          |    <0.001 |      569 |     17600 |            3.23 |
-|   Register              |    <0.001 |      971 |     35200 |            2.76 |
+| Slice Logic             |     0.001 |     2187 |       --- |             --- |
+|   LUT as Logic          |    <0.001 |      615 |     17600 |            3.49 |
+|   Register              |    <0.001 |     1109 |     35200 |            3.15 |
 |   CARRY4                |    <0.001 |       18 |      4400 |            0.41 |
 |   LUT as Shift Register |    <0.001 |       62 |      6000 |            1.03 |
-|   Others                |     0.000 |      205 |       --- |             --- |
-| Signals                 |     0.002 |     1462 |       --- |             --- |
+|   Others                |     0.000 |      206 |       --- |             --- |
+| Signals                 |     0.002 |     1658 |       --- |             --- |
 | I/O                     |     0.001 |        8 |       100 |            8.00 |
 | PS7                     |     1.556 |        1 |       --- |             --- |
 | Static Power            |     0.130 |          |           |                 |
@@ -148,6 +148,9 @@ Table of Contents
 +--------------------------------------------------+-----------+
 | Test_wrapper                                     |     1.565 |
 |   Test_i                                         |     1.564 |
+|     Encoder_0                                    |    <0.001 |
+|       U0                                         |    <0.001 |
+|         Encoder_v1_0_S00_AXI_inst                |    <0.001 |
 |     Motor_0                                      |    <0.001 |
 |       U0                                         |    <0.001 |
 |         Motor_v1_0_S00_AXI_inst                  |    <0.001 |
