@@ -13,6 +13,7 @@ src/helloworld.o src/helloworld.o: ../src/helloworld.c ../src/platform.h \
  ../../test_bsp/ps7_cortexa9_0/include/Motor.h \
  ../../test_bsp/ps7_cortexa9_0/include/xil_assert.h \
  ../../test_bsp/ps7_cortexa9_0/include/xstatus.h \
+ ../../test_bsp/ps7_cortexa9_0/include/xil_io.h \
  ../../test_bsp/ps7_cortexa9_0/include/Encoder.h
 
 ../src/platform.h:
@@ -44,5 +45,7 @@ src/helloworld.o src/helloworld.o: ../src/helloworld.c ../src/platform.h \
 ../../test_bsp/ps7_cortexa9_0/include/xil_assert.h:
 
 ../../test_bsp/ps7_cortexa9_0/include/xstatus.h:
+
+../../test_bsp/ps7_cortexa9_0/include/xil_io.h:
 
 ../../test_bsp/ps7_cortexa9_0/include/Encoder.h:

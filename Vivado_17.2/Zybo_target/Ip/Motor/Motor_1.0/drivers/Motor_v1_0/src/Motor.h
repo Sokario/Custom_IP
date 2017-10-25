@@ -10,6 +10,7 @@ extern "C" {
 #include "xil_types.h"
 #include "xil_assert.h"
 #include "xstatus.h"
+#include "xil_io.h"
 
 #define MOTOR_S00_AXI_SLV_REG0_OFFSET 0     // OverRide
 #define MOTOR_S00_AXI_SLV_REG1_OFFSET 4     // Speed (IN  | PS)

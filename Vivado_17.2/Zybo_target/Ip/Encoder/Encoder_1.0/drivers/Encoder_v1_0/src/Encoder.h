@@ -10,6 +10,7 @@ extern "C" {
 #include "xil_types.h"
 #include "xil_assert.h"
 #include "xstatus.h"
+#include "xil_io.h"
 
 #define ENCODER_S00_AXI_SLV_REG0_OFFSET 0   // Increments
 #define ENCODER_S00_AXI_SLV_REG1_OFFSET 4   // REG1
