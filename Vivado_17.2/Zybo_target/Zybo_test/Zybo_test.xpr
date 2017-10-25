@@ -20,6 +20,7 @@
     <Option Name="BoardPart" Val="digilentinc.com:zybo:part0:1.0"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../Ip/Derivator/Derivator_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../Ip/Encoder/Encoder_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../Ip/Motor/Motor_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../Ip/Motor/Motor_1.0"/>
@@ -80,6 +81,9 @@
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Test.bd" FileRelPathName="ip/Test_Encoder_0_0/Test_Encoder_0_0.xci">
           <Proxy FileSetName="Test_Encoder_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Test.bd" FileRelPathName="ip/Test_Derivator_0_0/Test_Derivator_0_0.xci">
+          <Proxy FileSetName="Test_Derivator_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/Test/hdl/Test_wrapper.v">
@@ -146,6 +150,12 @@
     <FileSet Name="Test_Encoder_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Test_Encoder_0_0">
       <Config>
         <Option Name="TopModule" Val="Test_Encoder_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="Test_Derivator_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Test_Derivator_0_0">
+      <Config>
+        <Option Name="TopModule" Val="Test_Derivator_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -216,9 +226,7 @@
     </Run>
     <Run Id="Test_Motor_0_1_synth_1" Type="Ft3:Synth" SrcSet="Test_Motor_0_1" Part="xc7z010clg400-1" ConstrsSet="Test_Motor_0_1" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Test_Motor_0_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -226,6 +234,15 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="Test_Encoder_0_0_synth_1" Type="Ft3:Synth" SrcSet="Test_Encoder_0_0" Part="xc7z010clg400-1" ConstrsSet="Test_Encoder_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Test_Encoder_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="Test_Derivator_0_0_synth_1" Type="Ft3:Synth" SrcSet="Test_Derivator_0_0" Part="xc7z010clg400-1" ConstrsSet="Test_Derivator_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Test_Derivator_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -319,9 +336,7 @@
     </Run>
     <Run Id="Test_Motor_0_1_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Test_Motor_0_1" Description="Default settings for Implementation." SynthRun="Test_Motor_0_1_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -336,6 +351,22 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="Test_Encoder_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Test_Encoder_0_0" Description="Default settings for Implementation." SynthRun="Test_Encoder_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="Test_Derivator_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Test_Derivator_0_0" Description="Default settings for Implementation." SynthRun="Test_Derivator_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>

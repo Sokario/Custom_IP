@@ -1,4 +1,4 @@
-17:14:29 **** Auto Build of configuration Debug for project test ****
+19:01:53 **** Auto Build of configuration Debug for project test ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
@@ -24,5 +24,5 @@ arm-none-eabi-size test.elf  |tee "test.elf.size"
 'Finished building: test.elf.size'
 ' '
 
-17:14:30 Build Finished (took 744ms)
+19:01:53 Build Finished (took 806ms)
 
