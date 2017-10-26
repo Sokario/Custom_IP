@@ -18,7 +18,7 @@ entity Subtractor_v1_0_S00_AXI is
 		-- Users to add ports here
         Add         : in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
         Subtract    : in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
-        Output      : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+        Result      : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -90,7 +90,7 @@ architecture arch_imp of Subtractor_v1_0_S00_AXI is
     -- USER signals
     signal add_i        : signed(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
     signal subtract_i   : signed(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
-    signal output_i     : signed(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
+    signal result_i     : signed(C_S_AXI_DATA_WIDTH-1 downto 0) := (others => '0');
     
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -352,7 +352,7 @@ begin
 	-- and the slave is ready to accept the read address.
 	slv_reg_rden <= axi_arready and S_AXI_ARVALID and (not axi_rvalid) ;
 
-	process (slv_reg0, axi_araddr, S_AXI_ARESETN, slv_reg_rden, add_i, subtract_i, output_i)
+	process (slv_reg0, axi_araddr, S_AXI_ARESETN, slv_reg_rden, add_i, subtract_i, result_i)
 	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0);
 	begin
 	    -- Address decoding for reading registers
@@ -365,7 +365,7 @@ begin
 	      when b"10" =>
 	        reg_data_out <= std_logic_vector(subtract_i);
 	      when b"11" =>
-	        reg_data_out <= std_logic_vector(output_i);
+	        reg_data_out <= std_logic_vector(result_i);
 	      when others =>
 	        reg_data_out  <= (others => '0');
 	    end case;
@@ -399,14 +399,14 @@ begin
     process( S_AXI_ACLK ) is
     begin
         if (rising_edge( S_AXI_ACLK )) then
-            output_i <= add_i - subtract_i;
+            result_i <= add_i - subtract_i;
         end if;
     end process;
     
     add_i       <= signed(slv_reg1) when (slv_reg0(0) = '1') else signed(Add);
     subtract_i  <= signed(slv_reg2) when (slv_reg0(1) = '1') else signed(Subtract);
     
-    Output  <= std_logic_vector(output_i);
+    Result  <= std_logic_vector(result_i);
 
 	-- User logic ends
 

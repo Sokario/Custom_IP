@@ -1,6 +1,61 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Thu Oct 26 20:47:16 2017
+| Host         : LogOut-AsusPro running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Test_Subtractor_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of Test_Subtractor_0_0 (xilinx.com:user:Subtractor:1.0) from (Rev. 3) to (Rev. 4)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'Test_Subtractor_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'Output'
+
+-Upgrade has added port 'Result'
+
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Thu Oct 26 20:34:38 2017
+| Host         : LogOut-AsusPro running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Test_PID_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of Test_PID_0_0 (xilinx.com:user:PID:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
 | Date         : Thu Oct 26 17:30:23 2017
 | Host         : LogOut-AsusPro running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

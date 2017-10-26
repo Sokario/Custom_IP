@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:Subtractor:1.0
--- IP Revision: 3
+-- IP Revision: 4
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -57,7 +57,7 @@ ENTITY Test_Subtractor_0_0 IS
   PORT (
     Add : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     Subtract : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    Output : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    Result : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_awvalid : IN STD_LOGIC;
@@ -93,7 +93,7 @@ ARCHITECTURE Test_Subtractor_0_0_arch OF Test_Subtractor_0_0 IS
     PORT (
       Add : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       Subtract : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      Output : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      Result : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_awvalid : IN STD_LOGIC;
@@ -148,7 +148,7 @@ BEGIN
     PORT MAP (
       Add => Add,
       Subtract => Subtract,
-      Output => Output,
+      Result => Result,
       s00_axi_awaddr => s00_axi_awaddr,
       s00_axi_awprot => s00_axi_awprot,
       s00_axi_awvalid => s00_axi_awvalid,

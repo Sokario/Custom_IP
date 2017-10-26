@@ -142,7 +142,7 @@ void PID_SetOverRide(PID *InstancePtr, u32 Data)
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
-    return PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG0_OFFSET, Data);
+    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG0_OFFSET, Data);
 }
 
 u32 PID_GetOverRide(PID *InstancePtr)
@@ -160,7 +160,7 @@ void PID_SetReset(PID *InstancePtr, u32 Data)
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
-    return PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG3_OFFSET, Data);
+    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG3_OFFSET, Data);
 }
 
 u32 PID_GetReset(PID *InstancePtr)
@@ -178,7 +178,7 @@ void PID_SetKp(PID *InstancePtr, u32 Data)
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
-    return PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG5_OFFSET, Data);
+    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG5_OFFSET, Data);
 }
 
 u32 PID_GetKp(PID *InstancePtr)
@@ -214,7 +214,7 @@ void PID_SetKd(PID *InstancePtr, u32 Data)
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
-    return PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG7_OFFSET, Data);
+    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG7_OFFSET, Data);
 }
 
 u32 PID_GetKd(PID *InstancePtr)
@@ -232,7 +232,7 @@ void PID_SetError(PID *InstancePtr, u32 Data)
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
-    return PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG1_OFFSET, Data);
+    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG1_OFFSET, Data);
 }
 
 u32 PID_GetError(PID *InstancePtr)
@@ -250,7 +250,7 @@ void PID_SetErrorDeadband(PID *InstancePtr, u32 Data)
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
-    return PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG12_OFFSET, Data);
+    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG12_OFFSET, Data);
 }
 
 u32 PID_GetErrorDeadband(PID *InstancePtr)
@@ -268,7 +268,7 @@ void PID_SetMinOutput(PID *InstancePtr, u32 Data)
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
-    return PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG13_OFFSET, Data);
+    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG13_OFFSET, Data);
 }
 
 u32 PID_GetMinOutput(PID *InstancePtr)
@@ -286,7 +286,7 @@ void PID_SetMaxOutput(PID *InstancePtr, u32 Data)
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
-    return PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG14_OFFSET, Data);
+    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG14_OFFSET, Data);
 }
 
 u32 PID_GetMaxOutput(PID *InstancePtr)

@@ -47,7 +47,7 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:user:Subtractor:1.0
--- IP Revision: 3
+-- IP Revision: 4
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
@@ -57,7 +57,7 @@ ENTITY Test_Subtractor_0_0 IS
   PORT (
     Add : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
     Subtract : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    Output : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    Result : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
     s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_awvalid : IN STD_LOGIC;
@@ -93,7 +93,7 @@ ARCHITECTURE Test_Subtractor_0_0_arch OF Test_Subtractor_0_0 IS
     PORT (
       Add : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
       Subtract : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      Output : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      Result : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
       s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_awvalid : IN STD_LOGIC;
@@ -122,7 +122,7 @@ ARCHITECTURE Test_Subtractor_0_0_arch OF Test_Subtractor_0_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF Test_Subtractor_0_0_arch : ARCHITECTURE IS "Test_Subtractor_0_0,Subtractor_v1_0,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF Test_Subtractor_0_0_arch: ARCHITECTURE IS "Test_Subtractor_0_0,Subtractor_v1_0,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=Subtractor,x_ipVersion=1.0,x_ipCoreRevision=3,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}";
+  ATTRIBUTE CORE_GENERATION_INFO OF Test_Subtractor_0_0_arch: ARCHITECTURE IS "Test_Subtractor_0_0,Subtractor_v1_0,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=Subtractor,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awprot: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT";
@@ -154,7 +154,7 @@ BEGIN
     PORT MAP (
       Add => Add,
       Subtract => Subtract,
-      Output => Output,
+      Result => Result,
       s00_axi_awaddr => s00_axi_awaddr,
       s00_axi_awprot => s00_axi_awprot,
       s00_axi_awvalid => s00_axi_awvalid,

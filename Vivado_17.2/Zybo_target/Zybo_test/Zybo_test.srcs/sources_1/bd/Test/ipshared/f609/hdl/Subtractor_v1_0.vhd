@@ -18,7 +18,7 @@ entity Subtractor_v1_0 is
 		-- Users to add ports here
         Add         : in std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
         Subtract    : in std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
-        Output      : out std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
+        Result      : out std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -59,7 +59,7 @@ architecture arch_imp of Subtractor_v1_0 is
 		port (
         Add         : in std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
         Subtract    : in std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
-        Output      : out std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
+        Result      : out std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
 		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -95,7 +95,7 @@ Subtractor_v1_0_S00_AXI_inst : Subtractor_v1_0_S00_AXI
 	port map (
         Add => Add,
         Subtract    => Subtract,
-        Output  => Output,
+        Result  => Result,
 		S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,

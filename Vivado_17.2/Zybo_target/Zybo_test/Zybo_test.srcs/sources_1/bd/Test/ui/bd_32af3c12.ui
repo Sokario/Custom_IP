@@ -10,21 +10,21 @@ preplace inst PID_0 -pg 1 -lvl 3 -y 250 -defaultsOSRD
 preplace inst Motor_0 -pg 1 -lvl 3 -y 90 -defaultsOSRD
 preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -y 460 -defaultsOSRD
 preplace inst Encoder_0 -pg 1 -lvl 3 -y 800 -defaultsOSRD
-preplace inst Subtractor_0 -pg 1 -lvl 3 -y 430 -defaultsOSRD
+preplace inst Subtractor_0 -pg 1 -lvl 3 -y 440 -defaultsOSRD
 preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -y 320 -defaultsOSRD
 preplace inst Derivator_0 -pg 1 -lvl 3 -y 610 -defaultsOSRD
 preplace inst processing_system7_0 -pg 1 -lvl 1 -y 770 -defaultsOSRD
 preplace netloc processing_system7_0_DDR 1 1 3 NJ 690 NJ 690 NJ
 preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 810
 preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 500
-preplace netloc Derivator_0_Speed 1 2 2 870 520 1160
+preplace netloc Derivator_0_Speed 1 2 2 870 350 1160
 preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 2 480 220 850
 preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 420 470
 preplace netloc ps7_0_axi_periph_M03_AXI 1 2 1 800
-preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 800
-preplace netloc Subtractor_0_Output 1 2 2 870 340 1160
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 810
+preplace netloc Subtractor_0_Output 1 2 2 870 340 1170
 preplace netloc Encoder_0_Increments 1 2 2 870 530 1150
-preplace netloc PID_0_Command 1 2 2 850 10 1160
+preplace netloc PID_0_Command 1 2 2 850 10 1170
 preplace netloc axi_gpio_0_GPIO2 1 3 1 NJ
 preplace netloc processing_system7_0_FIXED_IO 1 1 3 NJ 710 NJ 710 NJ
 preplace netloc axi_gpio_0_GPIO 1 3 1 NJ
@@ -33,7 +33,7 @@ preplace netloc ps7_0_axi_periph_M04_AXI 1 2 1 830
 preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 410 490 240 840
 preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 820
 preplace netloc rst_ps7_0_100M_interconnect_aresetn 1 1 1 N
-levelinfo -pg 1 0 250 650 1010 1180 -top 0 -bot 1020
+levelinfo -pg 1 0 250 650 1010 1190 -top 0 -bot 1020
 ",
 }
 {
