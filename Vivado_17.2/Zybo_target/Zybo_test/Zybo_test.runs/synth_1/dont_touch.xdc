@@ -28,6 +28,9 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Test_Encoder_0_
 # IP: bd/Test/ip/Test_Derivator_0_0/Test_Derivator_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Test_Derivator_0_0 || ORIG_REF_NAME==Test_Derivator_0_0}]
 
+# IP: bd/Test/ip/Test_PID_0_0/Test_PID_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Test_PID_0_0 || ORIG_REF_NAME==Test_PID_0_0}]
+
 # IP: bd/Test/ip/Test_auto_pc_0/Test_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Test_auto_pc_0 || ORIG_REF_NAME==Test_auto_pc_0}]
 

@@ -277,6 +277,17 @@
 
 /******************************************************************/
 
+/* Definitions for driver PID */
+#define XPAR_PID_NUM_INSTANCES 1
+
+/* Definitions for peripheral PID_0 */
+#define XPAR_PID_0_DEVICE_ID 0
+#define XPAR_PID_0_S00_AXI_BASEADDR 0x43C30000
+#define XPAR_PID_0_S00_AXI_HIGHADDR 0x43C3FFFF
+
+
+/******************************************************************/
+
 /* Definitions for driver QSPIPS */
 #define XPAR_XQSPIPS_NUM_INSTANCES 1
 

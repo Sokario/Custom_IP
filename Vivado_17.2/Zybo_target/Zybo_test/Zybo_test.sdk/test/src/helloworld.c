@@ -49,16 +49,21 @@
 #include "platform.h"
 #include "xil_printf.h"
 #include "xparameters.h"
-#include "xil_io.h"
+#include "sleep.h"
 
 #include "Motor.h"
 #include "Encoder.h"
+#include "Derivator.h"
+#include "PID.h"
 
 int main()
 {
     init_platform();
 
-    print("Hello World\n\r");
+    while (1) {
+    	print("Hello World\n\r");
+    	usleep(1000000);
+    }
 
     cleanup_platform();
     return 0;
