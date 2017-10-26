@@ -34,6 +34,17 @@
 
 /******************************************************************/
 
+/* Definitions for driver SUBTRACTOR */
+#define XPAR_SUBTRACTOR_NUM_INSTANCES 1
+
+/* Definitions for peripheral SUBTRACTOR_0 */
+#define XPAR_SUBTRACTOR_0_DEVICE_ID 0
+#define XPAR_SUBTRACTOR_0_S00_AXI_BASEADDR 0x43C40000
+#define XPAR_SUBTRACTOR_0_S00_AXI_HIGHADDR 0x43C4FFFF
+
+
+/******************************************************************/
+
 
 /* Definitions for peripheral PS7_DDR_0 */
 #define XPAR_PS7_DDR_0_S_AXI_BASEADDR 0x00100000

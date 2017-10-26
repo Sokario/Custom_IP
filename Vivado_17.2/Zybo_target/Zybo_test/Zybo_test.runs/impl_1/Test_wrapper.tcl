@@ -53,7 +53,10 @@ set rc [catch {
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.cache/wt [current_project]
   set_property parent.project_path C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.xpr [current_project]
-  set_property ip_repo_paths C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Ip [current_project]
+  set_property ip_repo_paths {
+  C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Ip/Subtractor/Subtractor_1.0
+  C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Ip
+} [current_project]
   set_property ip_output_repo C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES XPM_CDC [current_project]

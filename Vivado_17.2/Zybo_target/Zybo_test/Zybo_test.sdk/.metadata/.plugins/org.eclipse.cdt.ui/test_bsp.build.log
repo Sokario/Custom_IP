@@ -1,4 +1,4 @@
-16:27:41 **** Auto Build of project test_bsp ****
+17:35:38 **** Auto Build of project test_bsp ****
 make -k all 
 "Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
 make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
@@ -36,6 +36,8 @@ make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=
 make -C ps7_cortexa9_0/libsrc/sdps_v3_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_3/src"
 make -C ps7_cortexa9_0/libsrc/standalone_v6_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/Subtractor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Subtractor_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_3/src"
 make -C ps7_cortexa9_0/libsrc/ttcps_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_4/src"
@@ -466,6 +468,89 @@ make -C ps7_cortexa9_0/libsrc/sdps_v3_2/src -s libs  "SHELL=CMD" "COMPILER=arm-n
 "Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_3/src"
 make -C ps7_cortexa9_0/libsrc/standalone_v6_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling standalone"
+"Running Make libs in ps7_cortexa9_0/libsrc/Subtractor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Subtractor_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Subtractor..."
+Subtractor.c: In function 'Subtractor_CfgInitialize':
+Subtractor.c:124:76: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Subtractor_CfgInitialize(Subtractor * InstancePtr, Subtractor_Config * Config, UINTPTR EffectiveAddr)
+                                                                            ^~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+Subtractor.c: In function 'Subtractor_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:139:6: note: declared here
+ void Subtractor_SetOverRide(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:139:6: note: declared here
+ void Subtractor_SetOverRide(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+Subtractor.c: In function 'Subtractor_SetAdd':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:157:6: note: declared here
+ void Subtractor_SetAdd(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:157:6: note: declared here
+ void Subtractor_SetAdd(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+Subtractor.c: In function 'Subtractor_SetSubtract':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:175:6: note: declared here
+ void Subtractor_SetSubtract(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:175:6: note: declared here
+ void Subtractor_SetSubtract(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+Subtractor_selftest.c: In function 'SUBTRACTOR_Reg_SelfTest':
+Subtractor_selftest.c:52:59: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( SUBTRACTOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                           ^~
+Subtractor_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
 "Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_3/src"
 make -C ps7_cortexa9_0/libsrc/ttcps_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling ttcps"
@@ -480,5 +565,5 @@ make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm
 "Compiling xadcps"
 'Finished building libraries'
 
-16:28:04 Build Finished (took 22s.517ms)
+17:36:00 Build Finished (took 22s.357ms)
 
