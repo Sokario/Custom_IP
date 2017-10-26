@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
--- Date        : Thu Oct 26 14:57:03 2017
+-- Date        : Thu Oct 26 16:20:04 2017
 -- Host        : LogOut-AsusPro running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode funcsim
---               C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_PID_0_0/Test_PID_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
+--               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ Test_PID_0_0_sim_netlist.vhdl
 -- Design      : Test_PID_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -14,7 +14,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity Test_PID_0_0_PID_v1_0_S00_AXI is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_PID_v1_0_S00_AXI is
   port (
     s00_axi_awready : out STD_LOGIC;
     s00_axi_wready : out STD_LOGIC;
@@ -38,11 +38,9 @@ entity Test_PID_0_0_PID_v1_0_S00_AXI is
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     Reset : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Test_PID_0_0_PID_v1_0_S00_AXI : entity is "PID_v1_0_S00_AXI";
-end Test_PID_0_0_PID_v1_0_S00_AXI;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_PID_v1_0_S00_AXI;
 
-architecture STRUCTURE of Test_PID_0_0_PID_v1_0_S00_AXI is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_PID_v1_0_S00_AXI is
   signal \^command\ : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \Command[0]_INST_0_i_1_n_0\ : STD_LOGIC;
   signal Ended_INST_0_i_1_n_0 : STD_LOGIC;
@@ -25419,7 +25417,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity Test_PID_0_0_PID_v1_0 is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_PID_v1_0 is
   port (
     S_AXI_WREADY : out STD_LOGIC;
     S_AXI_ARREADY : out STD_LOGIC;
@@ -25443,11 +25441,9 @@ entity Test_PID_0_0_PID_v1_0 is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of Test_PID_0_0_PID_v1_0 : entity is "PID_v1_0";
-end Test_PID_0_0_PID_v1_0;
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_PID_v1_0;
 
-architecture STRUCTURE of Test_PID_0_0_PID_v1_0 is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_PID_v1_0 is
   signal \^s_axi_arready\ : STD_LOGIC;
   signal \^s_axi_awready\ : STD_LOGIC;
   signal \^s_axi_wready\ : STD_LOGIC;
@@ -25462,7 +25458,7 @@ begin
   S_AXI_WREADY <= \^s_axi_wready\;
   s00_axi_bvalid <= \^s00_axi_bvalid\;
   s00_axi_rvalid <= \^s00_axi_rvalid\;
-PID_v1_0_S00_AXI_inst: entity work.Test_PID_0_0_PID_v1_0_S00_AXI
+PID_v1_0_S00_AXI_inst: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_PID_v1_0_S00_AXI
      port map (
       Command(31 downto 0) => Command(31 downto 0),
       Ended => Ended,
@@ -25523,7 +25519,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity Test_PID_0_0 is
+entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   port (
     Reset : in STD_LOGIC;
     Error : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -25552,16 +25548,16 @@ entity Test_PID_0_0 is
     s00_axi_aresetn : in STD_LOGIC
   );
   attribute NotValidForBitStream : boolean;
-  attribute NotValidForBitStream of Test_PID_0_0 : entity is true;
+  attribute NotValidForBitStream of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of Test_PID_0_0 : entity is "Test_PID_0_0,PID_v1_0,{}";
+  attribute CHECK_LICENSE_TYPE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "Test_PID_0_0,PID_v1_0,{}";
   attribute downgradeipidentifiedwarnings : string;
-  attribute downgradeipidentifiedwarnings of Test_PID_0_0 : entity is "yes";
+  attribute downgradeipidentifiedwarnings of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "yes";
   attribute x_core_info : string;
-  attribute x_core_info of Test_PID_0_0 : entity is "PID_v1_0,Vivado 2017.2";
-end Test_PID_0_0;
+  attribute x_core_info of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix : entity is "PID_v1_0,Vivado 2017.2";
+end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 
-architecture STRUCTURE of Test_PID_0_0 is
+architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   signal \<const0>\ : STD_LOGIC;
 begin
   s00_axi_bresp(1) <= \<const0>\;
@@ -25572,7 +25568,7 @@ GND: unisim.vcomponents.GND
      port map (
       G => \<const0>\
     );
-U0: entity work.Test_PID_0_0_PID_v1_0
+U0: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_PID_v1_0
      port map (
       Command(31 downto 0) => Command(31 downto 0),
       Ended => Ended,

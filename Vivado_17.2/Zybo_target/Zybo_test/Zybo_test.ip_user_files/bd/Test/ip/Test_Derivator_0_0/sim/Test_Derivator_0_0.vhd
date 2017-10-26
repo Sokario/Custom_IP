@@ -46,20 +46,18 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: xilinx.com:user:PID:1.0
--- IP Revision: 2
+-- IP VLNV: xilinx.com:user:Derivator:1.0
+-- IP Revision: 4
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY Test_PID_0_0 IS
+ENTITY Test_Derivator_0_0 IS
   PORT (
-    Reset : IN STD_LOGIC;
-    Error : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    Command : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    Ended : OUT STD_LOGIC;
-    s00_axi_awaddr : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    Increments : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    Speed : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_awvalid : IN STD_LOGIC;
     s00_axi_awready : OUT STD_LOGIC;
@@ -70,7 +68,7 @@ ENTITY Test_PID_0_0 IS
     s00_axi_bresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s00_axi_bvalid : OUT STD_LOGIC;
     s00_axi_bready : IN STD_LOGIC;
-    s00_axi_araddr : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+    s00_axi_araddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
     s00_axi_arprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_arvalid : IN STD_LOGIC;
     s00_axi_arready : OUT STD_LOGIC;
@@ -81,29 +79,22 @@ ENTITY Test_PID_0_0 IS
     s00_axi_aclk : IN STD_LOGIC;
     s00_axi_aresetn : IN STD_LOGIC
   );
-END Test_PID_0_0;
+END Test_Derivator_0_0;
 
-ARCHITECTURE Test_PID_0_0_arch OF Test_PID_0_0 IS
+ARCHITECTURE Test_Derivator_0_0_arch OF Test_Derivator_0_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
-  ATTRIBUTE DowngradeIPIdentifiedWarnings OF Test_PID_0_0_arch: ARCHITECTURE IS "yes";
-  COMPONENT PID_v1_0 IS
+  ATTRIBUTE DowngradeIPIdentifiedWarnings OF Test_Derivator_0_0_arch: ARCHITECTURE IS "yes";
+  COMPONENT Derivator_v1_0 IS
     GENERIC (
       C_S00_AXI_DATA_WIDTH : INTEGER; -- Width of S_AXI data bus
       C_S00_AXI_ADDR_WIDTH : INTEGER; -- Width of S_AXI address bus
-      KP : INTEGER;
-      KI : INTEGER;
-      KD : INTEGER;
-      DIVIDER : INTEGER;
-      DEADBAND : INTEGER;
-      MIN : INTEGER;
-      MAX : INTEGER
+      FREQUENCE_ACK : INTEGER;
+      DIVIDER : INTEGER
     );
     PORT (
-      Reset : IN STD_LOGIC;
-      Error : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      Command : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-      Ended : OUT STD_LOGIC;
-      s00_axi_awaddr : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+      Increments : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      Speed : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_awvalid : IN STD_LOGIC;
       s00_axi_awready : OUT STD_LOGIC;
@@ -114,7 +105,7 @@ ARCHITECTURE Test_PID_0_0_arch OF Test_PID_0_0 IS
       s00_axi_bresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       s00_axi_bvalid : OUT STD_LOGIC;
       s00_axi_bready : IN STD_LOGIC;
-      s00_axi_araddr : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+      s00_axi_araddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
       s00_axi_arprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_arvalid : IN STD_LOGIC;
       s00_axi_arready : OUT STD_LOGIC;
@@ -125,9 +116,8 @@ ARCHITECTURE Test_PID_0_0_arch OF Test_PID_0_0 IS
       s00_axi_aclk : IN STD_LOGIC;
       s00_axi_aresetn : IN STD_LOGIC
     );
-  END COMPONENT PID_v1_0;
+  END COMPONENT Derivator_v1_0;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
-  ATTRIBUTE X_INTERFACE_INFO OF Reset: SIGNAL IS "xilinx.com:signal:reset:1.0 Reset RST";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awprot: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID";
@@ -150,23 +140,16 @@ ARCHITECTURE Test_PID_0_0_arch OF Test_PID_0_0 IS
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK, xilinx.com:signal:clock:1.0 s00_axi_aclk CLK";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 S00_AXI_RST RST, xilinx.com:signal:reset:1.0 s00_axi_aresetn RST";
 BEGIN
-  U0 : PID_v1_0
+  U0 : Derivator_v1_0
     GENERIC MAP (
       C_S00_AXI_DATA_WIDTH => 32,
-      C_S00_AXI_ADDR_WIDTH => 6,
-      KP => 1,
-      KI => 1,
-      KD => 1,
-      DIVIDER => 390625,
-      DEADBAND => 1,
-      MIN => 1,
-      MAX => 1
+      C_S00_AXI_ADDR_WIDTH => 4,
+      FREQUENCE_ACK => 256,
+      DIVIDER => 390625
     )
     PORT MAP (
-      Reset => Reset,
-      Error => Error,
-      Command => Command,
-      Ended => Ended,
+      Increments => Increments,
+      Speed => Speed,
       s00_axi_awaddr => s00_axi_awaddr,
       s00_axi_awprot => s00_axi_awprot,
       s00_axi_awvalid => s00_axi_awvalid,
@@ -189,4 +172,4 @@ BEGIN
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_aresetn => s00_axi_aresetn
     );
-END Test_PID_0_0_arch;
+END Test_Derivator_0_0_arch;

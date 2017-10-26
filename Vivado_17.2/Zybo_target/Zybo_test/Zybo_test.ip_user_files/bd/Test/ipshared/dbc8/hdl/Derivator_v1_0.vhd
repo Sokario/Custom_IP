@@ -2,30 +2,23 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity PID_v1_0 is
+entity Derivator_v1_0 is
 	generic (
 		-- Users to add parameters here
-		KP        : integer range 0 to 2147483647 := 1;   -- Proportional constant
-		KI        : integer range 0 to 2147483647 := 1;   -- Integral constant
-		KD        : integer range 0 to 2147483647 := 1;   -- Derivative constant
-        DEADBAND  : integer range 0 to 2147483647 := 1;   -- Negligible error limit
-        MIN       : integer range -2147483647 to 2147483647 := 1;   -- Minimum command limit
-        MAX       : integer range -2147483647 to 2147483647 := 1;   -- Maximum command limit
-		DIVIDER   : integer   := 390625;                  -- 100 MHz / 390625 = 256 Hz
+        FREQUENCE_ACK   : integer   := 256;     -- 256 Hz
+        DIVIDER         : integer   := 390625;  -- 100 MHz / 390625 = 256 Hz
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
 
 		-- Parameters of Axi Slave Bus Interface S00_AXI
 		C_S00_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S00_AXI_ADDR_WIDTH	: integer	:= 6
+		C_S00_AXI_ADDR_WIDTH	: integer	:= 4
 	);
 	port (
 		-- Users to add ports here
-        Reset   : in std_logic;
-        Error   : in std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
-        Command : out std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
-        Ended   : out std_logic;
+        Increments  : in std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
+        Speed       : out std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -53,28 +46,21 @@ entity PID_v1_0 is
 		s00_axi_rvalid	: out std_logic;
 		s00_axi_rready	: in std_logic
 	);
-end PID_v1_0;
+end Derivator_v1_0;
 
-architecture arch_imp of PID_v1_0 is
+architecture arch_imp of Derivator_v1_0 is
 
 	-- component declaration
-	component PID_v1_0_S00_AXI is
+	component Derivator_v1_0_S00_AXI is
 		generic (
-		KP        : integer range 0 to 2147483647 := 1;
-        KI        : integer range 0 to 2147483647 := 1;
-        KD        : integer range 0 to 2147483647 := 1;
-        DEADBAND  : integer range 0 to 2147483647 := 1;
-        MIN       : integer range -2147483647 to 2147483647 := 1;
-        MAX       : integer range -2147483647 to 2147483647 := 1;
-        DIVIDER   : integer   := 390625;
+		FREQUENCE_ACK : integer   := 256;
+		DIVIDER       : integer   := 390625;
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S_AXI_ADDR_WIDTH	: integer	:= 6
+		C_S_AXI_ADDR_WIDTH	: integer	:= 4
 		);
 		port (
-        Reset   : in std_logic;
-        Error   : in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
-        Command : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
-        Ended   : out std_logic;
+	    Increments : in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+	    Speed      : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
 		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -97,28 +83,21 @@ architecture arch_imp of PID_v1_0 is
 		S_AXI_RVALID	: out std_logic;
 		S_AXI_RREADY	: in std_logic
 		);
-	end component PID_v1_0_S00_AXI;
+	end component Derivator_v1_0_S00_AXI;
 
 begin
 
 -- Instantiation of Axi Bus Interface S00_AXI
-PID_v1_0_S00_AXI_inst : PID_v1_0_S00_AXI
+Derivator_v1_0_S00_AXI_inst : Derivator_v1_0_S00_AXI
 	generic map (
-        KP  => KP,
-        KI  => KI,
-        KD  => KD,
-        DEADBAND    => DEADBAND,
-        MIN => MIN,
-        MAX => MAX,
-        DIVIDER => DIVIDER,
+	    FREQUENCE_ACK  => FREQUENCE_ACK,
+	    DIVIDER    => DIVIDER,
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
 	)
 	port map (
-        Reset   => Reset,
-        Error   => Error,
-        Command => Command,
-        Ended   => Ended,
+	    Increments => Increments,
+	    Speed  => Speed,
 		S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,

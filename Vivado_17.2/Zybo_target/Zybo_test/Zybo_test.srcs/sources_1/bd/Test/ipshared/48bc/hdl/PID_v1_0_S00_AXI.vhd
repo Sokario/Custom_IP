@@ -588,7 +588,7 @@ begin
 	--REG11 Variation error    (OUT)
 	--REG12 Error deadBand     (INOUT)
 	--REG13 Min output         (INOUT)
-	--REG14 Min output         (INOUT)
+	--REG14 Max output         (INOUT)
 	--REG15 NULL
 
     process ( S_AXI_ACLK ) is

@@ -3,26 +3,32 @@
 #define PID_H
 
 
+#ifdef _cplusplus
+extern "C" {
+#endif
+
 /****************** Include Files ********************/
 #include "xil_types.h"
+#include "xil_assert.h"
 #include "xstatus.h"
+#include "xil_io.h"
 
-#define PID_S00_AXI_SLV_REG0_OFFSET 0
-#define PID_S00_AXI_SLV_REG1_OFFSET 4
-#define PID_S00_AXI_SLV_REG2_OFFSET 8
-#define PID_S00_AXI_SLV_REG3_OFFSET 12
-#define PID_S00_AXI_SLV_REG4_OFFSET 16
-#define PID_S00_AXI_SLV_REG5_OFFSET 20
-#define PID_S00_AXI_SLV_REG6_OFFSET 24
-#define PID_S00_AXI_SLV_REG7_OFFSET 28
-#define PID_S00_AXI_SLV_REG8_OFFSET 32
-#define PID_S00_AXI_SLV_REG9_OFFSET 36
-#define PID_S00_AXI_SLV_REG10_OFFSET 40
-#define PID_S00_AXI_SLV_REG11_OFFSET 44
-#define PID_S00_AXI_SLV_REG12_OFFSET 48
-#define PID_S00_AXI_SLV_REG13_OFFSET 52
-#define PID_S00_AXI_SLV_REG14_OFFSET 56
-#define PID_S00_AXI_SLV_REG15_OFFSET 60
+#define PID_S00_AXI_SLV_REG0_OFFSET 0   // OverRide         (IN)
+#define PID_S00_AXI_SLV_REG1_OFFSET 4   // Error            (IN  | PS)
+#define PID_S00_AXI_SLV_REG2_OFFSET 8   // Command          (OUT)
+#define PID_S00_AXI_SLV_REG3_OFFSET 12  // Reset            (IN)
+#define PID_S00_AXI_SLV_REG4_OFFSET 16  // Ended            (OUT)
+#define PID_S00_AXI_SLV_REG5_OFFSET 20  // Kp               (INOUT)
+#define PID_S00_AXI_SLV_REG6_OFFSET 24  // Ki               (INOUT)
+#define PID_S00_AXI_SLV_REG7_OFFSET 28  // Kd               (INOUT)
+#define PID_S00_AXI_SLV_REG8_OFFSET 32  // Error            (OUT | PL)
+#define PID_S00_AXI_SLV_REG9_OFFSET 36  // Last error       (OUT)
+#define PID_S00_AXI_SLV_REG10_OFFSET 40 // Sum error        (OUT)
+#define PID_S00_AXI_SLV_REG11_OFFSET 44 // Variation error  (OUT)
+#define PID_S00_AXI_SLV_REG12_OFFSET 48 // Error deadband   (OUT)
+#define PID_S00_AXI_SLV_REG13_OFFSET 52 // Min output       (INOUT)
+#define PID_S00_AXI_SLV_REG14_OFFSET 56 // Max output       (INOUT)
+#define PID_S00_AXI_SLV_REG15_OFFSET 60 // REG15
 
 
 /**************************** Type Definitions *****************************/
@@ -65,6 +71,29 @@
  */
 #define PID_mReadReg(BaseAddress, RegOffset) \
     Xil_In32((BaseAddress) + (RegOffset))
+    
+/************************** Constant Definitions ****************************/
+    
+/**
+ * This typedef contains configuration information for the device.
+ */
+typedef struct {
+    u16 DeviceId;        /* Unique ID  of device */
+    UINTPTR BaseAddress;    /* Device base address */
+} PID_Config;
+
+/**
+ * The Motor driver instance data. The user is required to allocate a
+ * variable of this type for every MOTOR device in the system. A pointer
+ * to a variable of this type is then passed to the driver API functions.
+ */
+typedef struct {
+    UINTPTR BaseAddress;    /* Device base address */
+    u32 IsReady;        /* Device is initialized and ready */
+} PID;
+
+/************************** Variable Definitions ***************************/
+extern PID_Config PID_ConfigTable[];
 
 /************************** Function Prototypes ****************************/
 /**
@@ -87,5 +116,44 @@
  *
  */
 XStatus PID_Reg_SelfTest(void * baseaddr_p);
+
+/*
+ * Initialization functions
+ */
+PID_Config *PID_LookupConfig(u16 DeviceId);
+int PID_Initialize(PID *InstancePtr, u16 DeviceId);
+int PID_CfgInitialize(PID *InstancePtr, PID_Config * Config, UINTPTR EffectiveAddr);
+
+/*
+ * API Basic functions implemented
+ */
+void PID_SetOverRide(PID *InstancePtr, u32 Data);
+u32 PID_GetOverRide(PID *InstancePtr);
+void PID_SetReset(PID *InstancePtr, u32 Data);
+u32 PID_GetReset(PID *InstancePtr);
+void PID_SetKp(PID *InstancePtr, u32 Data);
+u32 PID_GetKp(PID *InstancePtr);
+void PID_SetKi(PID *InstancePtr, u32 Data);
+u32 PID_GetKi(PID *InstancePtr);
+void PID_SetKd(PID *InstancePtr, u32 Data);
+u32 PID_GetKd(PID *InstancePtr);
+void PID_SetError(PID *InstancePtr, u32 Data);
+u32 PID_GetError(PID *InstancePtr);
+void PID_SetErrorDeadband(PID *InstancePtr, u32 Data);
+u32 PID_GetErrorDeadband(PID *InstancePtr);
+void PID_SetMinOutput(PID *InstancePtr, u32 Data);
+u32 PID_GetMinOutput(PID *InstancePtr);
+void PID_SetMaxOutput(PID *InstancePtr, u32 Data);
+u32 PID_GetMaxOutput(PID *InstancePtr);
+
+u32 PID_GetCommand(PID *InstancePtr);
+u32 PID_GetEnded(PID *InstancePtr);
+u32 PID_GetLastError(PID *InstancePtr);
+u32 PID_GetSumError(PID *InstancePtr);
+u32 PID_GetVariationError(PID *InstancePtr);
+
+#ifdef _cplusplus
+}
+#endif
 
 #endif // PID_H
