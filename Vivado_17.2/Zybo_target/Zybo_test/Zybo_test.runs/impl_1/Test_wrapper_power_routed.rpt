@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Thu Oct 26 14:59:19 2017
+| Date             : Thu Oct 26 15:43:56 2017
 | Host             : LogOut-AsusPro running 64-bit major release  (build 9200)
 | Command          : report_power -file Test_wrapper_power_routed.rpt -pb Test_wrapper_power_summary_routed.pb -rpx Test_wrapper_power_routed.rpx
 | Design           : Test_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 1.703 |
+| Total On-Chip Power (W)  | 1.702 |
 | Dynamic (W)              | 1.572 |
 | Device Static (W)        | 0.130 |
 | Effective TJA (C/W)      | 11.5  |
@@ -50,18 +50,18 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.007 |        3 |       --- |             --- |
-| Slice Logic             |     0.002 |     4364 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     1604 |     17600 |            9.11 |
+| Slice Logic             |     0.003 |     4409 |       --- |             --- |
+|   LUT as Logic          |     0.002 |     1648 |     17600 |            9.36 |
 |   CARRY4                |    <0.001 |      131 |      4400 |            2.98 |
 |   Register              |    <0.001 |     1930 |     35200 |            5.48 |
 |   LUT as Shift Register |    <0.001 |       62 |      6000 |            1.03 |
 |   Others                |     0.000 |      211 |       --- |             --- |
-| Signals                 |     0.004 |     4104 |       --- |             --- |
+| Signals                 |     0.004 |     4152 |       --- |             --- |
 | DSPs                    |     0.001 |       12 |        80 |           15.00 |
 | I/O                     |     0.001 |        8 |       100 |            8.00 |
 | PS7                     |     1.556 |        1 |       --- |             --- |
 | Static Power            |     0.130 |          |           |                 |
-| Total                   |     1.703 |          |           |                 |
+| Total                   |     1.702 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 

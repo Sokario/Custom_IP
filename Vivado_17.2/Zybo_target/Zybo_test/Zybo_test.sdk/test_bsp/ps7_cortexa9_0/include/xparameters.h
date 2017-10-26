@@ -23,6 +23,17 @@
 
 /******************************************************************/
 
+/* Definitions for driver DERIVATOR */
+#define XPAR_DERIVATOR_NUM_INSTANCES 1
+
+/* Definitions for peripheral DERIVATOR_0 */
+#define XPAR_DERIVATOR_0_DEVICE_ID 0
+#define XPAR_DERIVATOR_0_S00_AXI_BASEADDR 0x43C20000
+#define XPAR_DERIVATOR_0_S00_AXI_HIGHADDR 0x43C2FFFF
+
+
+/******************************************************************/
+
 
 /* Definitions for peripheral PS7_DDR_0 */
 #define XPAR_PS7_DDR_0_S_AXI_BASEADDR 0x00100000
@@ -215,11 +226,6 @@
 /* Definitions for peripheral PS7_SLCR_0 */
 #define XPAR_PS7_SLCR_0_S_AXI_BASEADDR 0xF8000000
 #define XPAR_PS7_SLCR_0_S_AXI_HIGHADDR 0xF8000FFF
-
-
-/* Definitions for peripheral DERIVATOR_0 */
-#define XPAR_DERIVATOR_0_S00_AXI_BASEADDR 0x43C20000
-#define XPAR_DERIVATOR_0_S00_AXI_HIGHADDR 0x43C2FFFF
 
 
 /******************************************************************/

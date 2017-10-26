@@ -2,15 +2,20 @@
 #ifndef DERIVATOR_H
 #define DERIVATOR_H
 
+#ifdef _cplusplus
+extern "C" {
+#endif
 
 /****************** Include Files ********************/
 #include "xil_types.h"
+#include "xil_assert.h"
 #include "xstatus.h"
+#include "xil_io.h"
 
-#define DERIVATOR_S00_AXI_SLV_REG0_OFFSET 0
-#define DERIVATOR_S00_AXI_SLV_REG1_OFFSET 4
-#define DERIVATOR_S00_AXI_SLV_REG2_OFFSET 8
-#define DERIVATOR_S00_AXI_SLV_REG3_OFFSET 12
+#define DERIVATOR_S00_AXI_SLV_REG0_OFFSET 0     // OverRide
+#define DERIVATOR_S00_AXI_SLV_REG1_OFFSET 4     // Increments
+#define DERIVATOR_S00_AXI_SLV_REG2_OFFSET 8     // Speed
+#define DERIVATOR_S00_AXI_SLV_REG3_OFFSET 12    // REG3
 
 
 /**************************** Type Definitions *****************************/
@@ -53,6 +58,29 @@
  */
 #define DERIVATOR_mReadReg(BaseAddress, RegOffset) \
     Xil_In32((BaseAddress) + (RegOffset))
+    
+/************************** Constant Definitions ****************************/
+    
+/**
+ * This typedef contains configuration information for the device.
+ */
+typedef struct {
+    u16 DeviceId;        /* Unique ID  of device */
+    UINTPTR BaseAddress;    /* Device base address */
+} Derivator_Config;
+
+/**
+ * The Motor driver instance data. The user is required to allocate a
+ * variable of this type for every MOTOR device in the system. A pointer
+ * to a variable of this type is then passed to the driver API functions.
+ */
+typedef struct {
+    UINTPTR BaseAddress;    /* Device base address */
+    u32 IsReady;        /* Device is initialized and ready */
+} Derivator;
+
+/************************** Variable Definitions ***************************/
+extern Derivator_Config Derivator_ConfigTable[];
 
 /************************** Function Prototypes ****************************/
 /**
@@ -75,5 +103,26 @@
  *
  */
 XStatus DERIVATOR_Reg_SelfTest(void * baseaddr_p);
+
+/*
+ * Initialization functions
+ */
+Derivator_Config *Derivator_LookupConfig(u16 DeviceId);
+int Derivator_Initialize(Derivator *InstancePtr, u16 DeviceId);
+int Derivator_CfgInitialize(Derivator *InstancePtr, Derivator_Config * Config, UINTPTR EffectiveAddr);
+
+/*
+ * API Basic functions implemented
+ */
+void Derivator_SetOverRide(Derivator *InstancePtr, u32 Data);
+u32 Derivator_GetOverRide(Derivator *InstancePtr);
+
+void Derivator_SetIncrements(Derivator *InstancePtr, u32 Data);
+u32 Derivator_GetIncrements(Derivator *InstancePtr);
+u32 Derivator_GetSpeed(Derivator *InstancePtr);
+
+#ifdef _cplusplus
+}
+#endif
 
 #endif // DERIVATOR_H

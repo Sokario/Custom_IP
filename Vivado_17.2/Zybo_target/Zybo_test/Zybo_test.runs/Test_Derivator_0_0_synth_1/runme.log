@@ -14,17 +14,17 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010-clg400'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010-clg400'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8296 
+INFO: Helper process launched with PID 13264 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 374.926 ; gain = 78.922
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 374.844 ; gain = 78.195
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Test_Derivator_0_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Derivator_0_0/synth/Test_Derivator_0_0.vhd:84]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
 	Parameter FREQUENCE_ACK bound to: 256 - type: integer 
 	Parameter DIVIDER bound to: 390625 - type: integer 
-INFO: [Synth 8-3491] module 'Derivator_v1_0' declared at 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/5dca/hdl/Derivator_v1_0.vhd:5' bound to instance 'U0' of component 'Derivator_v1_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Derivator_0_0/synth/Test_Derivator_0_0.vhd:149]
-INFO: [Synth 8-638] synthesizing module 'Derivator_v1_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/5dca/hdl/Derivator_v1_0.vhd:51]
+INFO: [Synth 8-3491] module 'Derivator_v1_0' declared at 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/dbc8/hdl/Derivator_v1_0.vhd:5' bound to instance 'U0' of component 'Derivator_v1_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Derivator_0_0/synth/Test_Derivator_0_0.vhd:149]
+INFO: [Synth 8-638] synthesizing module 'Derivator_v1_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/dbc8/hdl/Derivator_v1_0.vhd:51]
 	Parameter FREQUENCE_ACK bound to: 256 - type: integer 
 	Parameter DIVIDER bound to: 390625 - type: integer 
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
@@ -33,18 +33,18 @@ INFO: [Synth 8-638] synthesizing module 'Derivator_v1_0' [c:/Projet/Vivado/Custo
 	Parameter DIVIDER bound to: 390625 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'Derivator_v1_0_S00_AXI' declared at 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/5dca/hdl/Derivator_v1_0_S00_AXI.vhd:5' bound to instance 'Derivator_v1_0_S00_AXI_inst' of component 'Derivator_v1_0_S00_AXI' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/5dca/hdl/Derivator_v1_0.vhd:91]
-INFO: [Synth 8-638] synthesizing module 'Derivator_v1_0_S00_AXI' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/5dca/hdl/Derivator_v1_0_S00_AXI.vhd:88]
+INFO: [Synth 8-3491] module 'Derivator_v1_0_S00_AXI' declared at 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/dbc8/hdl/Derivator_v1_0_S00_AXI.vhd:5' bound to instance 'Derivator_v1_0_S00_AXI_inst' of component 'Derivator_v1_0_S00_AXI' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/dbc8/hdl/Derivator_v1_0.vhd:91]
+INFO: [Synth 8-638] synthesizing module 'Derivator_v1_0_S00_AXI' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/dbc8/hdl/Derivator_v1_0_S00_AXI.vhd:88]
 	Parameter FREQUENCE_ACK bound to: 256 - type: integer 
 	Parameter DIVIDER bound to: 390625 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-226] default block is never used [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/5dca/hdl/Derivator_v1_0_S00_AXI.vhd:232]
-INFO: [Synth 8-226] default block is never used [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/5dca/hdl/Derivator_v1_0_S00_AXI.vhd:362]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/5dca/hdl/Derivator_v1_0_S00_AXI.vhd:230]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/5dca/hdl/Derivator_v1_0_S00_AXI.vhd:361]
-INFO: [Synth 8-256] done synthesizing module 'Derivator_v1_0_S00_AXI' (1#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/5dca/hdl/Derivator_v1_0_S00_AXI.vhd:88]
-INFO: [Synth 8-256] done synthesizing module 'Derivator_v1_0' (2#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/5dca/hdl/Derivator_v1_0.vhd:51]
+INFO: [Synth 8-226] default block is never used [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/dbc8/hdl/Derivator_v1_0_S00_AXI.vhd:232]
+INFO: [Synth 8-226] default block is never used [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/dbc8/hdl/Derivator_v1_0_S00_AXI.vhd:362]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/dbc8/hdl/Derivator_v1_0_S00_AXI.vhd:230]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/dbc8/hdl/Derivator_v1_0_S00_AXI.vhd:361]
+INFO: [Synth 8-256] done synthesizing module 'Derivator_v1_0_S00_AXI' (1#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/dbc8/hdl/Derivator_v1_0_S00_AXI.vhd:88]
+INFO: [Synth 8-256] done synthesizing module 'Derivator_v1_0' (2#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/dbc8/hdl/Derivator_v1_0.vhd:51]
 INFO: [Synth 8-256] done synthesizing module 'Test_Derivator_0_0' (3#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Derivator_0_0/synth/Test_Derivator_0_0.vhd:84]
 WARNING: [Synth 8-3331] design Derivator_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
 WARNING: [Synth 8-3331] design Derivator_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
@@ -53,7 +53,7 @@ WARNING: [Synth 8-3331] design Derivator_v1_0_S00_AXI has unconnected port S_AXI
 WARNING: [Synth 8-3331] design Derivator_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design Derivator_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 415.004 ; gain = 119.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 415.176 ; gain = 118.527
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -63,7 +63,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 415.004 ; gain = 119.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 415.176 ; gain = 118.527
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -75,27 +75,27 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 708.258 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 708.188 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3936] Found unconnected internal register 'speed_i_reg' and it is trimmed from '64' to '32' bits. [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/5dca/hdl/Derivator_v1_0_S00_AXI.vhd:416]
+WARNING: [Synth 8-3936] Found unconnected internal register 'speed_i_reg' and it is trimmed from '64' to '32' bits. [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/dbc8/hdl/Derivator_v1_0_S00_AXI.vhd:416]
 INFO: [Synth 8-5546] ROM "enable_i" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -159,16 +159,8 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3936] Found unconnected internal register 'U0/Derivator_v1_0_S00_AXI_inst/previous_i_reg' and it is trimmed from '32' to '24' bits. [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/5dca/hdl/Derivator_v1_0_S00_AXI.vhd:416]
+INFO: [Synth 8-3936] Found unconnected internal register 'U0/Derivator_v1_0_S00_AXI_inst/previous_i_reg' and it is trimmed from '32' to '24' bits. [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/dbc8/hdl/Derivator_v1_0_S00_AXI.vhd:416]
 INFO: [Synth 8-5546] ROM "U0/Derivator_v1_0_S00_AXI_inst/enable_i" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-3331] design Test_Derivator_0_0 has unconnected port Increments[31]
-WARNING: [Synth 8-3331] design Test_Derivator_0_0 has unconnected port Increments[30]
-WARNING: [Synth 8-3331] design Test_Derivator_0_0 has unconnected port Increments[29]
-WARNING: [Synth 8-3331] design Test_Derivator_0_0 has unconnected port Increments[28]
-WARNING: [Synth 8-3331] design Test_Derivator_0_0 has unconnected port Increments[27]
-WARNING: [Synth 8-3331] design Test_Derivator_0_0 has unconnected port Increments[26]
-WARNING: [Synth 8-3331] design Test_Derivator_0_0 has unconnected port Increments[25]
-WARNING: [Synth 8-3331] design Test_Derivator_0_0 has unconnected port Increments[24]
 WARNING: [Synth 8-3331] design Test_Derivator_0_0 has unconnected port s00_axi_awprot[2]
 WARNING: [Synth 8-3331] design Test_Derivator_0_0 has unconnected port s00_axi_awprot[1]
 WARNING: [Synth 8-3331] design Test_Derivator_0_0 has unconnected port s00_axi_awprot[0]
@@ -197,7 +189,7 @@ INFO: [Synth 8-3332] Sequential element (U0/Derivator_v1_0_S00_AXI_inst/axi_arad
 INFO: [Synth 8-3332] Sequential element (U0/Derivator_v1_0_S00_AXI_inst/axi_araddr_reg[0]) is unused and will be removed from module Test_Derivator_0_0.
 INFO: [Synth 8-3332] Sequential element (U0/Derivator_v1_0_S00_AXI_inst/axi_rresp_reg[1]) is unused and will be removed from module Test_Derivator_0_0.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -209,13 +201,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -227,7 +219,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -251,7 +243,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -264,7 +256,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -276,25 +268,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -312,11 +304,11 @@ Report Cell Usage:
 +------+-------+------+
 |1     |CARRY4 |    11|
 |2     |LUT1   |    19|
-|3     |LUT2   |     1|
+|3     |LUT2   |     2|
 |4     |LUT3   |     3|
-|5     |LUT4   |    30|
-|6     |LUT5   |     8|
-|7     |LUT6   |    82|
+|5     |LUT4   |    35|
+|6     |LUT5   |    61|
+|7     |LUT6   |    58|
 |8     |FDRE   |   234|
 |9     |FDSE   |     2|
 +------+-------+------+
@@ -325,16 +317,16 @@ Report Instance Areas:
 +------+--------------------------------+-----------------------+------+
 |      |Instance                        |Module                 |Cells |
 +------+--------------------------------+-----------------------+------+
-|1     |top                             |                       |   390|
-|2     |  U0                            |Derivator_v1_0         |   390|
-|3     |    Derivator_v1_0_S00_AXI_inst |Derivator_v1_0_S00_AXI |   390|
+|1     |top                             |                       |   425|
+|2     |  U0                            |Derivator_v1_0         |   425|
+|3     |    Derivator_v1_0_S00_AXI_inst |Derivator_v1_0_S00_AXI |   425|
 +------+--------------------------------+-----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.258 ; gain = 412.254
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 708.188 ; gain = 411.539
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 15 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 708.258 ; gain = 119.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.258 ; gain = 412.254
+Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:20 . Memory (MB): peak = 708.188 ; gain = 118.527
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 708.188 ; gain = 411.539
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -343,12 +335,12 @@ INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-44 Infos, 23 Warnings, 0 Critical Warnings and 0 Errors encountered.
+44 Infos, 15 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 708.258 ; gain = 414.879
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 708.188 ; gain = 415.168
 INFO: [Common 17-1381] The checkpoint 'C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.runs/Test_Derivator_0_0_synth_1/Test_Derivator_0_0.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Derivator_0_0/Test_Derivator_0_0.xci
 INFO: [Coretcl 2-1174] Renamed 2 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.runs/Test_Derivator_0_0_synth_1/Test_Derivator_0_0.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 708.258 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Oct 25 18:54:34 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 708.188 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 26 15:41:45 2017...

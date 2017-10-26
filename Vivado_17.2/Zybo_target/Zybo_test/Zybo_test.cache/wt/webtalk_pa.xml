@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Thu Oct 26 14:56:09 2017">
+<application name="pa" timeStamp="Thu Oct 26 15:41:11 2017">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="b218a7e3302e462291c55b3761c01653" type="ProjectID"/>
-<property name="ProjectIteration" value="10" type="ProjectIteration"/>
+<property name="ProjectIteration" value="12" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -30,15 +30,15 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="OpenBlockDesign" value="4" type="JavaHandler"/>
 <property name="RegenerateRSBLayout" value="6" type="JavaHandler"/>
 <property name="ReportIPStatus" value="4" type="JavaHandler"/>
-<property name="RunBitgen" value="9" type="JavaHandler"/>
+<property name="RunBitgen" value="11" type="JavaHandler"/>
 <property name="SaveRSBDesign" value="1" type="JavaHandler"/>
-<property name="UpgradeIP" value="5" type="JavaHandler"/>
+<property name="UpgradeIP" value="7" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
 <property name="AddRepositoryInfoDialog_OK" value="1" type="GuiResourceData"/>
 <property name="BaseDialog_CANCEL" value="1" type="GuiResourceData"/>
-<property name="BaseDialog_OK" value="27" type="GuiResourceData"/>
-<property name="BaseReportTab_RERUN" value="11" type="GuiResourceData"/>
+<property name="BaseDialog_OK" value="29" type="GuiResourceData"/>
+<property name="BaseReportTab_RERUN" value="15" type="GuiResourceData"/>
 <property name="BoardTreePanel_BOARD_TREE_PANEL" value="2" type="GuiResourceData"/>
 <property name="CmdMsgDialog_OK" value="5" type="GuiResourceData"/>
 <property name="CoreAndInterfacesBaseTreeTablePanel_ADD_REPOSITORY" value="1" type="GuiResourceData"/>
@@ -49,9 +49,9 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="CustomizeCoreDialog_DOCUMENTATION" value="1" type="GuiResourceData"/>
 <property name="CustomizeCoreDialog_IP_LOCATION" value="1" type="GuiResourceData"/>
 <property name="FileSetPanel_FILE_SET_PANEL_TREE" value="2" type="GuiResourceData"/>
-<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="16" type="GuiResourceData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="18" type="GuiResourceData"/>
 <property name="GettingStartedView_CREATE_NEW_PROJECT" value="1" type="GuiResourceData"/>
-<property name="IPStatusSectionPanel_UPGRADE_SELECTED" value="5" type="GuiResourceData"/>
+<property name="IPStatusSectionPanel_UPGRADE_SELECTED" value="7" type="GuiResourceData"/>
 <property name="IPStatusTablePanel_IP_STATUS_TABLE" value="7" type="GuiResourceData"/>
 <property name="MainMenuMgr_EXPORT" value="6" type="GuiResourceData"/>
 <property name="MainMenuMgr_FILE" value="10" type="GuiResourceData"/>
@@ -64,12 +64,13 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PACommandNames_REGENERATE_LAYOUT" value="6" type="GuiResourceData"/>
 <property name="PACommandNames_SAVE_RSB_DESIGN" value="1" type="GuiResourceData"/>
 <property name="PartChooser_BOARDS" value="3" type="GuiResourceData"/>
+<property name="ProgressDialog_BACKGROUND" value="1" type="GuiResourceData"/>
 <property name="ProjectNameChooser_CHOOSE_PROJECT_LOCATION" value="3" type="GuiResourceData"/>
 <property name="ProjectNameChooser_PROJECT_NAME" value="1" type="GuiResourceData"/>
 <property name="RSBApplyAutomationBar_RUN_BLOCK_AUTOMATION" value="1" type="GuiResourceData"/>
 <property name="RSBApplyAutomationBar_RUN_CONNECTION_AUTOMATION" value="8" type="GuiResourceData"/>
 <property name="SaveProjectUtils_SAVE" value="5" type="GuiResourceData"/>
-<property name="SimpleOutputProductDialog_CLOSE_DIALOG_UNSAVED_CHANGES_WILL" value="5" type="GuiResourceData"/>
+<property name="SimpleOutputProductDialog_CLOSE_DIALOG_UNSAVED_CHANGES_WILL" value="7" type="GuiResourceData"/>
 <property name="SyntheticaGettingStartedView_RECENT_PROJECTS" value="4" type="GuiResourceData"/>
 <property name="SystemBuilderMenu_ADD_IP" value="1" type="GuiResourceData"/>
 <property name="SystemTab_REPORT_IP_STATUS" value="4" type="GuiResourceData"/>

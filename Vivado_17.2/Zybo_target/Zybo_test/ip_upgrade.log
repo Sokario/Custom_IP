@@ -1,6 +1,48 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Thu Oct 26 15:40:51 2017
+| Host         : LogOut-AsusPro running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Test_Derivator_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of Test_Derivator_0_0 (xilinx.com:user:Derivator:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Thu Oct 26 15:28:05 2017
+| Host         : LogOut-AsusPro running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Test_Derivator_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of Test_Derivator_0_0 (xilinx.com:user:Derivator:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
 | Date         : Thu Oct 26 14:54:09 2017
 | Host         : LogOut-AsusPro running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

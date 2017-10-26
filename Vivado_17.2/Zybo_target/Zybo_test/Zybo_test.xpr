@@ -152,15 +152,15 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="Test_Derivator_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Test_Derivator_0_0">
-      <Config>
-        <Option Name="TopModule" Val="Test_Derivator_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
     <FileSet Name="Test_PID_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Test_PID_0_0">
       <Config>
         <Option Name="TopModule" Val="Test_PID_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="Test_Derivator_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Test_Derivator_0_0">
+      <Config>
+        <Option Name="TopModule" Val="Test_Derivator_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -247,16 +247,18 @@
       <ReportStrategy/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="Test_Derivator_0_0_synth_1" Type="Ft3:Synth" SrcSet="Test_Derivator_0_0" Part="xc7z010clg400-1" ConstrsSet="Test_Derivator_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Test_Derivator_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="Test_PID_0_0_synth_1" Type="Ft3:Synth" SrcSet="Test_PID_0_0" Part="xc7z010clg400-1" ConstrsSet="Test_PID_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Test_PID_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="Test_PID_0_0_synth_1" Type="Ft3:Synth" SrcSet="Test_PID_0_0" Part="xc7z010clg400-1" ConstrsSet="Test_PID_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Test_PID_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="Test_Derivator_0_0_synth_1" Type="Ft3:Synth" SrcSet="Test_Derivator_0_0" Part="xc7z010clg400-1" ConstrsSet="Test_Derivator_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Test_Derivator_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -380,9 +382,11 @@
       <ReportStrategy/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="Test_Derivator_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Test_Derivator_0_0" Description="Default settings for Implementation." SynthRun="Test_Derivator_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="Test_PID_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Test_PID_0_0" Description="Default settings for Implementation." SynthRun="Test_PID_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -396,7 +400,7 @@
       <ReportStrategy/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="Test_PID_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Test_PID_0_0" Description="Default settings for Implementation." SynthRun="Test_PID_0_0_synth_1" IncludeInArchive="false">
+    <Run Id="Test_Derivator_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="Test_Derivator_0_0" Description="Default settings for Implementation." SynthRun="Test_Derivator_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017">
           <Desc>Default settings for Implementation.</Desc>

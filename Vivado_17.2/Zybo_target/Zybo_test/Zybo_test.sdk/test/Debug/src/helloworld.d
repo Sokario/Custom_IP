@@ -10,7 +10,13 @@ src/helloworld.o src/helloworld.o: ../src/helloworld.c ../src/platform.h \
  ../../test_bsp/ps7_cortexa9_0/include/xil_printf.h \
  ../../test_bsp/ps7_cortexa9_0/include/xpseudo_asm.h \
  ../../test_bsp/ps7_cortexa9_0/include/xreg_cortexa9.h \
- ../../test_bsp/ps7_cortexa9_0/include/xpseudo_asm_gcc.h
+ ../../test_bsp/ps7_cortexa9_0/include/xpseudo_asm_gcc.h \
+ ../../test_bsp/ps7_cortexa9_0/include/Motor.h \
+ ../../test_bsp/ps7_cortexa9_0/include/xil_assert.h \
+ ../../test_bsp/ps7_cortexa9_0/include/xstatus.h \
+ ../../test_bsp/ps7_cortexa9_0/include/Encoder.h \
+ ../../test_bsp/ps7_cortexa9_0/include/Derivator.h \
+ ../../test_bsp/ps7_cortexa9_0/include/PID.h
 
 ../src/platform.h:
 
@@ -37,3 +43,15 @@ src/helloworld.o src/helloworld.o: ../src/helloworld.c ../src/platform.h \
 ../../test_bsp/ps7_cortexa9_0/include/xreg_cortexa9.h:
 
 ../../test_bsp/ps7_cortexa9_0/include/xpseudo_asm_gcc.h:
+
+../../test_bsp/ps7_cortexa9_0/include/Motor.h:
+
+../../test_bsp/ps7_cortexa9_0/include/xil_assert.h:
+
+../../test_bsp/ps7_cortexa9_0/include/xstatus.h:
+
+../../test_bsp/ps7_cortexa9_0/include/Encoder.h:
+
+../../test_bsp/ps7_cortexa9_0/include/Derivator.h:
+
+../../test_bsp/ps7_cortexa9_0/include/PID.h:
