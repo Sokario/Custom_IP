@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
---Date        : Thu Oct 26 20:35:38 2017
+--Date        : Fri Oct 27 11:45:18 2017
 --Host        : LogOut-AsusPro running 64-bit major release  (build 9200)
 --Command     : generate_target Test.bd
 --Design      : Test
@@ -2379,7 +2379,7 @@ architecture STRUCTURE of Test is
   port (
     Add : in STD_LOGIC_VECTOR ( 31 downto 0 );
     Subtract : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    Output : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    Result : out STD_LOGIC_VECTOR ( 31 downto 0 );
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_awprot : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s00_axi_awvalid : in STD_LOGIC;
@@ -2747,7 +2747,7 @@ PID_0: component Test_PID_0_0
 Subtractor_0: component Test_Subtractor_0_0
      port map (
       Add(31 downto 0) => B"00000000000000000000000000000000",
-      Output(31 downto 0) => Subtractor_0_Output(31 downto 0),
+      Result(31 downto 0) => Subtractor_0_Output(31 downto 0),
       Subtract(31 downto 0) => Derivator_0_Speed(31 downto 0),
       s00_axi_aclk => processing_system7_0_FCLK_CLK0,
       s00_axi_araddr(3 downto 0) => ps7_0_axi_periph_M05_AXI_ARADDR(3 downto 0),

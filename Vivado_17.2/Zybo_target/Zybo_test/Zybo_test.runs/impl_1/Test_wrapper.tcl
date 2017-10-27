@@ -66,6 +66,7 @@ set rc [catch {
   add_files C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/Test.bd
   set_property is_locked true [get_files C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/Test.bd]
   set_param project.isImplRun false
+  read_xdc C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/constrs_1/new/test_xdc.xdc
   set_param project.isImplRun true
   link_design -top Test_wrapper -part xc7z010clg400-1
   set_param project.isImplRun false

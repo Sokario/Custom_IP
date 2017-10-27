@@ -42,6 +42,9 @@ set_property is_locked true [get_files C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zy
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
+read_xdc C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/constrs_1/new/test_xdc.xdc
+set_property used_in_implementation false [get_files C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/constrs_1/new/test_xdc.xdc]
+
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 
