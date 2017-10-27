@@ -115,6 +115,11 @@ architecture arch_imp of PID_v1_0_S00_AXI is
     signal command_i        : signed(2*C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
     signal command_limit    : signed(C_S_AXI_DATA_WIDTH-1 downto 0)     := (others => '0');
     
+    attribute USE_DSP48 : string;
+--    attribute USE_DSP48 of proportional_i: signal is "NO";
+--    attribute USE_DSP48 of integral_i: signal is "NO";
+--    attribute USE_DSP48 of derivative_i: signal is "NO";
+    
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
 	signal axi_awready	: std_logic;
@@ -602,77 +607,123 @@ begin
     end if;
     end process;
 
-    process ( S_AXI_ACLK, reset_i ) is   -- Proportional calculation
-    begin
-    if (reset_i = '1') then
-        proportional_i <= (others => '0');
-    elsif (rising_edge( S_AXI_ACLK )) then
-        if (enable_i = '1') then
-            proportional_i <= kp_i * error_i;
-        else
-            proportional_i <= proportional_i;
-        end if;
-    end if;
-    end process;
+--    process ( S_AXI_ACLK, reset_i ) is   -- Proportional calculation
+--    begin
+--    if (reset_i = '1') then
+--        proportional_i <= (others => '0');
+--    elsif (rising_edge( S_AXI_ACLK )) then
+--        if (enable_i = '1') then
+--            proportional_i <= kp_i * error_i;
+--        else
+--            proportional_i <= proportional_i;
+--        end if;
+--    end if;
+--    end process;
     
-    process ( S_AXI_ACLK, reset_i ) is   -- Integral calculation
-    begin
-    if (reset_i = '1') then
-        sum_i <= (others => '0');
-        integral_i <= (others => '0');
-    elsif (rising_edge( S_AXI_ACLK )) then
-        if (enable_i = '1') then
-            sum_i <= sum_i + error_i;
-            integral_i <= ki_i * sum_i;
-        else
-            sum_i <= sum_i;
-            integral_i <= integral_i;
-        end if;
-    end if;
-    end process;
+--    process ( S_AXI_ACLK, reset_i ) is   -- Integral calculation
+--    begin
+--    if (reset_i = '1') then
+--        sum_i <= (others => '0');
+--        integral_i <= (others => '0');
+--    elsif (rising_edge( S_AXI_ACLK )) then
+--        if (enable_i = '1') then
+--            sum_i <= sum_i + error_i;
+--            integral_i <= ki_i * sum_i;
+--        else
+--            sum_i <= sum_i;
+--            integral_i <= integral_i;
+--        end if;
+--    end if;
+--    end process;
     
-    process ( S_AXI_ACLK, reset_i ) is   -- Derivative calculation
-    begin
-    if (reset_i = '1') then
-        variation_i <= (others => '0');
-        derivative_i <= (others => '0');
-    elsif (rising_edge( S_AXI_ACLK )) then
-        if (enable_i = '1') then
-            variation_i <= error_i - previous_i;
-            derivative_i <= kd_i * variation_i;
-        else
-            variation_i <= variation_i;
-            derivative_i <= derivative_i;
-        end if;
-    end if;
-    end process;
+--    process ( S_AXI_ACLK, reset_i ) is   -- Derivative calculation
+--    begin
+--    if (reset_i = '1') then
+--        variation_i <= (others => '0');
+--        derivative_i <= (others => '0');
+--    elsif (rising_edge( S_AXI_ACLK )) then
+--        if (enable_i = '1') then
+--            variation_i <= error_i - previous_i;
+--            derivative_i <= kd_i * variation_i;
+--        else
+--            variation_i <= variation_i;
+--            derivative_i <= derivative_i;
+--        end if;
+--    end if;
+--    end process;
     
     process ( S_AXI_ACLK, reset_i ) is   -- PID calculation
     begin
     if (reset_i = '1') then
+        sum_i <= (others => '0');
+        variation_i <= (others => '0');
+        proportional_i <= (others => '0');
+        integral_i <= (others => '0');
+        derivative_i <= (others => '0');
         command_i <= (others => '0');
         previous_i <= (others => '0');
     elsif (rising_edge( S_AXI_ACLK )) then
         if (enable_i = '1') then
+            if (slv_reg0(0) = '1') then
+                error_choice <= signed(slv_reg1);
+            else    
+                deadBand_i <= signed(Error);
+            end if;
+            if (slv_reg0(2) = '1') then
+                kp_i <= signed(slv_reg5);
+            else    
+                kp_i <= to_signed(KP, C_S_AXI_DATA_WIDTH);
+            end if;
+            if (slv_reg0(3) = '1') then
+                ki_i <= signed(slv_reg6);
+            else    
+                ki_i <= to_signed(KI, C_S_AXI_DATA_WIDTH);
+            end if;
+            if (slv_reg0(4) = '1') then
+                kd_i <= signed(slv_reg7);
+            else    
+                kd_i <= to_signed(KD, C_S_AXI_DATA_WIDTH);
+            end if;
+            if (slv_reg0(5) = '1') then
+                deadBand_i <= signed(slv_reg12);
+            else    
+                deadBand_i <= to_signed(DEADBAND, C_S_AXI_DATA_WIDTH);
+            end if;
+            if ((error_choice < deadBand_i) and (error_choice > -deadBand_i)) then
+                error_i <= (others => '0');
+            else
+                error_i <= error_choice;
+            end if;
+
+            sum_i <= sum_i + error_i;
+            variation_i <= error_i - previous_i;
+            proportional_i <= kp_i * error_i;
+            integral_i <= ki_i * sum_i;
+            derivative_i <= kd_i * variation_i;
             command_i <= signed(proportional_i) + signed(integral_i) + signed(derivative_i);
             previous_i <= error_i;
         else
+            sum_i <= sum_i;
+            variation_i <= variation_i;
+            proportional_i <= proportional_i;
+            integral_i <= integral_i;
+            derivative_i <= derivative_i;
             command_i <= command_i;
             previous_i <= previous_i;
         end if;
     end if;
     end process;
 
-    kp_i        <= signed(slv_reg5) when (slv_reg0(2) = '1') else to_signed(KP, C_S_AXI_DATA_WIDTH);
-    ki_i        <= signed(slv_reg6) when (slv_reg0(3) = '1') else to_signed(KI, C_S_AXI_DATA_WIDTH);
-    kd_i        <= signed(slv_reg7) when (slv_reg0(4) = '1') else to_signed(KD, C_S_AXI_DATA_WIDTH);
-    deadBand_i  <= signed(slv_reg12) when (slv_reg0(5) = '1') else to_signed(DEADBAND, C_S_AXI_DATA_WIDTH);
+--    kp_i        <= signed(slv_reg5) when (slv_reg0(2) = '1') else to_signed(KP, C_S_AXI_DATA_WIDTH);
+--    ki_i        <= signed(slv_reg6) when (slv_reg0(3) = '1') else to_signed(KI, C_S_AXI_DATA_WIDTH);
+--    kd_i        <= signed(slv_reg7) when (slv_reg0(4) = '1') else to_signed(KD, C_S_AXI_DATA_WIDTH);
+--    deadBand_i  <= signed(slv_reg12) when (slv_reg0(5) = '1') else to_signed(DEADBAND, C_S_AXI_DATA_WIDTH);
     min_i       <= signed(slv_reg13) when (slv_reg0(6) = '1') else to_signed(MIN, C_S_AXI_DATA_WIDTH);
     max_i       <= signed(slv_reg14) when (slv_reg0(7) = '1') else to_signed(MAX, C_S_AXI_DATA_WIDTH);
 
     reset_i         <= slv_reg3(0) when (slv_reg0(1) = '1') else Reset;
-    error_choice    <= signed(slv_reg1) when (slv_reg0(0) = '1') else signed(Error);
-    error_i         <= (others => '0') when ((error_choice < deadBand_i) and (error_choice > -deadBand_i)) else error_choice;
+--    error_choice    <= signed(slv_reg1) when (slv_reg0(0) = '1') else signed(Error);
+--    error_i         <= (others => '0') when ((error_choice < deadBand_i) and (error_choice > -deadBand_i)) else error_choice;
     enable_i        <= '1' when (counter_i = DIVIDER-1) else '0';
     command_limit   <= min_i when (command_i < min_i) else
                        max_i when (command_i > max_i) else

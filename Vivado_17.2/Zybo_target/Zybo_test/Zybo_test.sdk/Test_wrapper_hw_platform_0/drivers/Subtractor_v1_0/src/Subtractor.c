@@ -190,7 +190,7 @@ u32 Subtractor_GetSubtract(Subtractor *InstancePtr)
     return SUBTRACTOR_mReadReg(InstancePtr->BaseAddress, SUBTRACTOR_S00_AXI_SLV_REG2_OFFSET);
 }
 
-u32 Subtractor_GetOutput(Subtractor *InstancePtr)
+u32 Subtractor_GetResult(Subtractor *InstancePtr)
 {
     /* Asserts */
     Xil_AssertNonvoid(InstancePtr != NULL);

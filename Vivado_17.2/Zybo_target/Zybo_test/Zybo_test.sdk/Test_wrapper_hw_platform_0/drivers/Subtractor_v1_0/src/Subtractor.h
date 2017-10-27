@@ -122,7 +122,7 @@ u32 Subtractor_GetAdd(Subtractor *InstancePtr);
 void Subtractor_SetSubtract(Subtractor *InstancePtr, u32 Data);
 u32 Subtractor_GetSubtract(Subtractor *InstancePtr);
 
-u32 Subtractor_GetOutput(Subtractor *InstancePtr);
+u32 Subtractor_GetResult(Subtractor *InstancePtr);
 
 #ifdef _cplusplus
 }
