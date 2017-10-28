@@ -34,6 +34,17 @@
 
 /******************************************************************/
 
+/* Definitions for driver ODOMETER */
+#define XPAR_ODOMETER_NUM_INSTANCES 1
+
+/* Definitions for peripheral ODOMETER_0 */
+#define XPAR_ODOMETER_0_DEVICE_ID 0
+#define XPAR_ODOMETER_0_S00_AXI_BASEADDR 0x43C50000
+#define XPAR_ODOMETER_0_S00_AXI_HIGHADDR 0x43C5FFFF
+
+
+/******************************************************************/
+
 /* Definitions for driver SUBTRACTOR */
 #define XPAR_SUBTRACTOR_NUM_INSTANCES 1
 

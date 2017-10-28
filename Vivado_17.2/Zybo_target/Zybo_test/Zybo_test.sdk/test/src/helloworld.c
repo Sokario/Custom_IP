@@ -56,6 +56,7 @@
 #include "PID.h"
 #include "Derivator.h"
 #include "Subtractor.h"
+#include "Odometer.h"
 
 int main()
 {

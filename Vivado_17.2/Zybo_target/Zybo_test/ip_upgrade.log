@@ -1,6 +1,101 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Sun Oct 29 00:22:03 2017
+| Host         : LogOut-AsusPro running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Test_Odometer_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of Test_Odometer_0_0 (xilinx.com:user:Odometer:1.0) from (Rev. 3) to (Rev. 4)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Sun Oct 29 00:08:02 2017
+| Host         : LogOut-AsusPro running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Test_Odometer_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of Test_Odometer_0_0 (xilinx.com:user:Odometer:1.0) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Sat Oct 28 23:46:22 2017
+| Host         : LogOut-AsusPro running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'Test_Odometer_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of Test_Odometer_0_0 (xilinx.com:user:Odometer:1.0) from (Rev. 1) to (Rev. 2)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'Test_Odometer_0_0'.
+
+
+-Upgrade has added interface 'Reset' (xilinx.com:signal:reset:1.0)
+
+-Upgrade has added interface 's00_axi_aclk' (xilinx.com:signal:clock:1.0)
+
+-Upgrade has added interface 's00_axi_aresetn' (xilinx.com:signal:reset:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'Test_Odometer_0_0'. These changes may impact your design.
+
+
+-Upgrade has added port 'Angle'
+
+-Upgrade has added port 'Distance'
+
+-Upgrade has added port 'Increments_Left'
+
+-Upgrade has added port 'Increments_Right'
+
+-Upgrade has added port 'Reset'
+
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
 | Date         : Fri Oct 27 16:21:17 2017
 | Host         : LogOut-AsusPro running 64-bit major release  (build 9200)
 | Command      : upgrade_ip

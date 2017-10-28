@@ -17,7 +17,8 @@ src/helloworld.o src/helloworld.o: ../src/helloworld.c ../src/platform.h \
  ../../test_bsp/ps7_cortexa9_0/include/Encoder.h \
  ../../test_bsp/ps7_cortexa9_0/include/PID.h \
  ../../test_bsp/ps7_cortexa9_0/include/Derivator.h \
- ../../test_bsp/ps7_cortexa9_0/include/Subtractor.h
+ ../../test_bsp/ps7_cortexa9_0/include/Subtractor.h \
+ ../../test_bsp/ps7_cortexa9_0/include/Odometer.h
 
 ../src/platform.h:
 
@@ -58,3 +59,5 @@ src/helloworld.o src/helloworld.o: ../src/helloworld.c ../src/platform.h \
 ../../test_bsp/ps7_cortexa9_0/include/Derivator.h:
 
 ../../test_bsp/ps7_cortexa9_0/include/Subtractor.h:
+
+../../test_bsp/ps7_cortexa9_0/include/Odometer.h:

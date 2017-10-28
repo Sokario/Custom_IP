@@ -1,4 +1,4 @@
-16:34:08 **** Auto Build of project test_bsp ****
+00:27:18 **** Auto Build of project test_bsp ****
 make -k all 
 "Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
 make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
@@ -22,6 +22,8 @@ make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=ar
 make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/motor_v1_0/src"
 make -C ps7_cortexa9_0/libsrc/motor_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/Odometer_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Odometer_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/pid_v1_0/src"
 make -C ps7_cortexa9_0/libsrc/pid_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_3/src"
@@ -128,12 +130,12 @@ make -C ps7_cortexa9_0/libsrc/emacps_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm
 "Running Make libs in ps7_cortexa9_0/libsrc/encoder_v1_0/src"
 make -C ps7_cortexa9_0/libsrc/encoder_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling Encoder..."
-encoder.c: In function 'Encoder_CfgInitialize':
-encoder.c:124:67: warning: unused parameter 'Config' [-Wunused-parameter]
+Encoder.c: In function 'Encoder_CfgInitialize':
+Encoder.c:124:67: warning: unused parameter 'Config' [-Wunused-parameter]
  int Encoder_CfgInitialize(Encoder * InstancePtr, Encoder_Config * Config, UINTPTR EffectiveAddr)
                                                                    ^~~~~~
-encoder_selftest.c: In function 'ENCODER_Reg_SelfTest':
-encoder_selftest.c:51:56: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+Encoder_selftest.c: In function 'ENCODER_Reg_SelfTest':
+Encoder_selftest.c:51:56: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
     if ( ENCODER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
                                                         ^~
 "Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
@@ -222,225 +224,354 @@ motor_selftest.c: In function 'MOTOR_Reg_SelfTest':
 motor_selftest.c:51:54: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
     if ( MOTOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
                                                       ^~
+"Running Make libs in ps7_cortexa9_0/libsrc/Odometer_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Odometer_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Odometer..."
+Odometer.c: In function 'Odometer_CfgInitialize':
+Odometer.c:124:70: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Odometer_CfgInitialize(Odometer * InstancePtr, Odometer_Config * Config, UINTPTR EffectiveAddr)
+                                                                      ^~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:139:6: note: declared here
+ void Odometer_SetOverRide(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:139:6: note: declared here
+ void Odometer_SetOverRide(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetIncrementsLeft':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:157:6: note: declared here
+ void Odometer_SetIncrementsLeft(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:157:6: note: declared here
+ void Odometer_SetIncrementsLeft(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetIncrementsRight':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:175:6: note: declared here
+ void Odometer_SetIncrementsRight(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:175:6: note: declared here
+ void Odometer_SetIncrementsRight(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetLap':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:196:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:193:6: note: declared here
+ void Odometer_SetLap(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:197:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:193:6: note: declared here
+ void Odometer_SetLap(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetReset':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:215:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:212:6: note: declared here
+ void Odometer_SetReset(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:216:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:212:6: note: declared here
+ void Odometer_SetReset(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+Odometer_selftest.c: In function 'ODOMETER_Reg_SelfTest':
+Odometer_selftest.c:52:57: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( ODOMETER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                         ^~
+Odometer_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
 "Running Make libs in ps7_cortexa9_0/libsrc/pid_v1_0/src"
 make -C ps7_cortexa9_0/libsrc/pid_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling PID..."
-pid.c: In function 'PID_CfgInitialize':
-pid.c:124:55: warning: unused parameter 'Config' [-Wunused-parameter]
+PID.c: In function 'PID_CfgInitialize':
+PID.c:124:55: warning: unused parameter 'Config' [-Wunused-parameter]
  int PID_CfgInitialize(PID * InstancePtr, PID_Config * Config, UINTPTR EffectiveAddr)
                                                        ^~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
-pid.c: In function 'PID_SetOverRide':
+                 from PID.c:4:
+PID.c: In function 'PID_SetOverRide':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
-pid.c:139:6: note: declared here
+PID.c:139:6: note: declared here
  void PID_SetOverRide(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
+                 from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
-pid.c:139:6: note: declared here
+PID.c:139:6: note: declared here
  void PID_SetOverRide(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
-pid.c: In function 'PID_SetReset':
+                 from PID.c:4:
+PID.c: In function 'PID_SetReset':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
-pid.c:157:6: note: declared here
+PID.c:157:6: note: declared here
  void PID_SetReset(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
+                 from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
-pid.c:157:6: note: declared here
+PID.c:157:6: note: declared here
  void PID_SetReset(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
-pid.c: In function 'PID_SetKp':
+                 from PID.c:4:
+PID.c: In function 'PID_SetKp':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
-pid.c:175:6: note: declared here
+PID.c:175:6: note: declared here
  void PID_SetKp(PID *InstancePtr, u32 Data)
       ^~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
+                 from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
-pid.c:175:6: note: declared here
+PID.c:175:6: note: declared here
  void PID_SetKp(PID *InstancePtr, u32 Data)
       ^~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
-pid.c: In function 'PID_SetKi':
+                 from PID.c:4:
+PID.c: In function 'PID_SetKi':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:196:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:196:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
-pid.c:193:6: note: declared here
+PID.c:193:6: note: declared here
  void PID_SetKi(PID *InstancePtr, u32 Data)
       ^~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
+                 from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:197:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:197:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
-pid.c:193:6: note: declared here
+PID.c:193:6: note: declared here
  void PID_SetKi(PID *InstancePtr, u32 Data)
       ^~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
-pid.c: In function 'PID_SetKd':
+                 from PID.c:4:
+PID.c: In function 'PID_SetKd':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:214:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:214:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
-pid.c:211:6: note: declared here
+PID.c:211:6: note: declared here
  void PID_SetKd(PID *InstancePtr, u32 Data)
       ^~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
+                 from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:215:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:215:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
-pid.c:211:6: note: declared here
+PID.c:211:6: note: declared here
  void PID_SetKd(PID *InstancePtr, u32 Data)
       ^~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
-pid.c: In function 'PID_SetError':
+                 from PID.c:4:
+PID.c: In function 'PID_SetError':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:232:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:232:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
-pid.c:229:6: note: declared here
+PID.c:229:6: note: declared here
  void PID_SetError(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
+                 from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:233:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:233:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
-pid.c:229:6: note: declared here
+PID.c:229:6: note: declared here
  void PID_SetError(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
-pid.c: In function 'PID_SetErrorDeadband':
+                 from PID.c:4:
+PID.c: In function 'PID_SetErrorDeadband':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:250:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:250:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
-pid.c:247:6: note: declared here
+PID.c:247:6: note: declared here
  void PID_SetErrorDeadband(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
+                 from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:251:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:251:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
-pid.c:247:6: note: declared here
+PID.c:247:6: note: declared here
  void PID_SetErrorDeadband(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
-pid.c: In function 'PID_SetMinOutput':
+                 from PID.c:4:
+PID.c: In function 'PID_SetMinOutput':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:268:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:268:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
-pid.c:265:6: note: declared here
+PID.c:265:6: note: declared here
  void PID_SetMinOutput(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
+                 from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:269:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:269:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
-pid.c:265:6: note: declared here
+PID.c:265:6: note: declared here
  void PID_SetMinOutput(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
-pid.c: In function 'PID_SetMaxOutput':
+                 from PID.c:4:
+PID.c: In function 'PID_SetMaxOutput':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:286:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:286:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
-pid.c:283:6: note: declared here
+PID.c:283:6: note: declared here
  void PID_SetMaxOutput(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
-                 from pid.c:4:
+                 from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
-pid.c:287:5: note: in expansion of macro 'Xil_AssertNonvoid'
+PID.c:287:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
-pid.c:283:6: note: declared here
+PID.c:283:6: note: declared here
  void PID_SetMaxOutput(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~~~~~
-pid_selftest.c: In function 'PID_Reg_SelfTest':
-pid_selftest.c:52:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+PID_selftest.c: In function 'PID_Reg_SelfTest':
+PID_selftest.c:52:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
     if ( PID_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
                                                     ^~
-pid_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+PID_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
   int Index;
       ^~~~~
 "Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_3/src"
@@ -565,5 +696,5 @@ make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm
 "Compiling xadcps"
 'Finished building libraries'
 
-16:34:33 Build Finished (took 25s.325ms)
+00:27:41 Build Finished (took 23s.164ms)
 

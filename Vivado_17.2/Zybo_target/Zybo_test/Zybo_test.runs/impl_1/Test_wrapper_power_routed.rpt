@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Fri Oct 27 16:30:47 2017
+| Date             : Sun Oct 29 00:25:07 2017
 | Host             : LogOut-AsusPro running 64-bit major release  (build 9200)
 | Command          : report_power -file Test_wrapper_power_routed.rpt -pb Test_wrapper_power_summary_routed.pb -rpx Test_wrapper_power_routed.rpx
 | Design           : Test_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 1.702 |
+| Total On-Chip Power (W)  | 1.703 |
 | Dynamic (W)              | 1.572 |
 | Device Static (W)        | 0.130 |
 | Effective TJA (C/W)      | 11.5  |
@@ -50,19 +50,19 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.008 |        3 |       --- |             --- |
-| Slice Logic             |     0.002 |     5143 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     1667 |     17600 |            9.47 |
-|   CARRY4                |    <0.001 |      142 |      4400 |            3.23 |
-|   Register              |    <0.001 |     2391 |     35200 |            6.79 |
-|   F7/F8 Muxes           |    <0.001 |      127 |     17600 |            0.72 |
+| Slice Logic             |     0.002 |     6123 |       --- |             --- |
+|   LUT as Logic          |     0.002 |     2108 |     17600 |           11.98 |
+|   CARRY4                |    <0.001 |      198 |      4400 |            4.50 |
+|   Register              |    <0.001 |     2691 |     35200 |            7.64 |
+|   F7/F8 Muxes           |    <0.001 |      159 |     17600 |            0.90 |
 |   LUT as Shift Register |    <0.001 |       62 |      6000 |            1.03 |
-|   Others                |     0.000 |      216 |       --- |             --- |
-| Signals                 |     0.004 |     4270 |       --- |             --- |
+|   Others                |     0.000 |      218 |       --- |             --- |
+| Signals                 |     0.004 |     4974 |       --- |             --- |
 | DSPs                    |    <0.001 |       12 |        80 |           15.00 |
 | I/O                     |     0.001 |        8 |       100 |            8.00 |
 | PS7                     |     1.556 |        1 |       --- |             --- |
 | Static Power            |     0.130 |          |           |                 |
-| Total                   |     1.702 |          |           |                 |
+| Total                   |     1.703 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -149,7 +149,7 @@ Table of Contents
 | Name                                             | Power (W) |
 +--------------------------------------------------+-----------+
 | Test_wrapper                                     |     1.572 |
-|   Test_i                                         |     1.570 |
+|   Test_i                                         |     1.571 |
 |     Derivator_0                                  |    <0.001 |
 |       U0                                         |    <0.001 |
 |         Derivator_v1_0_S00_AXI_inst              |    <0.001 |
@@ -159,6 +159,9 @@ Table of Contents
 |     Motor_0                                      |    <0.001 |
 |       U0                                         |    <0.001 |
 |         Motor_v1_0_S00_AXI_inst                  |    <0.001 |
+|     Odometer_0                                   |    <0.001 |
+|       U0                                         |    <0.001 |
+|         Odometer_v1_0_S00_AXI_inst               |    <0.001 |
 |     PID_0                                        |     0.004 |
 |       U0                                         |     0.004 |
 |         PID_v1_0_S00_AXI_inst                    |     0.004 |
@@ -188,7 +191,7 @@ Table of Contents
 |               RD.r_channel_0                     |    <0.001 |
 |                 rd_data_fifo_0                   |    <0.001 |
 |                 transaction_fifo_0               |    <0.001 |
-|               SI_REG                             |     0.002 |
+|               SI_REG                             |     0.001 |
 |                 ar_pipe                          |    <0.001 |
 |                 aw_pipe                          |    <0.001 |
 |                 b_pipe                           |    <0.001 |
