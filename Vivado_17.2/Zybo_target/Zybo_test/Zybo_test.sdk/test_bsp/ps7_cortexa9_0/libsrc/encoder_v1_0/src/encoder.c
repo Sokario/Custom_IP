@@ -142,7 +142,7 @@ void Encoder_SetOverRide(Encoder *InstancePtr, u32 Data)
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
-    ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG0_OFFSET);
+    ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG0_OFFSET, Data);
 }
 
 u32 Encoder_GetOverRide(Encoder *InstancePtr)
@@ -160,7 +160,7 @@ void Encoder_SetReset(Encoder *InstancePtr, u32 Data)
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
-    ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG1_OFFSET);
+    ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG1_OFFSET, Data);
 }
 
 u32 Encoder_GetIncrements(Encoder *InstancePtr)

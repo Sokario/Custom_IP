@@ -1,4 +1,4 @@
-11:25:25 **** Auto Build of project test_bsp ****
+15:22:15 **** Auto Build of project test_bsp ****
 make -k all 
 "Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
 make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
@@ -153,16 +153,6 @@ Encoder.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
 Encoder.c:139:6: note: declared here
  void Encoder_SetOverRide(Encoder *InstancePtr, u32 Data)
       ^~~~~~~~~~~~~~~~~~~
-Encoder.c:145:80: error: macro "ENCODER_mWriteReg" requires 3 arguments, but only 2 given
-     ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG0_OFFSET);
-                                                                                ^
-Encoder.c:145:5: error: 'ENCODER_mWriteReg' undeclared (first use in this function)
-     ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG0_OFFSET);
-     ^~~~~~~~~~~~~~~~~
-Encoder.c:145:5: note: each undeclared identifier is reported only once for each function it appears in
-Encoder.c:139:52: warning: unused parameter 'Data' [-Wunused-parameter]
- void Encoder_SetOverRide(Encoder *InstancePtr, u32 Data)
-                                                    ^~~~
 In file included from Encoder.h:11:0,
                  from Encoder.c:4:
 Encoder.c: In function 'Encoder_SetReset':
@@ -186,21 +176,10 @@ Encoder.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
 Encoder.c:157:6: note: declared here
  void Encoder_SetReset(Encoder *InstancePtr, u32 Data)
       ^~~~~~~~~~~~~~~~
-Encoder.c:163:80: error: macro "ENCODER_mWriteReg" requires 3 arguments, but only 2 given
-     ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG1_OFFSET);
-                                                                                ^
-Encoder.c:163:5: error: 'ENCODER_mWriteReg' undeclared (first use in this function)
-     ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG1_OFFSET);
-     ^~~~~~~~~~~~~~~~~
-Encoder.c:157:49: warning: unused parameter 'Data' [-Wunused-parameter]
- void Encoder_SetReset(Encoder *InstancePtr, u32 Data)
-                                                 ^~~~
 Encoder_selftest.c: In function 'ENCODER_Reg_SelfTest':
 Encoder_selftest.c:51:56: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
     if ( ENCODER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
                                                         ^~
-make[1]: *** [libs] Erreur 1
-make: *** [ps7_cortexa9_0/libsrc/Encoder_v1_0/src/make.libs] Erreur 2
 "Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
 make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling gpio"
@@ -415,10 +394,6 @@ Odometer_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
 "Running Make libs in ps7_cortexa9_0/libsrc/PID_v1_0/src"
 make -C ps7_cortexa9_0/libsrc/PID_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling PID..."
-PID.c: In function 'PID_CfgInitialize':
-PID.c:124:55: warning: unused parameter 'Config' [-Wunused-parameter]
- int PID_CfgInitialize(PID * InstancePtr, PID_Config * Config, UINTPTR EffectiveAddr)
-                                                       ^~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
 PID.c: In function 'PID_SetOverRide':
@@ -444,7 +419,7 @@ PID.c:139:6: note: declared here
       ^~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
-PID.c: In function 'PID_SetReset':
+PID.c: In function 'PID_SetError':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
@@ -452,7 +427,7 @@ PID.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
 PID.c:157:6: note: declared here
- void PID_SetReset(PID *InstancePtr, u32 Data)
+ void PID_SetError(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
@@ -463,11 +438,11 @@ PID.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
 PID.c:157:6: note: declared here
- void PID_SetReset(PID *InstancePtr, u32 Data)
+ void PID_SetError(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
-PID.c: In function 'PID_SetKp':
+PID.c: In function 'PID_SetReset':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
@@ -475,8 +450,8 @@ PID.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
 PID.c:175:6: note: declared here
- void PID_SetKp(PID *InstancePtr, u32 Data)
-      ^~~~~~~~~
+ void PID_SetReset(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
@@ -486,11 +461,11 @@ PID.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
 PID.c:175:6: note: declared here
- void PID_SetKp(PID *InstancePtr, u32 Data)
-      ^~~~~~~~~
+ void PID_SetReset(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
-PID.c: In function 'PID_SetKi':
+PID.c: In function 'PID_SetProportional':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
@@ -498,8 +473,8 @@ PID.c:196:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
 PID.c:193:6: note: declared here
- void PID_SetKi(PID *InstancePtr, u32 Data)
-      ^~~~~~~~~
+ void PID_SetProportional(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
@@ -509,11 +484,11 @@ PID.c:197:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
 PID.c:193:6: note: declared here
- void PID_SetKi(PID *InstancePtr, u32 Data)
-      ^~~~~~~~~
+ void PID_SetProportional(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
-PID.c: In function 'PID_SetKd':
+PID.c: In function 'PID_SetIntegral':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
@@ -521,8 +496,8 @@ PID.c:214:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
 PID.c:211:6: note: declared here
- void PID_SetKd(PID *InstancePtr, u32 Data)
-      ^~~~~~~~~
+ void PID_SetIntegral(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
@@ -532,11 +507,11 @@ PID.c:215:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
 PID.c:211:6: note: declared here
- void PID_SetKd(PID *InstancePtr, u32 Data)
-      ^~~~~~~~~
+ void PID_SetIntegral(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
-PID.c: In function 'PID_SetError':
+PID.c: In function 'PID_SetDerivative':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
@@ -544,8 +519,8 @@ PID.c:232:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
 PID.c:229:6: note: declared here
- void PID_SetError(PID *InstancePtr, u32 Data)
-      ^~~~~~~~~~~~
+ void PID_SetDerivative(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
@@ -555,11 +530,11 @@ PID.c:233:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
 PID.c:229:6: note: declared here
- void PID_SetError(PID *InstancePtr, u32 Data)
-      ^~~~~~~~~~~~
+ void PID_SetDerivative(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
-PID.c: In function 'PID_SetErrorDeadband':
+PID.c: In function 'PID_SetDeadBand':
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
          return 0;                                  \
                 ^
@@ -567,8 +542,8 @@ PID.c:250:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr != NULL);
      ^~~~~~~~~~~~~~~~~
 PID.c:247:6: note: declared here
- void PID_SetErrorDeadband(PID *InstancePtr, u32 Data)
-      ^~~~~~~~~~~~~~~~~~~~
+ void PID_SetDeadBand(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
 ../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
@@ -578,8 +553,8 @@ PID.c:251:5: note: in expansion of macro 'Xil_AssertNonvoid'
      Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
      ^~~~~~~~~~~~~~~~~
 PID.c:247:6: note: declared here
- void PID_SetErrorDeadband(PID *InstancePtr, u32 Data)
-      ^~~~~~~~~~~~~~~~~~~~
+ void PID_SetDeadBand(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
 In file included from PID.h:12:0,
                  from PID.c:4:
 PID.c: In function 'PID_SetMinOutput':
@@ -626,6 +601,558 @@ PID.c:287:5: note: in expansion of macro 'Xil_AssertNonvoid'
 PID.c:283:6: note: declared here
  void PID_SetMaxOutput(PID *InstancePtr, u32 Data)
       ^~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_Error':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:351:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:348:6: note: declared here
+ void PID_PS_OverRide_Error(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:352:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:348:6: note: declared here
+ void PID_PS_OverRide_Error(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_DataError':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:363:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:360:6: note: declared here
+ void PID_PS_OverRide_DataError(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:364:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:360:6: note: declared here
+ void PID_PS_OverRide_DataError(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PL_OverRide_Error':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:373:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:370:6: note: declared here
+ void PID_PL_OverRide_Error(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:374:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:370:6: note: declared here
+ void PID_PL_OverRide_Error(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_Reset':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:385:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:382:6: note: declared here
+ void PID_PS_OverRide_Reset(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:386:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:382:6: note: declared here
+ void PID_PS_OverRide_Reset(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_DataReset':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:397:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:394:6: note: declared here
+ void PID_PS_OverRide_DataReset(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:398:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:394:6: note: declared here
+ void PID_PS_OverRide_DataReset(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PL_OverRide_Reset':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:407:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:404:6: note: declared here
+ void PID_PL_OverRide_Reset(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:408:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:404:6: note: declared here
+ void PID_PL_OverRide_Reset(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_Proportional':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:419:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:416:6: note: declared here
+ void PID_PS_OverRide_Proportional(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:420:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:416:6: note: declared here
+ void PID_PS_OverRide_Proportional(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_DataProportional':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:431:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:428:6: note: declared here
+ void PID_PS_OverRide_DataProportional(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:432:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:428:6: note: declared here
+ void PID_PS_OverRide_DataProportional(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PL_OverRide_Proportional':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:441:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:438:6: note: declared here
+ void PID_PL_OverRide_Proportional(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:442:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:438:6: note: declared here
+ void PID_PL_OverRide_Proportional(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_Integral':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:453:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:450:6: note: declared here
+ void PID_PS_OverRide_Integral(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:454:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:450:6: note: declared here
+ void PID_PS_OverRide_Integral(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_DataIntegral':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:465:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:462:6: note: declared here
+ void PID_PS_OverRide_DataIntegral(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:466:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:462:6: note: declared here
+ void PID_PS_OverRide_DataIntegral(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PL_OverRide_Integral':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:475:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:472:6: note: declared here
+ void PID_PL_OverRide_Integral(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:476:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:472:6: note: declared here
+ void PID_PL_OverRide_Integral(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_Derivative':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:487:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:484:6: note: declared here
+ void PID_PS_OverRide_Derivative(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:488:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:484:6: note: declared here
+ void PID_PS_OverRide_Derivative(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_DataDerivative':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:499:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:496:6: note: declared here
+ void PID_PS_OverRide_DataDerivative(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:500:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:496:6: note: declared here
+ void PID_PS_OverRide_DataDerivative(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PL_OverRide_Derivative':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:509:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:506:6: note: declared here
+ void PID_PL_OverRide_Derivative(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:510:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:506:6: note: declared here
+ void PID_PL_OverRide_Derivative(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_DeadBand':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:521:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:518:6: note: declared here
+ void PID_PS_OverRide_DeadBand(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:522:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:518:6: note: declared here
+ void PID_PS_OverRide_DeadBand(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_DataDeadBand':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:533:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:530:6: note: declared here
+ void PID_PS_OverRide_DataDeadBand(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:534:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:530:6: note: declared here
+ void PID_PS_OverRide_DataDeadBand(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PL_OverRide_DeadBand':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:543:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:540:6: note: declared here
+ void PID_PL_OverRide_DeadBand(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:544:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:540:6: note: declared here
+ void PID_PL_OverRide_DeadBand(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_MinOutput':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:555:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:552:6: note: declared here
+ void PID_PS_OverRide_MinOutput(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:556:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:552:6: note: declared here
+ void PID_PS_OverRide_MinOutput(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_DataMinOutput':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:567:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:564:6: note: declared here
+ void PID_PS_OverRide_DataMinOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:568:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:564:6: note: declared here
+ void PID_PS_OverRide_DataMinOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PL_OverRide_MinOutput':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:577:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:574:6: note: declared here
+ void PID_PL_OverRide_MinOutput(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:578:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:574:6: note: declared here
+ void PID_PL_OverRide_MinOutput(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_MaxOutput':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:589:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:586:6: note: declared here
+ void PID_PS_OverRide_MaxOutput(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:590:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:586:6: note: declared here
+ void PID_PS_OverRide_MaxOutput(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PS_OverRide_DataMaxOutput':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:601:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:598:6: note: declared here
+ void PID_PS_OverRide_DataMaxOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:602:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:598:6: note: declared here
+ void PID_PS_OverRide_DataMaxOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_PL_OverRide_MaxOutput':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:611:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:608:6: note: declared here
+ void PID_PL_OverRide_MaxOutput(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:612:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:608:6: note: declared here
+ void PID_PL_OverRide_MaxOutput(PID *InstancePtr)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
 PID_selftest.c: In function 'PID_Reg_SelfTest':
 PID_selftest.c:52:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
     if ( PID_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
@@ -753,7 +1280,7 @@ make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-
 "Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
 make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling xadcps"
-make: La cible « all » n'a pas pu être refabriquée à cause d'erreurs.
+'Finished building libraries'
 
-11:25:48 Build Finished (took 23s.107ms)
+15:22:41 Build Finished (took 25s.723ms)
 

@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Fri Oct 27 16:21:38 2017
-# Process ID: 1324
+# Start of session at: Mon Oct 30 15:10:55 2017
+# Process ID: 5640
 # Current directory: C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.runs/Test_PID_0_0_synth_1
 # Command line: vivado.exe -log Test_PID_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Test_PID_0_0.tcl
 # Log file: C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.runs/Test_PID_0_0_synth_1/Test_PID_0_0.vds
@@ -15,9 +15,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010-clg400'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010-clg400'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8144 
+INFO: Helper process launched with PID 7832 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 376.527 ; gain = 78.703
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 376.785 ; gain = 78.867
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Test_PID_0_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_PID_0_0/synth/Test_PID_0_0.vhd:86]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
@@ -29,8 +29,8 @@ INFO: [Synth 8-638] synthesizing module 'Test_PID_0_0' [c:/Projet/Vivado/Custom_
 	Parameter DEADBAND bound to: 1 - type: integer 
 	Parameter MIN bound to: 1 - type: integer 
 	Parameter MAX bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'PID_v1_0' declared at 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0.vhd:5' bound to instance 'U0' of component 'PID_v1_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_PID_0_0/synth/Test_PID_0_0.vhd:159]
-INFO: [Synth 8-638] synthesizing module 'PID_v1_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0.vhd:58]
+INFO: [Synth 8-3491] module 'PID_v1_0' declared at 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0.vhd:5' bound to instance 'U0' of component 'PID_v1_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_PID_0_0/synth/Test_PID_0_0.vhd:159]
+INFO: [Synth 8-638] synthesizing module 'PID_v1_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0.vhd:58]
 	Parameter KP bound to: 1 - type: integer 
 	Parameter KI bound to: 1 - type: integer 
 	Parameter KD bound to: 1 - type: integer 
@@ -49,8 +49,8 @@ INFO: [Synth 8-638] synthesizing module 'PID_v1_0' [c:/Projet/Vivado/Custom_IP/V
 	Parameter DIVIDER bound to: 390625 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
-INFO: [Synth 8-3491] module 'PID_v1_0_S00_AXI' declared at 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:5' bound to instance 'PID_v1_0_S00_AXI_inst' of component 'PID_v1_0_S00_AXI' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0.vhd:105]
-INFO: [Synth 8-638] synthesizing module 'PID_v1_0_S00_AXI' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:95]
+INFO: [Synth 8-3491] module 'PID_v1_0_S00_AXI' declared at 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:5' bound to instance 'PID_v1_0_S00_AXI_inst' of component 'PID_v1_0_S00_AXI' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0.vhd:105]
+INFO: [Synth 8-638] synthesizing module 'PID_v1_0_S00_AXI' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:95]
 	Parameter KP bound to: 1 - type: integer 
 	Parameter KI bound to: 1 - type: integer 
 	Parameter KD bound to: 1 - type: integer 
@@ -60,51 +60,18 @@ INFO: [Synth 8-638] synthesizing module 'PID_v1_0_S00_AXI' [c:/Projet/Vivado/Cus
 	Parameter DIVIDER bound to: 390625 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
-INFO: [Synth 8-226] default block is never used [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:282]
-INFO: [Synth 8-226] default block is never used [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:520]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:265]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:267]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg8_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:271]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg9_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:272]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg10_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:273]
-WARNING: [Synth 8-6014] Unused sequential element slv_reg11_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:274]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:280]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:519]
-INFO: [Synth 8-256] done synthesizing module 'PID_v1_0_S00_AXI' (1#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:95]
-INFO: [Synth 8-256] done synthesizing module 'PID_v1_0' (2#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0.vhd:58]
+INFO: [Synth 8-226] default block is never used [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:282]
+INFO: [Synth 8-226] default block is never used [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:520]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:265]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg4_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:267]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg9_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:272]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg10_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:273]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg11_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:274]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:280]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:519]
+INFO: [Synth 8-256] done synthesizing module 'PID_v1_0_S00_AXI' (1#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:95]
+INFO: [Synth 8-256] done synthesizing module 'PID_v1_0' (2#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0.vhd:58]
 INFO: [Synth 8-256] done synthesizing module 'Test_PID_0_0' (3#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_PID_0_0/synth/Test_PID_0_0.vhd:86]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[31]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[30]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[29]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[28]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[27]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[26]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[25]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[24]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[23]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[22]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[21]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[20]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[19]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[18]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[17]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[16]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[15]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[14]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[13]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[12]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[11]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[10]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[9]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[8]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[7]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[6]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[5]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[4]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[3]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[2]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[1]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[0]
 WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
 WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
 WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
@@ -112,7 +79,7 @@ WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port S_AXI_ARPRO
 WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 416.605 ; gain = 118.781
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 416.863 ; gain = 118.945
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -122,7 +89,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 416.605 ; gain = 118.781
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 416.863 ; gain = 118.945
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -134,28 +101,28 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 713.813 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 714.129 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 713.813 ; gain = 415.988
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 714.129 ; gain = 416.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 713.813 ; gain = 415.988
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 714.129 ; gain = 416.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 713.813 ; gain = 415.988
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 714.129 ; gain = 416.211
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "Ended" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5546] ROM "enable_i" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element sum_i_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element sum_i_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:613]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 713.813 ; gain = 415.988
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 714.129 ; gain = 416.211
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -173,7 +140,7 @@ Detailed RTL Component Info :
 	   2 Input     19 Bit       Adders := 1     
 +---Registers : 
 	               64 Bit    Registers := 4     
-	               32 Bit    Registers := 19    
+	               32 Bit    Registers := 20    
 	               19 Bit    Registers := 1     
 	                6 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
@@ -181,8 +148,8 @@ Detailed RTL Component Info :
 +---Multipliers : 
 	                32x32  Multipliers := 3     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 14    
-	  16 Input     32 Bit        Muxes := 10    
+	   2 Input     32 Bit        Muxes := 16    
+	  16 Input     32 Bit        Muxes := 11    
 	   2 Input     19 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 8     
 ---------------------------------------------------------------------------------
@@ -200,7 +167,7 @@ Detailed RTL Component Info :
 	   2 Input     19 Bit       Adders := 1     
 +---Registers : 
 	               64 Bit    Registers := 4     
-	               32 Bit    Registers := 19    
+	               32 Bit    Registers := 20    
 	               19 Bit    Registers := 1     
 	                6 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
@@ -208,8 +175,8 @@ Detailed RTL Component Info :
 +---Multipliers : 
 	                32x32  Multipliers := 3     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 14    
-	  16 Input     32 Bit        Muxes := 10    
+	   2 Input     32 Bit        Muxes := 16    
+	  16 Input     32 Bit        Muxes := 11    
 	   2 Input     19 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 8     
 ---------------------------------------------------------------------------------
@@ -229,19 +196,19 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "enable_i" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "Ended" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:701]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:702]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:700]
-WARNING: [Synth 8-6014] Unused sequential element integral_i_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:661]
-WARNING: [Synth 8-6014] Unused sequential element derivative_i_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:662]
-WARNING: [Synth 8-6014] Unused sequential element proportional_i_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:660]
-WARNING: [Synth 8-6014] Unused sequential element  was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:700]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:656]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:657]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:655]
+WARNING: [Synth 8-6014] Unused sequential element integral_i_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:616]
+WARNING: [Synth 8-6014] Unused sequential element derivative_i_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:617]
+WARNING: [Synth 8-6014] Unused sequential element proportional_i_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:615]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:655]
 WARNING: [Synth 8-6014] Unused sequential element  was removed. 
-WARNING: [Synth 8-6014] Unused sequential element  was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:700]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:655]
 WARNING: [Synth 8-6014] Unused sequential element  was removed. 
-WARNING: [Synth 8-6014] Unused sequential element  was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:700]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:655]
 WARNING: [Synth 8-6014] Unused sequential element  was removed. 
-WARNING: [Synth 8-6014] Unused sequential element sum_i_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:658]
+WARNING: [Synth 8-6014] Unused sequential element sum_i_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:613]
 DSP Report: Generating DSP integral_i0, operation Mode is: A*B.
 DSP Report: operator integral_i0 is absorbed into DSP integral_i0.
 DSP Report: operator integral_i0 is absorbed into DSP integral_i0.
@@ -282,38 +249,6 @@ DSP Report: Generating DSP proportional_i0, operation Mode is: (PCIN>>17)+A*B2.
 DSP Report: register B is absorbed into DSP proportional_i0.
 DSP Report: operator proportional_i0 is absorbed into DSP proportional_i0.
 DSP Report: operator proportional_i0 is absorbed into DSP proportional_i0.
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[31]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[30]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[29]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[28]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[27]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[26]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[25]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[24]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[23]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[22]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[21]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[20]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[19]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[18]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[17]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[16]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[15]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[14]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[13]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[12]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[11]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[10]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[9]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[8]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[7]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[6]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[5]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[4]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[3]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[2]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[1]
-WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port Error[0]
 WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
 WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
 WARNING: [Synth 8-3331] design PID_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
@@ -428,7 +363,7 @@ INFO: [Synth 8-3332] Sequential element (U0/PID_v1_0_S00_AXI_inst/derivative_i_r
 INFO: [Synth 8-3332] Sequential element (U0/PID_v1_0_S00_AXI_inst/derivative_i_reg[32]) is unused and will be removed from module Test_PID_0_0.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 713.813 ; gain = 415.988
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 714.129 ; gain = 416.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -466,13 +401,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 750.520 ; gain = 452.695
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 750.777 ; gain = 452.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 751.520 ; gain = 453.695
+Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 752.781 ; gain = 454.863
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -483,27 +418,27 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:661]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:661]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:662]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:662]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:660]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:660]
-INFO: [Synth 8-3886] merging instance 'i_823' (FDCE) to 'i_854'
-INFO: [Synth 8-3886] merging instance 'i_744' (FDCE) to 'i_854'
-INFO: [Synth 8-3886] merging instance 'i_665' (FDCE) to 'i_854'
-INFO: [Synth 8-3886] merging instance 'i_854' (FDCE) to 'i_775'
-INFO: [Synth 8-3886] merging instance 'i_775' (FDCE) to 'i_696'
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:658]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:658]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:658]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:658]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:659]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:659]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:659]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/3e70/hdl/PID_v1_0_S00_AXI.vhd:659]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:616]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:616]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:617]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:617]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:615]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:615]
+INFO: [Synth 8-3886] merging instance 'i_2931' (FDCE) to 'i_2962'
+INFO: [Synth 8-3886] merging instance 'i_2852' (FDCE) to 'i_2962'
+INFO: [Synth 8-3886] merging instance 'i_2773' (FDCE) to 'i_2962'
+INFO: [Synth 8-3886] merging instance 'i_2962' (FDCE) to 'i_2883'
+INFO: [Synth 8-3886] merging instance 'i_2883' (FDCE) to 'i_2804'
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:613]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:613]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:613]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:613]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:614]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:614]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:614]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/4add/hdl/PID_v1_0_S00_AXI.vhd:614]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 775.375 ; gain = 477.551
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 775.965 ; gain = 478.047
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -527,7 +462,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 775.375 ; gain = 477.551
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 775.965 ; gain = 478.047
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -540,7 +475,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 775.375 ; gain = 477.551
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 775.965 ; gain = 478.047
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -552,25 +487,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 775.375 ; gain = 477.551
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 775.965 ; gain = 478.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 775.375 ; gain = 477.551
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 775.965 ; gain = 478.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 775.375 ; gain = 477.551
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 775.965 ; gain = 478.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 775.375 ; gain = 477.551
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 775.965 ; gain = 478.047
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -592,33 +527,31 @@ Report Cell Usage:
 |4     |DSP48E1_3 |     1|
 |5     |DSP48E1_4 |     1|
 |6     |DSP48E1_5 |     2|
-|7     |LUT1      |    55|
-|8     |LUT2      |   267|
-|9     |LUT3      |   208|
-|10    |LUT4      |   202|
-|11    |LUT5      |   110|
-|12    |LUT6      |   172|
-|13    |MUXF7     |    64|
-|14    |MUXF8     |    32|
-|15    |FDCE      |   263|
-|16    |FDRE      |   600|
-|17    |FDSE      |     8|
+|7     |LUT1      |    54|
+|8     |LUT2      |   215|
+|9     |LUT3      |   243|
+|10    |LUT4      |   209|
+|11    |LUT5      |    96|
+|12    |LUT6      |   259|
+|13    |FDCE      |   263|
+|14    |FDRE      |   632|
+|15    |FDSE      |     8|
 +------+----------+------+
 
 Report Instance Areas: 
 +------+--------------------------+-----------------+------+
 |      |Instance                  |Module           |Cells |
 +------+--------------------------+-----------------+------+
-|1     |top                       |                 |  2098|
-|2     |  U0                      |PID_v1_0         |  2065|
-|3     |    PID_v1_0_S00_AXI_inst |PID_v1_0_S00_AXI |  2062|
+|1     |top                       |                 |  2096|
+|2     |  U0                      |PID_v1_0         |  2063|
+|3     |    PID_v1_0_S00_AXI_inst |PID_v1_0_S00_AXI |  2060|
 +------+--------------------------+-----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 775.375 ; gain = 477.551
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 775.965 ; gain = 478.047
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 49 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 775.375 ; gain = 180.344
-Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 775.375 ; gain = 477.551
+Synthesis finished with 0 errors, 0 critical warnings and 17 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 775.965 ; gain = 180.781
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 775.965 ; gain = 478.047
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 117 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -628,12 +561,12 @@ INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-153 Infos, 96 Warnings, 0 Critical Warnings and 0 Errors encountered.
+153 Infos, 31 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:38 . Memory (MB): peak = 775.375 ; gain = 481.184
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 775.965 ; gain = 482.680
 INFO: [Common 17-1381] The checkpoint 'C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.runs/Test_PID_0_0_synth_1/Test_PID_0_0.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_PID_0_0/Test_PID_0_0.xci
 INFO: [Coretcl 2-1174] Renamed 2 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.runs/Test_PID_0_0_synth_1/Test_PID_0_0.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 775.375 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Fri Oct 27 16:22:23 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 775.965 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 30 15:11:39 2017...

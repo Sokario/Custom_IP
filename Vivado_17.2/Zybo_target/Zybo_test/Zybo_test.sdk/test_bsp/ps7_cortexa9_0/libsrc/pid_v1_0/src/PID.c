@@ -86,7 +86,7 @@ int PID_Initialize(PID * InstancePtr, u16 DeviceId)
 		return (XST_DEVICE_NOT_FOUND);
 	}
 
-	return PID_CfgInitialize(InstancePtr, ConfigPtr, ConfigPtr->BaseAddress);
+	return PID_CfgInitialize(InstancePtr, ConfigPtr->BaseAddress);
 }
 
 /****************************************************************************/
@@ -121,7 +121,7 @@ int PID_Initialize(PID * InstancePtr, u16 DeviceId)
 * @note		None.
 *
 *****************************************************************************/
-int PID_CfgInitialize(PID * InstancePtr, PID_Config * Config, UINTPTR EffectiveAddr)
+int PID_CfgInitialize(PID * InstancePtr, UINTPTR EffectiveAddr)
 {
 	/* Assert arguments */
 	Xil_AssertNonvoid(InstancePtr != NULL);
@@ -154,78 +154,6 @@ u32 PID_GetOverRide(PID *InstancePtr)
     return PID_mReadReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG0_OFFSET);
 }
 
-void PID_SetReset(PID *InstancePtr, u32 Data)
-{
-    /* Asserts */
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-    
-    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG3_OFFSET, Data);
-}
-
-u32 PID_GetReset(PID *InstancePtr)
-{
-    /* Asserts */
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-    
-    return PID_mReadReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG3_OFFSET);
-}
-
-void PID_SetKp(PID *InstancePtr, u32 Data)
-{
-    /* Asserts */
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-    
-    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG5_OFFSET, Data);
-}
-
-u32 PID_GetKp(PID *InstancePtr)
-{
-    /* Asserts */
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-    
-    return PID_mReadReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG5_OFFSET);
-}
-
-void PID_SetKi(PID *InstancePtr, u32 Data)
-{
-    /* Asserts */
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-    
-    return PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG6_OFFSET, Data);
-}
-
-u32 PID_GetKi(PID *InstancePtr)
-{
-    /* Asserts */
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-    
-    return PID_mReadReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG6_OFFSET);
-}
-
-void PID_SetKd(PID *InstancePtr, u32 Data)
-{
-    /* Asserts */
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-    
-    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG7_OFFSET, Data);
-}
-
-u32 PID_GetKd(PID *InstancePtr)
-{
-    /* Asserts */
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-    
-    return PID_mReadReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG7_OFFSET);
-}
-
 void PID_SetError(PID *InstancePtr, u32 Data)
 {
     /* Asserts */
@@ -244,7 +172,79 @@ u32 PID_GetError(PID *InstancePtr)
     return PID_mReadReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG8_OFFSET);
 }
 
-void PID_SetErrorDeadband(PID *InstancePtr, u32 Data)
+void PID_SetReset(PID *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG3_OFFSET, Data);
+}
+
+u32 PID_GetReset(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    return PID_mReadReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG3_OFFSET);
+}
+
+void PID_SetProportional(PID *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG5_OFFSET, Data);
+}
+
+u32 PID_GetProportional(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    return PID_mReadReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG5_OFFSET);
+}
+
+void PID_SetIntegral(PID *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    return PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG6_OFFSET, Data);
+}
+
+u32 PID_GetIntegral(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    return PID_mReadReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG6_OFFSET);
+}
+
+void PID_SetDerivative(PID *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG7_OFFSET, Data);
+}
+
+u32 PID_GetDerivative(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    return PID_mReadReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG7_OFFSET);
+}
+
+void PID_SetDeadBand(PID *InstancePtr, u32 Data)
 {
     /* Asserts */
     Xil_AssertNonvoid(InstancePtr != NULL);
@@ -253,7 +253,7 @@ void PID_SetErrorDeadband(PID *InstancePtr, u32 Data)
     PID_mWriteReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG12_OFFSET, Data);
 }
 
-u32 PID_GetErrorDeadband(PID *InstancePtr)
+u32 PID_GetDeadBand(PID *InstancePtr)
 {
     /* Asserts */
     Xil_AssertNonvoid(InstancePtr != NULL);
@@ -342,3 +342,278 @@ u32 PID_GetVariationError(PID *InstancePtr)
     
     return PID_mReadReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG11_OFFSET);
 }
+
+///////////////////////////
+
+void PID_PS_OverRide_Error(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_mReadReg(InstancePtr->BaseAddress, PID_S00_AXI_SLV_REG0_OFFSET);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_ERROR) | (1 << PID_OVERRIDE_INDICE_ERROR);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_DataError(PID *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    PID_PS_OverRide_Error(InstancePtr);
+    PID_SetError(InstancePtr, Data);
+}
+
+void PID_PL_OverRide_Error(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_ERROR) & ~(1 << PID_OVERRIDE_INDICE_ERROR);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_Reset(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_RESET) | (1 << PID_OVERRIDE_INDICE_RESET);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_DataReset(PID *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    PID_PS_OverRide_Reset(InstancePtr);
+    PID_SetReset(InstancePtr, Data);
+}
+
+void PID_PL_OverRide_Reset(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_RESET) & ~(1 << PID_OVERRIDE_INDICE_RESET);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_Proportional(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_PROPORTIONAL) | (1 << PID_OVERRIDE_INDICE_PROPORTIONAL);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_DataProportional(PID *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    PID_PS_OverRide_Proportional(InstancePtr);
+    PID_SetProportional(InstancePtr, Data);
+}
+
+void PID_PL_OverRide_Proportional(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_PROPORTIONAL) & ~(1 << PID_OVERRIDE_INDICE_PROPORTIONAL);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_Integral(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_INTEGRAL) | (1 << PID_OVERRIDE_INDICE_INTEGRAL);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_DataIntegral(PID *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    PID_PS_OverRide_Integral(InstancePtr);
+    PID_SetIntegral(InstancePtr, Data);
+}
+
+void PID_PL_OverRide_Integral(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_INTEGRAL) & ~(1 << PID_OVERRIDE_INDICE_INTEGRAL);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_Derivative(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_DERIVATIVE) | (1 << PID_OVERRIDE_INDICE_DERIVATIVE);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_DataDerivative(PID *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    PID_PS_OverRide_Derivative(InstancePtr);
+    PID_SetDerivative(InstancePtr, Data);
+}
+
+void PID_PL_OverRide_Derivative(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_DERIVATIVE) & ~(1 << PID_OVERRIDE_INDICE_DERIVATIVE);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_DeadBand(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_DEADBAND) | (1 << PID_OVERRIDE_INDICE_DEADBAND);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_DataDeadBand(PID *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    PID_PS_OverRide_DeadBand(InstancePtr);
+    PID_SetDeadBand(InstancePtr, Data);
+}
+
+void PID_PL_OverRide_DeadBand(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_DEADBAND) & ~(1 << PID_OVERRIDE_INDICE_DEADBAND);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_MinOutput(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_MIN_OUTPUT) | (1 << PID_OVERRIDE_INDICE_MIN_OUTPUT);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_DataMinOutput(PID *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    PID_PS_OverRide_MinOutput(InstancePtr);
+    PID_SetMinOutput(InstancePtr, Data);
+}
+
+void PID_PL_OverRide_MinOutput(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_MIN_OUTPUT) & ~(1 << PID_OVERRIDE_INDICE_MIN_OUTPUT);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_MaxOutput(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_MAX_OUTPUT) | (1 << PID_OVERRIDE_INDICE_MAX_OUTPUT);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+
+void PID_PS_OverRide_DataMaxOutput(PID *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    PID_PS_OverRide_MaxOutput(InstancePtr);
+    PID_SetMaxOutput(InstancePtr, Data);
+}
+
+void PID_PL_OverRide_MaxOutput(PID *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = PID_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~PID_OVERRIDE_MASK_MAX_OUTPUT) & ~(1 << PID_OVERRIDE_INDICE_MAX_OUTPUT);
+    
+    PID_SetOverRide(InstancePtr, reg_value);
+}
+

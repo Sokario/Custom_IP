@@ -666,3 +666,48 @@ con
 11:23:22 INFO  : Closing and re-opening the MSS file of ther project test_bsp
 11:23:57 INFO  : Refreshed build settings on project test
 11:26:20 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+14:52:55 INFO  : Registering command handlers for SDK TCF services
+14:52:55 INFO  : Launching XSCT server: xsct.bat -interactive C:\Projet\Vivado\Custom_IP\Vivado_17.2\Zybo_target\Zybo_test\Zybo_test.sdk\temp_xsdb_launch_script.tcl
+14:52:58 INFO  : XSCT server has started successfully.
+14:52:58 INFO  : Successfully done setting XSCT server connection channel  
+14:53:02 INFO  : Processing command line option -hwspec C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.sdk/Test_wrapper.hdf.
+14:53:02 INFO  : Successfully done setting SDK workspace  
+14:53:02 INFO  : Checking for hwspec changes in the project Test_wrapper_hw_platform_0.
+14:53:04 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1509371521648,  Project:1509358874752
+14:53:04 INFO  : The hardware specification for project 'Test_wrapper_hw_platform_0' is different from C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.sdk/Test_wrapper.hdf.
+14:53:04 INFO  : Copied contents of C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.sdk/Test_wrapper.hdf into \Test_wrapper_hw_platform_0\system.hdf.
+14:53:08 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+14:53:18 INFO  : 
+14:53:19 INFO  : Updating hardware inferred compiler options for test.
+14:53:20 INFO  : Clearing existing target manager status.
+14:56:06 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+15:04:43 INFO  : Registering command handlers for SDK TCF services
+15:04:43 INFO  : Launching XSCT server: xsct.bat -interactive C:\Projet\Vivado\Custom_IP\Vivado_17.2\Zybo_target\Zybo_test\Zybo_test.sdk\temp_xsdb_launch_script.tcl
+15:04:45 INFO  : XSCT server has started successfully.
+15:04:48 INFO  : Processing command line option -hwspec C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.sdk/Test_wrapper.hdf.
+15:04:48 INFO  : Checking for hwspec changes in the project Test_wrapper_hw_platform_0.
+15:04:48 INFO  : Successfully done setting XSCT server connection channel  
+15:04:48 INFO  : Successfully done setting SDK workspace  
+15:04:49 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1509372261578,  Project:1509371521648
+15:04:49 INFO  : The hardware specification for project 'Test_wrapper_hw_platform_0' is different from C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.sdk/Test_wrapper.hdf.
+15:04:49 INFO  : Copied contents of C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.sdk/Test_wrapper.hdf into \Test_wrapper_hw_platform_0\system.hdf.
+15:04:53 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+15:05:02 INFO  : 
+15:05:03 INFO  : Updating hardware inferred compiler options for test.
+15:05:03 INFO  : Clearing existing target manager status.
+15:07:58 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+15:14:54 INFO  : Registering command handlers for SDK TCF services
+15:14:54 INFO  : Launching XSCT server: xsct.bat -interactive C:\Projet\Vivado\Custom_IP\Vivado_17.2\Zybo_target\Zybo_test\Zybo_test.sdk\temp_xsdb_launch_script.tcl
+15:14:56 INFO  : XSCT server has started successfully.
+15:14:58 INFO  : Processing command line option -hwspec C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.sdk/Test_wrapper.hdf.
+15:14:58 INFO  : Successfully done setting XSCT server connection channel  
+15:14:58 INFO  : Checking for hwspec changes in the project Test_wrapper_hw_platform_0.
+15:14:58 INFO  : Successfully done setting SDK workspace  
+15:15:00 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1509372846013,  Project:1509372261578
+15:15:00 INFO  : The hardware specification for project 'Test_wrapper_hw_platform_0' is different from C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.sdk/Test_wrapper.hdf.
+15:15:00 INFO  : Copied contents of C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.sdk/Test_wrapper.hdf into \Test_wrapper_hw_platform_0\system.hdf.
+15:15:04 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+15:15:12 INFO  : 
+15:15:13 INFO  : Updating hardware inferred compiler options for test.
+15:16:31 INFO  : Clearing existing target manager status.
+15:29:58 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
