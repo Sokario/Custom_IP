@@ -46,20 +46,21 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: xilinx.com:user:Motor:1.0
--- IP Revision: 5
+-- IP VLNV: xilinx.com:user:Odometer:1.0
+-- IP Revision: 4
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY Test_Motor_0_1 IS
+ENTITY Test_Odometer_0_0 IS
   PORT (
-    Speed : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    Sens : OUT STD_LOGIC;
-    PWM : OUT STD_LOGIC;
-    Enable : OUT STD_LOGIC;
-    s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+    Reset : IN STD_LOGIC;
+    Increments_Left : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    Increments_Right : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+    Angle : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    Distance : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+    s00_axi_awaddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
     s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_awvalid : IN STD_LOGIC;
     s00_axi_awready : OUT STD_LOGIC;
@@ -70,7 +71,7 @@ ENTITY Test_Motor_0_1 IS
     s00_axi_bresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
     s00_axi_bvalid : OUT STD_LOGIC;
     s00_axi_bready : IN STD_LOGIC;
-    s00_axi_araddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+    s00_axi_araddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
     s00_axi_arprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
     s00_axi_arvalid : IN STD_LOGIC;
     s00_axi_arready : OUT STD_LOGIC;
@@ -81,23 +82,24 @@ ENTITY Test_Motor_0_1 IS
     s00_axi_aclk : IN STD_LOGIC;
     s00_axi_aresetn : IN STD_LOGIC
   );
-END Test_Motor_0_1;
+END Test_Odometer_0_0;
 
-ARCHITECTURE Test_Motor_0_1_arch OF Test_Motor_0_1 IS
+ARCHITECTURE Test_Odometer_0_0_arch OF Test_Odometer_0_0 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
-  ATTRIBUTE DowngradeIPIdentifiedWarnings OF Test_Motor_0_1_arch: ARCHITECTURE IS "yes";
-  COMPONENT Motor_v1_0 IS
+  ATTRIBUTE DowngradeIPIdentifiedWarnings OF Test_Odometer_0_0_arch: ARCHITECTURE IS "yes";
+  COMPONENT Odometer_v1_0 IS
     GENERIC (
       C_S00_AXI_DATA_WIDTH : INTEGER; -- Width of S_AXI data bus
       C_S00_AXI_ADDR_WIDTH : INTEGER; -- Width of S_AXI address bus
-      PWM_COUNTER_MAX : INTEGER
+      LAP : INTEGER
     );
     PORT (
-      Speed : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-      Sens : OUT STD_LOGIC;
-      PWM : OUT STD_LOGIC;
-      Enable : OUT STD_LOGIC;
-      s00_axi_awaddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+      Reset : IN STD_LOGIC;
+      Increments_Left : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      Increments_Right : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
+      Angle : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      Distance : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
+      s00_axi_awaddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
       s00_axi_awprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_awvalid : IN STD_LOGIC;
       s00_axi_awready : OUT STD_LOGIC;
@@ -108,7 +110,7 @@ ARCHITECTURE Test_Motor_0_1_arch OF Test_Motor_0_1 IS
       s00_axi_bresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
       s00_axi_bvalid : OUT STD_LOGIC;
       s00_axi_bready : IN STD_LOGIC;
-      s00_axi_araddr : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+      s00_axi_araddr : IN STD_LOGIC_VECTOR(4 DOWNTO 0);
       s00_axi_arprot : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
       s00_axi_arvalid : IN STD_LOGIC;
       s00_axi_arready : OUT STD_LOGIC;
@@ -119,8 +121,9 @@ ARCHITECTURE Test_Motor_0_1_arch OF Test_Motor_0_1 IS
       s00_axi_aclk : IN STD_LOGIC;
       s00_axi_aresetn : IN STD_LOGIC
     );
-  END COMPONENT Motor_v1_0;
+  END COMPONENT Odometer_v1_0;
   ATTRIBUTE X_INTERFACE_INFO : STRING;
+  ATTRIBUTE X_INTERFACE_INFO OF Reset: SIGNAL IS "xilinx.com:signal:reset:1.0 Reset RST";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awaddr: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWADDR";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awprot: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWPROT";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_awvalid: SIGNAL IS "xilinx.com:interface:aximm:1.0 S00_AXI AWVALID";
@@ -143,17 +146,18 @@ ARCHITECTURE Test_Motor_0_1_arch OF Test_Motor_0_1 IS
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_aclk: SIGNAL IS "xilinx.com:signal:clock:1.0 S00_AXI_CLK CLK, xilinx.com:signal:clock:1.0 s00_axi_aclk CLK";
   ATTRIBUTE X_INTERFACE_INFO OF s00_axi_aresetn: SIGNAL IS "xilinx.com:signal:reset:1.0 S00_AXI_RST RST, xilinx.com:signal:reset:1.0 s00_axi_aresetn RST";
 BEGIN
-  U0 : Motor_v1_0
+  U0 : Odometer_v1_0
     GENERIC MAP (
       C_S00_AXI_DATA_WIDTH => 32,
-      C_S00_AXI_ADDR_WIDTH => 4,
-      PWM_COUNTER_MAX => 2500
+      C_S00_AXI_ADDR_WIDTH => 5,
+      LAP => 1
     )
     PORT MAP (
-      Speed => Speed,
-      Sens => Sens,
-      PWM => PWM,
-      Enable => Enable,
+      Reset => Reset,
+      Increments_Left => Increments_Left,
+      Increments_Right => Increments_Right,
+      Angle => Angle,
+      Distance => Distance,
       s00_axi_awaddr => s00_axi_awaddr,
       s00_axi_awprot => s00_axi_awprot,
       s00_axi_awvalid => s00_axi_awvalid,
@@ -176,4 +180,4 @@ BEGIN
       s00_axi_aclk => s00_axi_aclk,
       s00_axi_aresetn => s00_axi_aresetn
     );
-END Test_Motor_0_1_arch;
+END Test_Odometer_0_0_arch;

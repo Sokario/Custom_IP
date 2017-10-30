@@ -86,7 +86,7 @@ int Motor_Initialize(Motor * InstancePtr, u16 DeviceId)
 		return (XST_DEVICE_NOT_FOUND);
 	}
 
-	return Motor_CfgInitialize(InstancePtr, ConfigPtr, ConfigPtr->BaseAddress);
+	return Motor_CfgInitialize(InstancePtr, ConfigPtr->BaseAddress);
 }
 
 /****************************************************************************/
@@ -121,7 +121,7 @@ int Motor_Initialize(Motor * InstancePtr, u16 DeviceId)
 * @note		None.
 *
 *****************************************************************************/
-int Motor_CfgInitialize(Motor * InstancePtr, Motor_Config * Config, UINTPTR EffectiveAddr)
+int Motor_CfgInitialize(Motor * InstancePtr, UINTPTR EffectiveAddr)
 {
 	/* Assert arguments */
 	Xil_AssertNonvoid(InstancePtr != NULL);
@@ -154,13 +154,31 @@ u32 Motor_GetOverRide(Motor *InstancePtr)
     return MOTOR_mReadReg(InstancePtr->BaseAddress, MOTOR_S00_AXI_SLV_REG0_OFFSET);
 }
 
-void Motor_SetSpeed(Motor *InstancePtr, u32 Data)
+void Motor_SetEnable(Motor *InstancePtr, u32 Data)
 {
     /* Asserts */
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
     MOTOR_mWriteReg(InstancePtr->BaseAddress, MOTOR_S00_AXI_SLV_REG1_OFFSET, Data);
+}
+
+u32 Motor_GetEnable(Motor *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    return MOTOR_mReadReg(InstancePtr->BaseAddress, MOTOR_S00_AXI_SLV_REG1_OFFSET);
+}
+
+void Motor_SetSpeed(Motor *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    MOTOR_mWriteReg(InstancePtr->BaseAddress, MOTOR_S00_AXI_SLV_REG2_OFFSET, Data);
 }
 
 u32 Motor_GetSpeed(Motor *InstancePtr)
@@ -172,16 +190,7 @@ u32 Motor_GetSpeed(Motor *InstancePtr)
     return MOTOR_mReadReg(InstancePtr->BaseAddress, MOTOR_S00_AXI_SLV_REG2_OFFSET);
 }
 
-void Motor_SetEnable(Motor *InstancePtr, u32 Data)
-{
-    /* Asserts */
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-    
-    MOTOR_mWriteReg(InstancePtr->BaseAddress, MOTOR_S00_AXI_SLV_REG3_OFFSET, Data);
-}
-
-u32 Motor_GetEnable(Motor *InstancePtr)
+u32 Motor_GetSens(Motor *InstancePtr)
 {
     /* Asserts */
     Xil_AssertNonvoid(InstancePtr != NULL);

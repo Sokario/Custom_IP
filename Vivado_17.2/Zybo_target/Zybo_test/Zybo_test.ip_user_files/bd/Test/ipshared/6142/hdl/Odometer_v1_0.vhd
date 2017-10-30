@@ -2,27 +2,27 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity Motor_v1_0 is
+entity Odometer_v1_0 is
 	generic (
 		-- Users to add parameters here
-        PWM_COUNTER_MAX : integer   := 2500;    -- 40 kHz with 100 MHz S_AXI_ACLK
+        LAP : integer   := 1;   -- Constante value of increments for the robot to do 360° 
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
 
 		-- Parameters of Axi Slave Bus Interface S00_AXI
 		C_S00_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S00_AXI_ADDR_WIDTH	: integer	:= 4
+		C_S00_AXI_ADDR_WIDTH	: integer	:= 5
 	);
 	port (
 		-- Users to add ports here
-        Speed   : in std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
-        Sens    : out std_logic;
-        PWM     : out std_logic;
-        Enable  : out std_logic;
+        Reset               : in std_logic;
+        Increments_Left     : in std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
+        Increments_Right    : in std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
+        Angle               : out std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
+        Distance            : out std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
 		-- User ports ends
 		-- Do not modify the ports beyond this line
-
 
 		-- Ports of Axi Slave Bus Interface S00_AXI
 		s00_axi_aclk	: in std_logic;
@@ -47,22 +47,23 @@ entity Motor_v1_0 is
 		s00_axi_rvalid	: out std_logic;
 		s00_axi_rready	: in std_logic
 	);
-end Motor_v1_0;
+end Odometer_v1_0;
 
-architecture arch_imp of Motor_v1_0 is
+architecture arch_imp of Odometer_v1_0 is
 
 	-- component declaration
-	component Motor_v1_0_S00_AXI is
+	component Odometer_v1_0_S00_AXI is
 		generic (
-		PWM_COUNTER_MAX   : integer   := 2500;
+		LAP : integer   := 1; 
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S_AXI_ADDR_WIDTH	: integer	:= 4
+		C_S_AXI_ADDR_WIDTH	: integer	:= 5
 		);
 		port (
-		Speed   : in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
-        Sens    : out std_logic;
-        PWM     : out std_logic;
-        Enable  : out std_logic;
+		Reset               : in std_logic;
+        Increments_Left     : in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+        Increments_Right    : in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+        Angle               : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+        Distance            : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
 		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -85,22 +86,23 @@ architecture arch_imp of Motor_v1_0 is
 		S_AXI_RVALID	: out std_logic;
 		S_AXI_RREADY	: in std_logic
 		);
-	end component Motor_v1_0_S00_AXI;
+	end component Odometer_v1_0_S00_AXI;
 
 begin
 
 -- Instantiation of Axi Bus Interface S00_AXI
-Motor_v1_0_S00_AXI_inst : Motor_v1_0_S00_AXI
+Odometer_v1_0_S00_AXI_inst : Odometer_v1_0_S00_AXI
 	generic map (
-	    PWM_COUNTER_MAX    => PWM_COUNTER_MAX,
+	    LAP    => LAP,
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
 	)
 	port map (
-	    Speed      => Speed,
-	    Sens       => Sens,
-	    PWM        => PWM,
-	    Enable     => Enable,
+	    Reset  => Reset,
+	    Increments_Left    => Increments_Left,
+	    Increments_Right   => Increments_Right,
+	    Angle  => Angle,
+	    Distance   => Distance,
 		S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,

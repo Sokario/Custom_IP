@@ -13,9 +13,9 @@ extern "C" {
 #include "xil_io.h"
 
 #define MOTOR_S00_AXI_SLV_REG0_OFFSET 0     // OverRide
-#define MOTOR_S00_AXI_SLV_REG1_OFFSET 4     // Speed (IN  | PS)
-#define MOTOR_S00_AXI_SLV_REG2_OFFSET 8     // Speed (OUT | PL)
-#define MOTOR_S00_AXI_SLV_REG3_OFFSET 12    // Enable
+#define MOTOR_S00_AXI_SLV_REG1_OFFSET 4     // Enable
+#define MOTOR_S00_AXI_SLV_REG2_OFFSET 8     // Speed
+#define MOTOR_S00_AXI_SLV_REG3_OFFSET 12    // Sens
 
 
 /**************************** Type Definitions *****************************/
@@ -109,17 +109,19 @@ XStatus MOTOR_Reg_SelfTest(void * baseaddr_p);
  */
 Motor_Config *Motor_LookupConfig(u16 DeviceId);
 int Motor_Initialize(Motor *InstancePtr, u16 DeviceId);
-int Motor_CfgInitialize(Motor *InstancePtr, Motor_Config * Config, UINTPTR EffectiveAddr);
+int Motor_CfgInitialize(Motor *InstancePtr, UINTPTR EffectiveAddr);
 
 /*
  * API Basic functions implemented
  */
 void Motor_SetOverRide(Motor *InstancePtr, u32 Data);
 u32 Motor_GetOverRide(Motor *InstancePtr);
-void Motor_SetSpeed(Motor *InstancePtr, u32 Data);
-u32 Motor_GetSpeed(Motor *InstancePtr);
 void Motor_SetEnable(Motor *InstancePtr, u32 Data);
 u32 Motor_GetEnable(Motor *InstancePtr);
+void Motor_SetSpeed(Motor *InstancePtr, u32 Data);
+u32 Motor_GetSpeed(Motor *InstancePtr);
+
+u32 Motor_GetSens(Motor *InstancePtr);
 
 #ifdef _cplusplus
 }

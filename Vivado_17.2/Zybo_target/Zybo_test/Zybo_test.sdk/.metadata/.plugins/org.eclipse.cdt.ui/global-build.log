@@ -11716,3 +11716,2165 @@ arm-none-eabi-size test.elf  |tee "test.elf.size"
   19384	   1148	  22568	  43100	   a85c	test.elf
 'Finished building: test.elf.size'
 ' '
+10:47:59 **** Auto Build of project test_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/Derivator_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Derivator_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/encoder_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/encoder_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/motor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/motor_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/Odometer_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Odometer_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/pid_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/pid_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_3/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/Subtractor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Subtractor_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling coresightps_dcc"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/Derivator_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Derivator_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Derivator..."
+Derivator.c: In function 'Derivator_CfgInitialize':
+Derivator.c:124:73: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Derivator_CfgInitialize(Derivator * InstancePtr, Derivator_Config * Config, UINTPTR EffectiveAddr)
+                                                                         ^~~~~~
+In file included from Derivator.h:11:0,
+                 from Derivator.c:4:
+Derivator.c: In function 'Derivator_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Derivator.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Derivator.c:139:6: note: declared here
+ void Derivator_SetOverRide(Derivator *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from Derivator.h:11:0,
+                 from Derivator.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Derivator.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Derivator.c:139:6: note: declared here
+ void Derivator_SetOverRide(Derivator *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from Derivator.h:11:0,
+                 from Derivator.c:4:
+Derivator.c: In function 'Derivator_SetIncrements':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Derivator.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Derivator.c:157:6: note: declared here
+ void Derivator_SetIncrements(Derivator *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from Derivator.h:11:0,
+                 from Derivator.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Derivator.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Derivator.c:157:6: note: declared here
+ void Derivator_SetIncrements(Derivator *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~
+Derivator_selftest.c: In function 'DERIVATOR_Reg_SelfTest':
+Derivator_selftest.c:52:58: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( DERIVATOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                          ^~
+Derivator_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/encoder_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/encoder_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Encoder..."
+encoder.c: In function 'Encoder_CfgInitialize':
+encoder.c:124:67: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Encoder_CfgInitialize(Encoder * InstancePtr, Encoder_Config * Config, UINTPTR EffectiveAddr)
+                                                                   ^~~~~~
+encoder_selftest.c: In function 'ENCODER_Reg_SelfTest':
+encoder_selftest.c:51:56: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( ENCODER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                        ^~
+"Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/motor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/motor_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Motor..."
+motor.c: In function 'Motor_CfgInitialize':
+motor.c:124:61: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Motor_CfgInitialize(Motor * InstancePtr, Motor_Config * Config, UINTPTR EffectiveAddr)
+                                                             ^~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+motor.c: In function 'Motor_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+motor.c:139:6: note: declared here
+ void Motor_SetOverRide(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+motor.c:139:6: note: declared here
+ void Motor_SetOverRide(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+motor.c: In function 'Motor_SetSpeed':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+motor.c:157:6: note: declared here
+ void Motor_SetSpeed(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+motor.c:157:6: note: declared here
+ void Motor_SetSpeed(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+motor.c: In function 'Motor_SetEnable':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+motor.c:175:6: note: declared here
+ void Motor_SetEnable(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+motor.c:175:6: note: declared here
+ void Motor_SetEnable(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+motor_selftest.c: In function 'MOTOR_Reg_SelfTest':
+motor_selftest.c:51:54: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( MOTOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                      ^~
+"Running Make libs in ps7_cortexa9_0/libsrc/Odometer_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Odometer_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Odometer..."
+Odometer.c: In function 'Odometer_CfgInitialize':
+Odometer.c:124:70: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Odometer_CfgInitialize(Odometer * InstancePtr, Odometer_Config * Config, UINTPTR EffectiveAddr)
+                                                                      ^~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:139:6: note: declared here
+ void Odometer_SetOverRide(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:139:6: note: declared here
+ void Odometer_SetOverRide(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetIncrementsLeft':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:157:6: note: declared here
+ void Odometer_SetIncrementsLeft(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:157:6: note: declared here
+ void Odometer_SetIncrementsLeft(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetIncrementsRight':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:175:6: note: declared here
+ void Odometer_SetIncrementsRight(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:175:6: note: declared here
+ void Odometer_SetIncrementsRight(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetLap':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:196:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:193:6: note: declared here
+ void Odometer_SetLap(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:197:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:193:6: note: declared here
+ void Odometer_SetLap(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetReset':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:215:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:212:6: note: declared here
+ void Odometer_SetReset(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:216:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:212:6: note: declared here
+ void Odometer_SetReset(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+Odometer_selftest.c: In function 'ODOMETER_Reg_SelfTest':
+Odometer_selftest.c:52:57: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( ODOMETER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                         ^~
+Odometer_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/pid_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/pid_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling PID..."
+pid.c: In function 'PID_CfgInitialize':
+pid.c:124:55: warning: unused parameter 'Config' [-Wunused-parameter]
+ int PID_CfgInitialize(PID * InstancePtr, PID_Config * Config, UINTPTR EffectiveAddr)
+                                                       ^~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:139:6: note: declared here
+ void PID_SetOverRide(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:139:6: note: declared here
+ void PID_SetOverRide(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetReset':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:157:6: note: declared here
+ void PID_SetReset(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:157:6: note: declared here
+ void PID_SetReset(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetKp':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:175:6: note: declared here
+ void PID_SetKp(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:175:6: note: declared here
+ void PID_SetKp(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetKi':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:196:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:193:6: note: declared here
+ void PID_SetKi(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:197:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:193:6: note: declared here
+ void PID_SetKi(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetKd':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:214:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:211:6: note: declared here
+ void PID_SetKd(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:215:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:211:6: note: declared here
+ void PID_SetKd(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetError':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:232:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:229:6: note: declared here
+ void PID_SetError(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:233:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:229:6: note: declared here
+ void PID_SetError(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetErrorDeadband':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:250:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:247:6: note: declared here
+ void PID_SetErrorDeadband(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:251:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:247:6: note: declared here
+ void PID_SetErrorDeadband(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetMinOutput':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:268:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:265:6: note: declared here
+ void PID_SetMinOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:269:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:265:6: note: declared here
+ void PID_SetMinOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetMaxOutput':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:286:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:283:6: note: declared here
+ void PID_SetMaxOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:287:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:283:6: note: declared here
+ void PID_SetMaxOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+pid_selftest.c: In function 'PID_Reg_SelfTest':
+pid_selftest.c:52:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( PID_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                    ^~
+pid_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling scugic"
+xscugic_g.c:53:2: warning: missing initializer for field 'HandlerTable' of 'XScuGic_Config {aka struct <anonymous>}' [-Wmissing-field-initializers]
+  }
+  ^
+In file included from xscugic_g.c:41:0:
+xscugic.h:218:27: note: 'HandlerTable' declared here
+  XScuGic_VectorTableEntry HandlerTable[XSCUGIC_MAX_NUM_INTR_INPUTS];/**<
+                           ^~~~~~~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_3/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling standalone"
+"Running Make libs in ps7_cortexa9_0/libsrc/Subtractor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Subtractor_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Subtractor..."
+Subtractor.c: In function 'Subtractor_CfgInitialize':
+Subtractor.c:124:76: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Subtractor_CfgInitialize(Subtractor * InstancePtr, Subtractor_Config * Config, UINTPTR EffectiveAddr)
+                                                                            ^~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+Subtractor.c: In function 'Subtractor_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:139:6: note: declared here
+ void Subtractor_SetOverRide(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:139:6: note: declared here
+ void Subtractor_SetOverRide(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+Subtractor.c: In function 'Subtractor_SetAdd':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:157:6: note: declared here
+ void Subtractor_SetAdd(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:157:6: note: declared here
+ void Subtractor_SetAdd(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+Subtractor.c: In function 'Subtractor_SetSubtract':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:175:6: note: declared here
+ void Subtractor_SetSubtract(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:175:6: note: declared here
+ void Subtractor_SetSubtract(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+Subtractor_selftest.c: In function 'SUBTRACTOR_Reg_SelfTest':
+Subtractor_selftest.c:52:59: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( SUBTRACTOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                           ^~
+Subtractor_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+10:48:25 **** Auto Build of configuration Debug for project test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../test_bsp/ps7_cortexa9_0/lib -o "test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size test.elf  |tee "test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19384	   1148	  22568	  43100	   a85c	test.elf
+'Finished building: test.elf.size'
+' '
+10:58:12 **** Auto Build of project test_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/Derivator_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Derivator_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/encoder_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/encoder_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/motor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/motor_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/Odometer_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Odometer_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/pid_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/pid_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_3/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/Subtractor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Subtractor_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling coresightps_dcc"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/Derivator_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Derivator_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Derivator..."
+Derivator.c: In function 'Derivator_CfgInitialize':
+Derivator.c:124:73: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Derivator_CfgInitialize(Derivator * InstancePtr, Derivator_Config * Config, UINTPTR EffectiveAddr)
+                                                                         ^~~~~~
+In file included from Derivator.h:11:0,
+                 from Derivator.c:4:
+Derivator.c: In function 'Derivator_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Derivator.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Derivator.c:139:6: note: declared here
+ void Derivator_SetOverRide(Derivator *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from Derivator.h:11:0,
+                 from Derivator.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Derivator.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Derivator.c:139:6: note: declared here
+ void Derivator_SetOverRide(Derivator *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from Derivator.h:11:0,
+                 from Derivator.c:4:
+Derivator.c: In function 'Derivator_SetIncrements':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Derivator.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Derivator.c:157:6: note: declared here
+ void Derivator_SetIncrements(Derivator *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from Derivator.h:11:0,
+                 from Derivator.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Derivator.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Derivator.c:157:6: note: declared here
+ void Derivator_SetIncrements(Derivator *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~
+Derivator_selftest.c: In function 'DERIVATOR_Reg_SelfTest':
+Derivator_selftest.c:52:58: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( DERIVATOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                          ^~
+Derivator_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/encoder_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/encoder_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Encoder..."
+encoder.c: In function 'Encoder_CfgInitialize':
+encoder.c:124:67: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Encoder_CfgInitialize(Encoder * InstancePtr, Encoder_Config * Config, UINTPTR EffectiveAddr)
+                                                                   ^~~~~~
+encoder_selftest.c: In function 'ENCODER_Reg_SelfTest':
+encoder_selftest.c:51:56: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( ENCODER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                        ^~
+"Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/motor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/motor_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Motor..."
+motor.c: In function 'Motor_CfgInitialize':
+motor.c:124:61: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Motor_CfgInitialize(Motor * InstancePtr, Motor_Config * Config, UINTPTR EffectiveAddr)
+                                                             ^~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+motor.c: In function 'Motor_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+motor.c:139:6: note: declared here
+ void Motor_SetOverRide(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+motor.c:139:6: note: declared here
+ void Motor_SetOverRide(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+motor.c: In function 'Motor_SetEnable':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+motor.c:157:6: note: declared here
+ void Motor_SetEnable(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+motor.c:157:6: note: declared here
+ void Motor_SetEnable(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+motor.c: In function 'Motor_SetSpeed':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+motor.c:175:6: note: declared here
+ void Motor_SetSpeed(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+motor.c:175:6: note: declared here
+ void Motor_SetSpeed(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~
+motor_selftest.c: In function 'MOTOR_Reg_SelfTest':
+motor_selftest.c:51:54: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( MOTOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                      ^~
+"Running Make libs in ps7_cortexa9_0/libsrc/Odometer_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Odometer_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Odometer..."
+Odometer.c: In function 'Odometer_CfgInitialize':
+Odometer.c:124:70: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Odometer_CfgInitialize(Odometer * InstancePtr, Odometer_Config * Config, UINTPTR EffectiveAddr)
+                                                                      ^~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:139:6: note: declared here
+ void Odometer_SetOverRide(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:139:6: note: declared here
+ void Odometer_SetOverRide(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetIncrementsLeft':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:157:6: note: declared here
+ void Odometer_SetIncrementsLeft(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:157:6: note: declared here
+ void Odometer_SetIncrementsLeft(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetIncrementsRight':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:175:6: note: declared here
+ void Odometer_SetIncrementsRight(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:175:6: note: declared here
+ void Odometer_SetIncrementsRight(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetLap':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:196:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:193:6: note: declared here
+ void Odometer_SetLap(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:197:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:193:6: note: declared here
+ void Odometer_SetLap(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetReset':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:215:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:212:6: note: declared here
+ void Odometer_SetReset(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:216:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:212:6: note: declared here
+ void Odometer_SetReset(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+Odometer_selftest.c: In function 'ODOMETER_Reg_SelfTest':
+Odometer_selftest.c:52:57: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( ODOMETER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                         ^~
+Odometer_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/pid_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/pid_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling PID..."
+pid.c: In function 'PID_CfgInitialize':
+pid.c:124:55: warning: unused parameter 'Config' [-Wunused-parameter]
+ int PID_CfgInitialize(PID * InstancePtr, PID_Config * Config, UINTPTR EffectiveAddr)
+                                                       ^~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:139:6: note: declared here
+ void PID_SetOverRide(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:139:6: note: declared here
+ void PID_SetOverRide(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetReset':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:157:6: note: declared here
+ void PID_SetReset(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:157:6: note: declared here
+ void PID_SetReset(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetKp':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:175:6: note: declared here
+ void PID_SetKp(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:175:6: note: declared here
+ void PID_SetKp(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetKi':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:196:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:193:6: note: declared here
+ void PID_SetKi(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:197:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:193:6: note: declared here
+ void PID_SetKi(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetKd':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:214:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:211:6: note: declared here
+ void PID_SetKd(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:215:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:211:6: note: declared here
+ void PID_SetKd(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetError':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:232:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:229:6: note: declared here
+ void PID_SetError(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:233:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:229:6: note: declared here
+ void PID_SetError(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetErrorDeadband':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:250:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:247:6: note: declared here
+ void PID_SetErrorDeadband(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:251:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:247:6: note: declared here
+ void PID_SetErrorDeadband(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetMinOutput':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:268:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:265:6: note: declared here
+ void PID_SetMinOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:269:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:265:6: note: declared here
+ void PID_SetMinOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+pid.c: In function 'PID_SetMaxOutput':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:286:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+pid.c:283:6: note: declared here
+ void PID_SetMaxOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from pid.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+pid.c:287:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+pid.c:283:6: note: declared here
+ void PID_SetMaxOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+pid_selftest.c: In function 'PID_Reg_SelfTest':
+pid_selftest.c:52:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( PID_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                    ^~
+pid_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling scugic"
+xscugic_g.c:53:2: warning: missing initializer for field 'HandlerTable' of 'XScuGic_Config {aka struct <anonymous>}' [-Wmissing-field-initializers]
+  }
+  ^
+In file included from xscugic_g.c:41:0:
+xscugic.h:218:27: note: 'HandlerTable' declared here
+  XScuGic_VectorTableEntry HandlerTable[XSCUGIC_MAX_NUM_INTR_INPUTS];/**<
+                           ^~~~~~~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_3/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling standalone"
+"Running Make libs in ps7_cortexa9_0/libsrc/Subtractor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Subtractor_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Subtractor..."
+Subtractor.c: In function 'Subtractor_CfgInitialize':
+Subtractor.c:124:76: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Subtractor_CfgInitialize(Subtractor * InstancePtr, Subtractor_Config * Config, UINTPTR EffectiveAddr)
+                                                                            ^~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+Subtractor.c: In function 'Subtractor_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:139:6: note: declared here
+ void Subtractor_SetOverRide(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:139:6: note: declared here
+ void Subtractor_SetOverRide(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+Subtractor.c: In function 'Subtractor_SetAdd':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:157:6: note: declared here
+ void Subtractor_SetAdd(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:157:6: note: declared here
+ void Subtractor_SetAdd(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+Subtractor.c: In function 'Subtractor_SetSubtract':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:175:6: note: declared here
+ void Subtractor_SetSubtract(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:175:6: note: declared here
+ void Subtractor_SetSubtract(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+Subtractor_selftest.c: In function 'SUBTRACTOR_Reg_SelfTest':
+Subtractor_selftest.c:52:59: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( SUBTRACTOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                           ^~
+Subtractor_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+10:58:36 **** Auto Build of configuration Debug for project test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../test_bsp/ps7_cortexa9_0/lib -o "test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size test.elf  |tee "test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19384	   1148	  22568	  43100	   a85c	test.elf
+'Finished building: test.elf.size'
+' '
+10:59:42 **** Auto Build of project test_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/Derivator_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Derivator_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/encoder_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/encoder_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/motor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/motor_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/Odometer_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Odometer_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/pid_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/pid_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_7/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v6_3/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/Subtractor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Subtractor_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
+make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling coresightps_dcc"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/ddrps_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/ddrps_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling ddrps"
+"Running Make libs in ps7_cortexa9_0/libsrc/Derivator_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Derivator_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Derivator..."
+Derivator.c: In function 'Derivator_CfgInitialize':
+Derivator.c:124:73: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Derivator_CfgInitialize(Derivator * InstancePtr, Derivator_Config * Config, UINTPTR EffectiveAddr)
+                                                                         ^~~~~~
+In file included from Derivator.h:11:0,
+                 from Derivator.c:4:
+Derivator.c: In function 'Derivator_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Derivator.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Derivator.c:139:6: note: declared here
+ void Derivator_SetOverRide(Derivator *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from Derivator.h:11:0,
+                 from Derivator.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Derivator.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Derivator.c:139:6: note: declared here
+ void Derivator_SetOverRide(Derivator *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~
+In file included from Derivator.h:11:0,
+                 from Derivator.c:4:
+Derivator.c: In function 'Derivator_SetIncrements':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Derivator.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Derivator.c:157:6: note: declared here
+ void Derivator_SetIncrements(Derivator *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from Derivator.h:11:0,
+                 from Derivator.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Derivator.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Derivator.c:157:6: note: declared here
+ void Derivator_SetIncrements(Derivator *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~
+Derivator_selftest.c: In function 'DERIVATOR_Reg_SelfTest':
+Derivator_selftest.c:52:58: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( DERIVATOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                          ^~
+Derivator_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/encoder_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/encoder_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Encoder..."
+Encoder.c: In function 'Encoder_CfgInitialize':
+Encoder.c:124:67: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Encoder_CfgInitialize(Encoder * InstancePtr, Encoder_Config * Config, UINTPTR EffectiveAddr)
+                                                                   ^~~~~~
+Encoder_selftest.c: In function 'ENCODER_Reg_SelfTest':
+Encoder_selftest.c:51:56: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( ENCODER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                        ^~
+"Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
+make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling gpio"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/motor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/motor_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Motor..."
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+motor.c: In function 'Motor_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+motor.c:139:6: note: declared here
+ void Motor_SetOverRide(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+motor.c:139:6: note: declared here
+ void Motor_SetOverRide(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+motor.c: In function 'Motor_SetEnable':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+motor.c:157:6: note: declared here
+ void Motor_SetEnable(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+motor.c:157:6: note: declared here
+ void Motor_SetEnable(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+motor.c: In function 'Motor_SetSpeed':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+motor.c:175:6: note: declared here
+ void Motor_SetSpeed(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~
+In file included from Motor.h:11:0,
+                 from motor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+motor.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+motor.c:175:6: note: declared here
+ void Motor_SetSpeed(Motor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~
+motor_selftest.c: In function 'MOTOR_Reg_SelfTest':
+motor_selftest.c:51:54: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( MOTOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                      ^~
+"Running Make libs in ps7_cortexa9_0/libsrc/Odometer_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Odometer_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Odometer..."
+Odometer.c: In function 'Odometer_CfgInitialize':
+Odometer.c:124:70: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Odometer_CfgInitialize(Odometer * InstancePtr, Odometer_Config * Config, UINTPTR EffectiveAddr)
+                                                                      ^~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:139:6: note: declared here
+ void Odometer_SetOverRide(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:139:6: note: declared here
+ void Odometer_SetOverRide(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetIncrementsLeft':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:157:6: note: declared here
+ void Odometer_SetIncrementsLeft(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:157:6: note: declared here
+ void Odometer_SetIncrementsLeft(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetIncrementsRight':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:175:6: note: declared here
+ void Odometer_SetIncrementsRight(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:175:6: note: declared here
+ void Odometer_SetIncrementsRight(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetLap':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:196:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:193:6: note: declared here
+ void Odometer_SetLap(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:197:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:193:6: note: declared here
+ void Odometer_SetLap(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+Odometer.c: In function 'Odometer_SetReset':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:215:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:212:6: note: declared here
+ void Odometer_SetReset(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Odometer.h:11:0,
+                 from Odometer.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Odometer.c:216:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Odometer.c:212:6: note: declared here
+ void Odometer_SetReset(Odometer *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+Odometer_selftest.c: In function 'ODOMETER_Reg_SelfTest':
+Odometer_selftest.c:52:57: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( ODOMETER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                         ^~
+Odometer_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/pid_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/pid_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling PID..."
+PID.c: In function 'PID_CfgInitialize':
+PID.c:124:55: warning: unused parameter 'Config' [-Wunused-parameter]
+ int PID_CfgInitialize(PID * InstancePtr, PID_Config * Config, UINTPTR EffectiveAddr)
+                                                       ^~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:139:6: note: declared here
+ void PID_SetOverRide(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:139:6: note: declared here
+ void PID_SetOverRide(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_SetReset':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:157:6: note: declared here
+ void PID_SetReset(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:157:6: note: declared here
+ void PID_SetReset(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_SetKp':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:175:6: note: declared here
+ void PID_SetKp(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:175:6: note: declared here
+ void PID_SetKp(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_SetKi':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:196:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:193:6: note: declared here
+ void PID_SetKi(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:197:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:193:6: note: declared here
+ void PID_SetKi(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_SetKd':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:214:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:211:6: note: declared here
+ void PID_SetKd(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:215:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:211:6: note: declared here
+ void PID_SetKd(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_SetError':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:232:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:229:6: note: declared here
+ void PID_SetError(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:233:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:229:6: note: declared here
+ void PID_SetError(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_SetErrorDeadband':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:250:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:247:6: note: declared here
+ void PID_SetErrorDeadband(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:251:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:247:6: note: declared here
+ void PID_SetErrorDeadband(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_SetMinOutput':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:268:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:265:6: note: declared here
+ void PID_SetMinOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:269:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:265:6: note: declared here
+ void PID_SetMinOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+PID.c: In function 'PID_SetMaxOutput':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:286:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+PID.c:283:6: note: declared here
+ void PID_SetMaxOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+In file included from PID.h:12:0,
+                 from PID.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+PID.c:287:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+PID.c:283:6: note: declared here
+ void PID_SetMaxOutput(PID *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+PID_selftest.c: In function 'PID_Reg_SelfTest':
+PID_selftest.c:52:52: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( PID_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                    ^~
+PID_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v3_7/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v3_7/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling scugic"
+xscugic_g.c:53:2: warning: missing initializer for field 'HandlerTable' of 'XScuGic_Config {aka struct <anonymous>}' [-Wmissing-field-initializers]
+  }
+  ^
+In file included from xscugic_g.c:41:0:
+xscugic.h:218:27: note: 'HandlerTable' declared here
+  XScuGic_VectorTableEntry HandlerTable[XSCUGIC_MAX_NUM_INTR_INPUTS];/**<
+                           ^~~~~~~~~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v3_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v6_3/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v6_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling standalone"
+"Running Make libs in ps7_cortexa9_0/libsrc/Subtractor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Subtractor_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling Subtractor..."
+Subtractor.c: In function 'Subtractor_CfgInitialize':
+Subtractor.c:124:76: warning: unused parameter 'Config' [-Wunused-parameter]
+ int Subtractor_CfgInitialize(Subtractor * InstancePtr, Subtractor_Config * Config, UINTPTR EffectiveAddr)
+                                                                            ^~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+Subtractor.c: In function 'Subtractor_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:139:6: note: declared here
+ void Subtractor_SetOverRide(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:139:6: note: declared here
+ void Subtractor_SetOverRide(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+Subtractor.c: In function 'Subtractor_SetAdd':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:157:6: note: declared here
+ void Subtractor_SetAdd(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:157:6: note: declared here
+ void Subtractor_SetAdd(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+Subtractor.c: In function 'Subtractor_SetSubtract':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:178:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:175:6: note: declared here
+ void Subtractor_SetSubtract(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from Subtractor.h:12:0,
+                 from Subtractor.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Subtractor.c:179:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Subtractor.c:175:6: note: declared here
+ void Subtractor_SetSubtract(Subtractor *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~~~~
+Subtractor_selftest.c: In function 'SUBTRACTOR_Reg_SelfTest':
+Subtractor_selftest.c:52:59: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if ( SUBTRACTOR_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
+                                                           ^~
+Subtractor_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
+  int Index;
+      ^~~~~
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v3_3/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v3_4/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_4/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Compiling xadcps"
+'Finished building libraries'
+11:00:05 **** Auto Build of configuration Debug for project test ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/helloworld.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../test_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building target: test.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../test_bsp/ps7_cortexa9_0/lib -o "test.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: test.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size test.elf  |tee "test.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19384	   1148	  22568	  43100	   a85c	test.elf
+'Finished building: test.elf.size'
+' '

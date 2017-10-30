@@ -2,24 +2,25 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity Motor_v1_0_S00_AXI is
+entity Odometer_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
-        PWM_COUNTER_MAX : integer   := 2500;    -- 40 kHz with 100 MHz S_AXI_ACLK
+        LAP : integer   := 1;   -- Constante value of increments for the robot to do 360° 
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
 		-- Width of S_AXI data bus
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		-- Width of S_AXI address bus
-		C_S_AXI_ADDR_WIDTH	: integer	:= 4
+		C_S_AXI_ADDR_WIDTH	: integer	:= 5
 	);
 	port (
 		-- Users to add ports here
-        Speed   : in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
-        Sens    : out std_logic;
-        PWM     : out std_logic;
-        Enable  : out std_logic;
+		Reset               : in std_logic;
+        Increments_Left     : in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+        Increments_Right    : in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+        Angle               : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+        Distance            : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -84,16 +85,18 @@ entity Motor_v1_0_S00_AXI is
     		-- accept the read data and response information.
 		S_AXI_RREADY	: in std_logic
 	);
-end Motor_v1_0_S00_AXI;
+end Odometer_v1_0_S00_AXI;
 
-architecture arch_imp of Motor_v1_0_S00_AXI is
+architecture arch_imp of Odometer_v1_0_S00_AXI is
 
     -- USER signals
-    signal speed_i      : integer range 1-PWM_COUNTER_MAX to PWM_COUNTER_MAX-1  := 0;
-    signal compare_i    : integer range 0 to PWM_COUNTER_MAX-1  := 0;
-    signal counter_i    : integer range 0 to PWM_COUNTER_MAX-1  := 0;
-    signal pwm_i        : std_logic;
-    
+    signal reset_i      : std_logic;
+    signal left_i       : signed(C_S_AXI_DATA_WIDTH-1 downto 0);
+    signal right_i      : signed(C_S_AXI_DATA_WIDTH-1 downto 0);
+    signal lap_i        : signed(C_S_AXI_DATA_WIDTH-1 downto 0);
+    signal angle_i      : signed(C_S_AXI_DATA_WIDTH-1 downto 0);
+    signal distance_i   : signed(C_S_AXI_DATA_WIDTH-1 downto 0);
+            
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
 	signal axi_awready	: std_logic;
@@ -112,15 +115,19 @@ architecture arch_imp of Motor_v1_0_S00_AXI is
 	-- ADDR_LSB = 2 for 32 bits (n downto 2)
 	-- ADDR_LSB = 3 for 64 bits (n downto 3)
 	constant ADDR_LSB  : integer := (C_S_AXI_DATA_WIDTH/32)+ 1;
-	constant OPT_MEM_ADDR_BITS : integer := 1;
+	constant OPT_MEM_ADDR_BITS : integer := 2;
 	------------------------------------------------
 	---- Signals for user logic register space example
 	--------------------------------------------------
-	---- Number of Slave Registers 4
+	---- Number of Slave Registers 8
 	signal slv_reg0	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal slv_reg1	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal slv_reg2	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal slv_reg3	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+	signal slv_reg4	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+	signal slv_reg5	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+	signal slv_reg6	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+	signal slv_reg7	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal slv_reg_rden	: std_logic;
 	signal slv_reg_wren	: std_logic;
 	signal reg_data_out	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
@@ -226,11 +233,15 @@ begin
 	      slv_reg1 <= (others => '0');
 	      slv_reg2 <= (others => '0');
 	      slv_reg3 <= (others => '0');
+	      slv_reg4 <= (others => '0');
+	      slv_reg5 <= (others => '0');
+	      slv_reg6 <= (others => '0');
+	      slv_reg7 <= (others => '0');
 	    else
 	      loc_addr := axi_awaddr(ADDR_LSB + OPT_MEM_ADDR_BITS downto ADDR_LSB);
 	      if (slv_reg_wren = '1') then
 	        case loc_addr is
-	          when b"00" =>
+	          when b"000" =>
 	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
 	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
 	                -- Respective byte enables are asserted as per write strobes                   
@@ -238,7 +249,7 @@ begin
 	                slv_reg0(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
 	              end if;
 	            end loop;
-	          when b"01" =>
+	          when b"001" =>
 	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
 	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
 	                -- Respective byte enables are asserted as per write strobes                   
@@ -246,7 +257,7 @@ begin
 	                slv_reg1(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
 	              end if;
 	            end loop;
-	          when b"10" =>
+	          when b"010" =>
 	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
 	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
 	                -- Respective byte enables are asserted as per write strobes                   
@@ -254,7 +265,7 @@ begin
 	                slv_reg2(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
 	              end if;
 	            end loop;
-	          when b"11" =>
+	          when b"011" =>
 	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
 	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
 	                -- Respective byte enables are asserted as per write strobes                   
@@ -262,11 +273,47 @@ begin
 	                slv_reg3(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
 	              end if;
 	            end loop;
+	          when b"100" =>
+	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
+	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
+	                -- Respective byte enables are asserted as per write strobes                   
+	                -- slave registor 4
+	                slv_reg4(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+	              end if;
+	            end loop;
+	          when b"101" =>
+	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
+	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
+	                -- Respective byte enables are asserted as per write strobes                   
+	                -- slave registor 5
+	                slv_reg5(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+	              end if;
+	            end loop;
+	          when b"110" =>
+	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
+	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
+	                -- Respective byte enables are asserted as per write strobes                   
+	                -- slave registor 6
+	                slv_reg6(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+	              end if;
+	            end loop;
+	          when b"111" =>
+	            for byte_index in 0 to (C_S_AXI_DATA_WIDTH/8-1) loop
+	              if ( S_AXI_WSTRB(byte_index) = '1' ) then
+	                -- Respective byte enables are asserted as per write strobes                   
+	                -- slave registor 7
+	                slv_reg7(byte_index*8+7 downto byte_index*8) <= S_AXI_WDATA(byte_index*8+7 downto byte_index*8);
+	              end if;
+	            end loop;
 	          when others =>
 	            slv_reg0 <= slv_reg0;
 	            slv_reg1 <= slv_reg1;
 	            slv_reg2 <= slv_reg2;
 	            slv_reg3 <= slv_reg3;
+	            slv_reg4 <= slv_reg4;
+	            slv_reg5 <= slv_reg5;
+	            slv_reg6 <= slv_reg6;
+	            slv_reg7 <= slv_reg7;
 	        end case;
 	      end if;
 	    end if;
@@ -354,20 +401,28 @@ begin
 	-- and the slave is ready to accept the read address.
 	slv_reg_rden <= axi_arready and S_AXI_ARVALID and (not axi_rvalid) ;
 
-	process (slv_reg0, slv_reg1, slv_reg2, slv_reg3, axi_araddr, S_AXI_ARESETN, slv_reg_rden)
+	process (slv_reg0, slv_reg1, slv_reg2, slv_reg3, slv_reg4, slv_reg5, slv_reg6, slv_reg7, axi_araddr, S_AXI_ARESETN, slv_reg_rden)
 	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0);
 	begin
 	    -- Address decoding for reading registers
 	    loc_addr := axi_araddr(ADDR_LSB + OPT_MEM_ADDR_BITS downto ADDR_LSB);
 	    case loc_addr is
-	      when b"00" =>
+	      when b"000" =>
 	        reg_data_out <= slv_reg0;
-	      when b"01" =>
+	      when b"001" =>
 	        reg_data_out <= slv_reg1;
-	      when b"10" =>
-	        reg_data_out <= slv_reg2;
-	      when b"11" =>
-	        reg_data_out <= slv_reg3;
+	      when b"010" =>
+	        reg_data_out <= std_logic_vector(left_i);
+	      when b"011" =>
+	        reg_data_out <= std_logic_vector(right_i);
+	      when b"100" =>
+	        reg_data_out <= std_logic_vector(angle_i);
+	      when b"101" =>
+	        reg_data_out <= std_logic_vector(distance_i);
+	      when b"110" =>
+	        reg_data_out <= std_logic_vector(lap_i);
+	      when b"111" =>
+	        reg_data_out <= slv_reg7;
 	      when others =>
 	        reg_data_out  <= (others => '0');
 	    end case;
@@ -393,29 +448,30 @@ begin
 
 
 	-- Add user logic here
-	--reg0 = OverRide  (IN)
-	--reg1 = Speed     (IN  | PS)
-	--reg2 = Speed     (OUT | PL)
-	--reg4 = Enable    (IN)
+	--REG0 OverRide    (IN)
+	--REG1 Reset       (IN)
+	--REG2 Left        (INOUT)
+	--REG3 Right       (INOUT)
+	--REG4 Angle       (OUT)
+	--REG5 Distance    (OUT)
+	--REG6 Lap         (INOUT)
+	--REG7 NULL
+	
+	process ( S_AXI_ACLK ) is
+	begin
+	   if (rising_edge( S_AXI_ACLK )) then
+	       angle_i <= (left_i - right_i) / 2;
+	       distance_i <= (left_i + right_i) / 2;
+	   end if;
+	end process;
 
-    process( S_AXI_ACLK ) is
-    begin
-        if (rising_edge( S_AXI_ACLK )) then
-            if (counter_i = PWM_COUNTER_MAX-1) then
-                counter_i <= 0;
-            else
-                counter_i <= counter_i + 1;
-            end if;
-        end if;
-    end process;
-
-    speed_i <= to_integer(signed(slv_reg1)) when (to_integer(unsigned(slv_reg0)) = 1) else to_integer(signed(Speed));
-    compare_i   <= -speed_i when(speed_i < 0) else speed_i;
-    pwm_i       <= '1' when (counter_i < compare_i) else '0';
+    left_i  <= signed(slv_reg2) when (slv_reg0(0) = '1') else signed(Increments_Left);
+    right_i <= signed(slv_reg3) when (slv_reg0(0) = '1') else signed(Increments_Right);
+    reset_i <= slv_reg1(0) when (slv_reg0(1) = '1') else Reset;
+    lap_i   <= signed(slv_reg6) when (slv_reg0(2) = '1') else to_signed(LAP, C_S_AXI_DATA_WIDTH);
     
-    Sens    <= '1' when (speed_i < 0) else '0';
-    PWM     <= not(pwm_i) when (speed_i < 0) else pwm_i;
-    Enable  <= '1' when (to_integer(unsigned(slv_reg3)) = 1) else '0';
+    Angle       <= std_logic_vector(angle_i);
+    Distance    <= std_logic_vector(distance_i);
 
 	-- User logic ends
 

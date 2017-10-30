@@ -2,8 +2,8 @@
 # Vivado v2017.2 (64-bit)
 # SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
 # IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
-# Start of session at: Wed Oct 25 17:09:14 2017
-# Process ID: 10976
+# Start of session at: Mon Oct 30 10:53:41 2017
+# Process ID: 8092
 # Current directory: C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.runs/Test_Motor_0_1_synth_1
 # Command line: vivado.exe -log Test_Motor_0_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Test_Motor_0_1.tcl
 # Log file: C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.runs/Test_Motor_0_1_synth_1/Test_Motor_0_1.vds
@@ -15,33 +15,34 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010-clg400'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010-clg400'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 8084 
+INFO: Helper process launched with PID 5796 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 374.840 ; gain = 79.031
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 376.703 ; gain = 78.621
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Test_Motor_0_1' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Motor_0_1/synth/Test_Motor_0_1.vhd:86]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
 	Parameter PWM_COUNTER_MAX bound to: 2500 - type: integer 
-INFO: [Synth 8-3491] module 'Motor_v1_0' declared at 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/f15c/hdl/Motor_v1_0.vhd:5' bound to instance 'U0' of component 'Motor_v1_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Motor_0_1/synth/Test_Motor_0_1.vhd:152]
-INFO: [Synth 8-638] synthesizing module 'Motor_v1_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/f15c/hdl/Motor_v1_0.vhd:52]
+INFO: [Synth 8-3491] module 'Motor_v1_0' declared at 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/bf25/hdl/Motor_v1_0.vhd:5' bound to instance 'U0' of component 'Motor_v1_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Motor_0_1/synth/Test_Motor_0_1.vhd:152]
+INFO: [Synth 8-638] synthesizing module 'Motor_v1_0' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/bf25/hdl/Motor_v1_0.vhd:52]
 	Parameter PWM_COUNTER_MAX bound to: 2500 - type: integer 
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
 	Parameter PWM_COUNTER_MAX bound to: 2500 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'Motor_v1_0_S00_AXI' declared at 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/f15c/hdl/Motor_v1_0_S00_AXI.vhd:5' bound to instance 'Motor_v1_0_S00_AXI_inst' of component 'Motor_v1_0_S00_AXI' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/f15c/hdl/Motor_v1_0.vhd:93]
-INFO: [Synth 8-638] synthesizing module 'Motor_v1_0_S00_AXI' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/f15c/hdl/Motor_v1_0_S00_AXI.vhd:89]
+INFO: [Synth 8-3491] module 'Motor_v1_0_S00_AXI' declared at 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/bf25/hdl/Motor_v1_0_S00_AXI.vhd:5' bound to instance 'Motor_v1_0_S00_AXI_inst' of component 'Motor_v1_0_S00_AXI' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/bf25/hdl/Motor_v1_0.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'Motor_v1_0_S00_AXI' [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/bf25/hdl/Motor_v1_0_S00_AXI.vhd:89]
 	Parameter PWM_COUNTER_MAX bound to: 2500 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-226] default block is never used [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/f15c/hdl/Motor_v1_0_S00_AXI.vhd:232]
-INFO: [Synth 8-226] default block is never used [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/f15c/hdl/Motor_v1_0_S00_AXI.vhd:362]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/f15c/hdl/Motor_v1_0_S00_AXI.vhd:230]
-WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/f15c/hdl/Motor_v1_0_S00_AXI.vhd:361]
-INFO: [Synth 8-256] done synthesizing module 'Motor_v1_0_S00_AXI' (1#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/f15c/hdl/Motor_v1_0_S00_AXI.vhd:89]
-INFO: [Synth 8-256] done synthesizing module 'Motor_v1_0' (2#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/f15c/hdl/Motor_v1_0.vhd:52]
+INFO: [Synth 8-226] default block is never used [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/bf25/hdl/Motor_v1_0_S00_AXI.vhd:232]
+INFO: [Synth 8-226] default block is never used [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/bf25/hdl/Motor_v1_0_S00_AXI.vhd:362]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/bf25/hdl/Motor_v1_0_S00_AXI.vhd:227]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/bf25/hdl/Motor_v1_0_S00_AXI.vhd:230]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/bf25/hdl/Motor_v1_0_S00_AXI.vhd:361]
+INFO: [Synth 8-256] done synthesizing module 'Motor_v1_0_S00_AXI' (1#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/bf25/hdl/Motor_v1_0_S00_AXI.vhd:89]
+INFO: [Synth 8-256] done synthesizing module 'Motor_v1_0' (2#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ipshared/bf25/hdl/Motor_v1_0.vhd:52]
 INFO: [Synth 8-256] done synthesizing module 'Test_Motor_0_1' (3#1) [c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Motor_0_1/synth/Test_Motor_0_1.vhd:86]
 WARNING: [Synth 8-3331] design Motor_v1_0_S00_AXI has unconnected port Speed[31]
 WARNING: [Synth 8-3331] design Motor_v1_0_S00_AXI has unconnected port Speed[30]
@@ -69,7 +70,7 @@ WARNING: [Synth 8-3331] design Motor_v1_0_S00_AXI has unconnected port S_AXI_ARP
 WARNING: [Synth 8-3331] design Motor_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design Motor_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 415.172 ; gain = 119.363
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 416.781 ; gain = 118.699
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -79,7 +80,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 415.172 ; gain = 119.363
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 416.781 ; gain = 118.699
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -91,26 +92,26 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 708.105 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 710.094 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "Enable" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -125,14 +126,14 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     12 Bit       Adders := 2     
 +---Registers : 
-	               32 Bit    Registers := 5     
+	               32 Bit    Registers := 4     
 	               12 Bit    Registers := 1     
 	                4 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 6     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 4     
-	   4 Input     32 Bit        Muxes := 5     
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 4     
 	   2 Input     13 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 7     
@@ -148,14 +149,14 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     12 Bit       Adders := 2     
 +---Registers : 
-	               32 Bit    Registers := 5     
+	               32 Bit    Registers := 4     
 	               12 Bit    Registers := 1     
 	                4 Bit    Registers := 2     
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 6     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 4     
-	   4 Input     32 Bit        Muxes := 5     
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 4     
 	   2 Input     13 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 7     
@@ -213,7 +214,7 @@ INFO: [Synth 8-3332] Sequential element (U0/Motor_v1_0_S00_AXI_inst/axi_araddr_r
 INFO: [Synth 8-3332] Sequential element (U0/Motor_v1_0_S00_AXI_inst/axi_araddr_reg[0]) is unused and will be removed from module Test_Motor_0_1.
 INFO: [Synth 8-3332] Sequential element (U0/Motor_v1_0_S00_AXI_inst/axi_rresp_reg[1]) is unused and will be removed from module Test_Motor_0_1.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -225,13 +226,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -243,7 +244,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -267,7 +268,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -280,7 +281,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -292,25 +293,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -327,13 +328,13 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |CARRY4 |     8|
-|2     |LUT1   |    13|
-|3     |LUT2   |     2|
-|4     |LUT3   |     3|
-|5     |LUT4   |    37|
-|6     |LUT5   |    10|
-|7     |LUT6   |    81|
-|8     |FDRE   |   179|
+|2     |LUT1   |    14|
+|3     |LUT2   |     3|
+|4     |LUT3   |    16|
+|5     |LUT4   |    55|
+|6     |LUT5   |    17|
+|7     |LUT6   |    20|
+|8     |FDRE   |   147|
 |9     |FDSE   |     2|
 +------+-------+------+
 
@@ -341,16 +342,16 @@ Report Instance Areas:
 +------+----------------------------+-------------------+------+
 |      |Instance                    |Module             |Cells |
 +------+----------------------------+-------------------+------+
-|1     |top                         |                   |   335|
-|2     |  U0                        |Motor_v1_0         |   335|
-|3     |    Motor_v1_0_S00_AXI_inst |Motor_v1_0_S00_AXI |   335|
+|1     |top                         |                   |   282|
+|2     |  U0                        |Motor_v1_0         |   282|
+|3     |    Motor_v1_0_S00_AXI_inst |Motor_v1_0_S00_AXI |   282|
 +------+----------------------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.105 ; gain = 412.297
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 710.094 ; gain = 412.012
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 25 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 708.105 ; gain = 119.363
-Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 708.105 ; gain = 412.297
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 710.094 ; gain = 118.699
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 710.094 ; gain = 412.012
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -359,12 +360,12 @@ INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-34 Infos, 52 Warnings, 0 Critical Warnings and 0 Errors encountered.
+34 Infos, 53 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 708.105 ; gain = 414.922
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 710.094 ; gain = 416.641
 INFO: [Common 17-1381] The checkpoint 'C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.runs/Test_Motor_0_1_synth_1/Test_Motor_0_1.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Motor_0_1/Test_Motor_0_1.xci
 INFO: [Coretcl 2-1174] Renamed 2 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.runs/Test_Motor_0_1_synth_1/Test_Motor_0_1.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 708.105 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Wed Oct 25 17:09:51 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 710.094 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 30 10:54:14 2017...
