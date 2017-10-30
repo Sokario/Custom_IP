@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date             : Mon Oct 30 15:13:47 2017
+| Date             : Mon Oct 30 15:53:53 2017
 | Host             : LogOut-AsusPro running 64-bit major release  (build 9200)
 | Command          : report_power -file Test_wrapper_power_routed.rpt -pb Test_wrapper_power_summary_routed.pb -rpx Test_wrapper_power_routed.rpx
 | Design           : Test_wrapper
@@ -30,8 +30,8 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 1.703 |
-| Dynamic (W)              | 1.573 |
+| Total On-Chip Power (W)  | 1.702 |
+| Dynamic (W)              | 1.572 |
 | Device Static (W)        | 0.130 |
 | Effective TJA (C/W)      | 11.5  |
 | Max Ambient (C)          | 65.4  |
@@ -50,19 +50,19 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.008 |        3 |       --- |             --- |
-| Slice Logic             |     0.002 |     6043 |       --- |             --- |
-|   LUT as Logic          |     0.002 |     2194 |     17600 |           12.47 |
-|   CARRY4                |    <0.001 |      201 |      4400 |            4.57 |
+| Slice Logic             |     0.002 |     5834 |       --- |             --- |
+|   LUT as Logic          |     0.002 |     2090 |     17600 |           11.88 |
+|   CARRY4                |    <0.001 |      181 |      4400 |            4.11 |
 |   Register              |    <0.001 |     2628 |     35200 |            7.47 |
 |   F7/F8 Muxes           |    <0.001 |       63 |     17600 |            0.36 |
 |   LUT as Shift Register |    <0.001 |       62 |      6000 |            1.03 |
 |   Others                |     0.000 |      219 |       --- |             --- |
-| Signals                 |     0.004 |     5082 |       --- |             --- |
+| Signals                 |     0.004 |     4968 |       --- |             --- |
 | DSPs                    |    <0.001 |       12 |        80 |           15.00 |
 | I/O                     |     0.001 |        8 |       100 |            8.00 |
 | PS7                     |     1.556 |        1 |       --- |             --- |
 | Static Power            |     0.130 |          |           |                 |
-| Total                   |     1.703 |          |           |                 |
+| Total                   |     1.702 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,7 +72,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.022 |       0.015 |      0.007 |
+| Vccint    |       1.000 |     0.021 |       0.014 |      0.007 |
 | Vccaux    |       1.800 |     0.012 |       0.000 |      0.012 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |

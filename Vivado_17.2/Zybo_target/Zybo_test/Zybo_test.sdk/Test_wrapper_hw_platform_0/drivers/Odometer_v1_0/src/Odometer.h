@@ -21,6 +21,16 @@ extern "C" {
 #define ODOMETER_S00_AXI_SLV_REG6_OFFSET 24 // Lap
 #define ODOMETER_S00_AXI_SLV_REG7_OFFSET 28 // REG7
 
+#define ODOMETER_OVERRIDE_INDICE_LEFT   0
+#define ODOMETER_OVERRIDE_INDICE_RIGHT  1
+#define ODOMETER_OVERRIDE_INDICE_RESET  2
+#define ODOMETER_OVERRIDE_INDICE_LAP    3
+
+#define ODOMETER_OVERRIDE_MASK_LEFT     0x0001
+#define ODOMETER_OVERRIDE_MASK_RIGHT    0x0002
+#define ODOMETER_OVERRIDE_MASK_RESET    0x0004
+#define ODOMETER_OVERRIDE_MASK_LAP      0x0008
+
 
 /**************************** Type Definitions *****************************/
 /**
@@ -113,7 +123,7 @@ XStatus ODOMETER_Reg_SelfTest(void * baseaddr_p);
  */
 Odometer_Config *Odometer_LookupConfig(u16 DeviceId);
 int Odometer_Initialize(Odometer *InstancePtr, u16 DeviceId);
-int Odometer_CfgInitialize(Odometer *InstancePtr, Odometer_Config * Config, UINTPTR EffectiveAddr);
+int Odometer_CfgInitialize(Odometer *InstancePtr, UINTPTR EffectiveAddr);
 
 /*
  * API Basic functions implemented
@@ -131,6 +141,25 @@ void Odometer_SetReset(Odometer *InstancePtr, u32 Data);
 
 u32 Odometer_GetAngle(Odometer *InstancePtr);
 u32 Odometer_GetDistance(Odometer *InstancePtr);
+
+/*
+ * MACRO Basic functions implemented
+ */
+void Odometer_PS_OverRide_Left(Odometer *InstancePtr);
+void Odometer_PS_OverRide_DataLeft(Odometer *InstancePtr, u32 Data);
+void Odometer_PL_OverRide_Left(Odometer *InstancePtr);
+
+void Odometer_PS_OverRide_Right(Odometer *InstancePtr);
+void Odometer_PS_OverRide_DataRight(Odometer *InstancePtr, u32 Data);
+void Odometer_PL_OverRide_Right(Odometer *InstancePtr);
+
+void Odometer_PS_OverRide_Reset(Odometer *InstancePtr);
+void Odometer_PS_OverRide_DataReset(Odometer *InstancePtr, u32 Data);
+void Odometer_PL_OverRide_Reset(Odometer *InstancePtr);
+
+void Odometer_PS_OverRide_Lap(Odometer *InstancePtr);
+void Odometer_PS_OverRide_DataLap(Odometer *InstancePtr, u32 Data);
+void Odometer_PL_OverRide_Lap(Odometer *InstancePtr);
 
 #ifdef _cplusplus
 }

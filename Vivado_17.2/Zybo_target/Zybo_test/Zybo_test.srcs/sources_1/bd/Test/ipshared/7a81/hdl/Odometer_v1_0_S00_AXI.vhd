@@ -460,15 +460,15 @@ begin
 	process ( S_AXI_ACLK ) is
 	begin
 	   if (rising_edge( S_AXI_ACLK )) then
-	       angle_i <= (left_i - right_i) / 2;
+	       angle_i <= left_i - right_i;
 	       distance_i <= (left_i + right_i) / 2;
 	   end if;
 	end process;
 
     left_i  <= signed(slv_reg2) when (slv_reg0(0) = '1') else signed(Increments_Left);
-    right_i <= signed(slv_reg3) when (slv_reg0(0) = '1') else signed(Increments_Right);
-    reset_i <= slv_reg1(0) when (slv_reg0(1) = '1') else Reset;
-    lap_i   <= signed(slv_reg6) when (slv_reg0(2) = '1') else to_signed(LAP, C_S_AXI_DATA_WIDTH);
+    right_i <= signed(slv_reg3) when (slv_reg0(1) = '1') else signed(Increments_Right);
+    reset_i <= slv_reg1(0) when (slv_reg0(2) = '1') else Reset;
+    lap_i   <= signed(slv_reg6) when (slv_reg0(3) = '1') else to_signed(LAP, C_S_AXI_DATA_WIDTH);
     
     Angle       <= std_logic_vector(angle_i);
     Distance    <= std_logic_vector(distance_i);

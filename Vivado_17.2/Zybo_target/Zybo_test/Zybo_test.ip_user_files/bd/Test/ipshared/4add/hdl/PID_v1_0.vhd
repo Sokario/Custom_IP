@@ -2,27 +2,33 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity Odometer_v1_0 is
+entity PID_v1_0 is
 	generic (
 		-- Users to add parameters here
-        LAP : integer   := 1;   -- Constante value of increments for the robot to do 360° 
+		KP        : integer range 0 to 2147483647 := 1;   -- Proportional constant
+		KI        : integer range 0 to 2147483647 := 1;   -- Integral constant
+		KD        : integer range 0 to 2147483647 := 1;   -- Derivative constant
+        DEADBAND  : integer range 0 to 2147483647 := 1;   -- Negligible error limit
+        MIN       : integer range -2147483647 to 2147483647 := 1;   -- Minimum command limit
+        MAX       : integer range -2147483647 to 2147483647 := 1;   -- Maximum command limit
+		DIVIDER   : integer   := 390625;                  -- 100 MHz / 390625 = 256 Hz
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
 
 		-- Parameters of Axi Slave Bus Interface S00_AXI
 		C_S00_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S00_AXI_ADDR_WIDTH	: integer	:= 5
+		C_S00_AXI_ADDR_WIDTH	: integer	:= 6
 	);
 	port (
 		-- Users to add ports here
-        Reset               : in std_logic;
-        Increments_Left     : in std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
-        Increments_Right    : in std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
-        Angle               : out std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
-        Distance            : out std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
+        Reset   : in std_logic;
+        Error   : in std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
+        Command : out std_logic_vector(C_S00_AXI_DATA_WIDTH-1 downto 0);
+        Ended   : out std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
+
 
 		-- Ports of Axi Slave Bus Interface S00_AXI
 		s00_axi_aclk	: in std_logic;
@@ -47,23 +53,28 @@ entity Odometer_v1_0 is
 		s00_axi_rvalid	: out std_logic;
 		s00_axi_rready	: in std_logic
 	);
-end Odometer_v1_0;
+end PID_v1_0;
 
-architecture arch_imp of Odometer_v1_0 is
+architecture arch_imp of PID_v1_0 is
 
 	-- component declaration
-	component Odometer_v1_0_S00_AXI is
+	component PID_v1_0_S00_AXI is
 		generic (
-		LAP : integer   := 1; 
+		KP        : integer range 0 to 2147483647 := 1;
+        KI        : integer range 0 to 2147483647 := 1;
+        KD        : integer range 0 to 2147483647 := 1;
+        DEADBAND  : integer range 0 to 2147483647 := 1;
+        MIN       : integer range -2147483647 to 2147483647 := 1;
+        MAX       : integer range -2147483647 to 2147483647 := 1;
+        DIVIDER   : integer   := 390625;
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
-		C_S_AXI_ADDR_WIDTH	: integer	:= 5
+		C_S_AXI_ADDR_WIDTH	: integer	:= 6
 		);
 		port (
-		Reset               : in std_logic;
-        Increments_Left     : in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
-        Increments_Right    : in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
-        Angle               : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
-        Distance            : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+        Reset   : in std_logic;
+        Error   : in std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+        Command : out std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
+        Ended   : out std_logic;
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
 		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -86,23 +97,28 @@ architecture arch_imp of Odometer_v1_0 is
 		S_AXI_RVALID	: out std_logic;
 		S_AXI_RREADY	: in std_logic
 		);
-	end component Odometer_v1_0_S00_AXI;
+	end component PID_v1_0_S00_AXI;
 
 begin
 
 -- Instantiation of Axi Bus Interface S00_AXI
-Odometer_v1_0_S00_AXI_inst : Odometer_v1_0_S00_AXI
+PID_v1_0_S00_AXI_inst : PID_v1_0_S00_AXI
 	generic map (
-	    LAP    => LAP,
+        KP  => KP,
+        KI  => KI,
+        KD  => KD,
+        DEADBAND    => DEADBAND,
+        MIN => MIN,
+        MAX => MAX,
+        DIVIDER => DIVIDER,
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
 	)
 	port map (
-	    Reset  => Reset,
-	    Increments_Left    => Increments_Left,
-	    Increments_Right   => Increments_Right,
-	    Angle  => Angle,
-	    Distance   => Distance,
+        Reset   => Reset,
+        Error   => Error,
+        Command => Command,
+        Ended   => Ended,
 		S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,
