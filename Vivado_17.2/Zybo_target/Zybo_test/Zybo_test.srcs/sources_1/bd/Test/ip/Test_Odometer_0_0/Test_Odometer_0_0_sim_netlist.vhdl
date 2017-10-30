@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
--- Date        : Mon Oct 30 15:51:46 2017
+-- Date        : Mon Oct 30 16:14:30 2017
 -- Host        : LogOut-AsusPro running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               C:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Odometer_0_0/Test_Odometer_0_0_sim_netlist.vhdl
@@ -27,8 +27,8 @@ entity Test_Odometer_0_0_Odometer_v1_0_S00_AXI is
     s00_axi_awvalid : in STD_LOGIC;
     s00_axi_wvalid : in STD_LOGIC;
     s00_axi_arvalid : in STD_LOGIC;
-    Increments_Right : in STD_LOGIC_VECTOR ( 31 downto 0 );
     Increments_Left : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    Increments_Right : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -526,7 +526,7 @@ architecture STRUCTURE of Test_Odometer_0_0_Odometer_v1_0_S00_AXI is
   signal \distance_i_reg[8]_i_2_n_2\ : STD_LOGIC;
   signal \distance_i_reg[8]_i_2_n_3\ : STD_LOGIC;
   signal p_0_in : STD_LOGIC_VECTOR ( 2 downto 0 );
-  signal p_1_in : STD_LOGIC_VECTOR ( 31 downto 1 );
+  signal p_1_in : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal reg_data_out : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \^s00_axi_bvalid\ : STD_LOGIC;
   signal \^s00_axi_rvalid\ : STD_LOGIC;
@@ -627,7 +627,7 @@ architecture STRUCTURE of Test_Odometer_0_0_Odometer_v1_0_S00_AXI is
   attribute SOFT_HLUTNM of \axi_rdata[29]_i_4\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of \axi_rdata[2]_i_4\ : label is "soft_lutpair6";
   attribute SOFT_HLUTNM of \axi_rdata[30]_i_4\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \axi_rdata[31]_i_5\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \axi_rdata[31]_i_6\ : label is "soft_lutpair4";
   attribute SOFT_HLUTNM of \axi_rdata[3]_i_4\ : label is "soft_lutpair7";
   attribute SOFT_HLUTNM of \axi_rdata[4]_i_4\ : label is "soft_lutpair8";
   attribute SOFT_HLUTNM of \axi_rdata[5]_i_4\ : label is "soft_lutpair9";
@@ -656,7 +656,7 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       CO(1) => angle_i0_carry_n_2,
       CO(0) => angle_i0_carry_n_3,
       CYINIT => '1',
-      DI(3 downto 0) => \data2__0\(3 downto 0),
+      DI(3 downto 0) => \data3__0\(3 downto 0),
       O(3 downto 0) => angle_i0(3 downto 0),
       S(3) => angle_i0_carry_i_5_n_0,
       S(2) => angle_i0_carry_i_6_n_0,
@@ -671,7 +671,7 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       CO(1) => \angle_i0_carry__0_n_2\,
       CO(0) => \angle_i0_carry__0_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => \data2__0\(7 downto 4),
+      DI(3 downto 0) => \data3__0\(7 downto 4),
       O(3 downto 0) => angle_i0(7 downto 4),
       S(3) => \angle_i0_carry__0_i_5_n_0\,
       S(2) => \angle_i0_carry__0_i_6_n_0\,
@@ -683,52 +683,52 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(7),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(7),
-      O => \data2__0\(7)
+      I0 => slv_reg3(7),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(7),
+      O => \data3__0\(7)
     );
 \angle_i0_carry__0_i_2\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(6),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(6),
-      O => \data2__0\(6)
+      I0 => slv_reg3(6),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(6),
+      O => \data3__0\(6)
     );
 \angle_i0_carry__0_i_3\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(5),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(5),
-      O => \data2__0\(5)
+      I0 => slv_reg3(5),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(5),
+      O => \data3__0\(5)
     );
 \angle_i0_carry__0_i_4\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(4),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(4),
-      O => \data2__0\(4)
+      I0 => slv_reg3(4),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(4),
+      O => \data3__0\(4)
     );
 \angle_i0_carry__0_i_5\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(7),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(7),
-      I3 => Increments_Right(7),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(7),
+      I0 => Increments_Right(7),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(7),
+      I3 => Increments_Left(7),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(7),
       O => \angle_i0_carry__0_i_5_n_0\
     );
 \angle_i0_carry__0_i_6\: unisim.vcomponents.LUT6
@@ -736,12 +736,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(6),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(6),
-      I3 => Increments_Right(6),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(6),
+      I0 => Increments_Right(6),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(6),
+      I3 => Increments_Left(6),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(6),
       O => \angle_i0_carry__0_i_6_n_0\
     );
 \angle_i0_carry__0_i_7\: unisim.vcomponents.LUT6
@@ -749,12 +749,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(5),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(5),
-      I3 => Increments_Right(5),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(5),
+      I0 => Increments_Right(5),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(5),
+      I3 => Increments_Left(5),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(5),
       O => \angle_i0_carry__0_i_7_n_0\
     );
 \angle_i0_carry__0_i_8\: unisim.vcomponents.LUT6
@@ -762,12 +762,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(4),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(4),
-      I3 => Increments_Right(4),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(4),
+      I0 => Increments_Right(4),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(4),
+      I3 => Increments_Left(4),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(4),
       O => \angle_i0_carry__0_i_8_n_0\
     );
 \angle_i0_carry__1\: unisim.vcomponents.CARRY4
@@ -778,7 +778,7 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       CO(1) => \angle_i0_carry__1_n_2\,
       CO(0) => \angle_i0_carry__1_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => \data2__0\(11 downto 8),
+      DI(3 downto 0) => \data3__0\(11 downto 8),
       O(3 downto 0) => angle_i0(11 downto 8),
       S(3) => \angle_i0_carry__1_i_5_n_0\,
       S(2) => \angle_i0_carry__1_i_6_n_0\,
@@ -790,52 +790,52 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(11),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(11),
-      O => \data2__0\(11)
+      I0 => slv_reg3(11),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(11),
+      O => \data3__0\(11)
     );
 \angle_i0_carry__1_i_2\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(10),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(10),
-      O => \data2__0\(10)
+      I0 => slv_reg3(10),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(10),
+      O => \data3__0\(10)
     );
 \angle_i0_carry__1_i_3\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(9),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(9),
-      O => \data2__0\(9)
+      I0 => slv_reg3(9),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(9),
+      O => \data3__0\(9)
     );
 \angle_i0_carry__1_i_4\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(8),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(8),
-      O => \data2__0\(8)
+      I0 => slv_reg3(8),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(8),
+      O => \data3__0\(8)
     );
 \angle_i0_carry__1_i_5\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(11),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(11),
-      I3 => Increments_Right(11),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(11),
+      I0 => Increments_Right(11),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(11),
+      I3 => Increments_Left(11),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(11),
       O => \angle_i0_carry__1_i_5_n_0\
     );
 \angle_i0_carry__1_i_6\: unisim.vcomponents.LUT6
@@ -843,12 +843,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(10),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(10),
-      I3 => Increments_Right(10),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(10),
+      I0 => Increments_Right(10),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(10),
+      I3 => Increments_Left(10),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(10),
       O => \angle_i0_carry__1_i_6_n_0\
     );
 \angle_i0_carry__1_i_7\: unisim.vcomponents.LUT6
@@ -856,12 +856,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(9),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(9),
-      I3 => Increments_Right(9),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(9),
+      I0 => Increments_Right(9),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(9),
+      I3 => Increments_Left(9),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(9),
       O => \angle_i0_carry__1_i_7_n_0\
     );
 \angle_i0_carry__1_i_8\: unisim.vcomponents.LUT6
@@ -869,12 +869,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(8),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(8),
-      I3 => Increments_Right(8),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(8),
+      I0 => Increments_Right(8),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(8),
+      I3 => Increments_Left(8),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(8),
       O => \angle_i0_carry__1_i_8_n_0\
     );
 \angle_i0_carry__2\: unisim.vcomponents.CARRY4
@@ -885,7 +885,7 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       CO(1) => \angle_i0_carry__2_n_2\,
       CO(0) => \angle_i0_carry__2_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => \data2__0\(15 downto 12),
+      DI(3 downto 0) => \data3__0\(15 downto 12),
       O(3 downto 0) => angle_i0(15 downto 12),
       S(3) => \angle_i0_carry__2_i_5_n_0\,
       S(2) => \angle_i0_carry__2_i_6_n_0\,
@@ -897,52 +897,52 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(15),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(15),
-      O => \data2__0\(15)
+      I0 => slv_reg3(15),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(15),
+      O => \data3__0\(15)
     );
 \angle_i0_carry__2_i_2\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(14),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(14),
-      O => \data2__0\(14)
+      I0 => slv_reg3(14),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(14),
+      O => \data3__0\(14)
     );
 \angle_i0_carry__2_i_3\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(13),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(13),
-      O => \data2__0\(13)
+      I0 => slv_reg3(13),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(13),
+      O => \data3__0\(13)
     );
 \angle_i0_carry__2_i_4\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(12),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(12),
-      O => \data2__0\(12)
+      I0 => slv_reg3(12),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(12),
+      O => \data3__0\(12)
     );
 \angle_i0_carry__2_i_5\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(15),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(15),
-      I3 => Increments_Right(15),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(15),
+      I0 => Increments_Right(15),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(15),
+      I3 => Increments_Left(15),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(15),
       O => \angle_i0_carry__2_i_5_n_0\
     );
 \angle_i0_carry__2_i_6\: unisim.vcomponents.LUT6
@@ -950,12 +950,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(14),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(14),
-      I3 => Increments_Right(14),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(14),
+      I0 => Increments_Right(14),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(14),
+      I3 => Increments_Left(14),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(14),
       O => \angle_i0_carry__2_i_6_n_0\
     );
 \angle_i0_carry__2_i_7\: unisim.vcomponents.LUT6
@@ -963,12 +963,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(13),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(13),
-      I3 => Increments_Right(13),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(13),
+      I0 => Increments_Right(13),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(13),
+      I3 => Increments_Left(13),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(13),
       O => \angle_i0_carry__2_i_7_n_0\
     );
 \angle_i0_carry__2_i_8\: unisim.vcomponents.LUT6
@@ -976,12 +976,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(12),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(12),
-      I3 => Increments_Right(12),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(12),
+      I0 => Increments_Right(12),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(12),
+      I3 => Increments_Left(12),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(12),
       O => \angle_i0_carry__2_i_8_n_0\
     );
 \angle_i0_carry__3\: unisim.vcomponents.CARRY4
@@ -992,7 +992,7 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       CO(1) => \angle_i0_carry__3_n_2\,
       CO(0) => \angle_i0_carry__3_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => \data2__0\(19 downto 16),
+      DI(3 downto 0) => \data3__0\(19 downto 16),
       O(3 downto 0) => angle_i0(19 downto 16),
       S(3) => \angle_i0_carry__3_i_5_n_0\,
       S(2) => \angle_i0_carry__3_i_6_n_0\,
@@ -1004,52 +1004,52 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(19),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(19),
-      O => \data2__0\(19)
+      I0 => slv_reg3(19),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(19),
+      O => \data3__0\(19)
     );
 \angle_i0_carry__3_i_2\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(18),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(18),
-      O => \data2__0\(18)
+      I0 => slv_reg3(18),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(18),
+      O => \data3__0\(18)
     );
 \angle_i0_carry__3_i_3\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(17),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(17),
-      O => \data2__0\(17)
+      I0 => slv_reg3(17),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(17),
+      O => \data3__0\(17)
     );
 \angle_i0_carry__3_i_4\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(16),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(16),
-      O => \data2__0\(16)
+      I0 => slv_reg3(16),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(16),
+      O => \data3__0\(16)
     );
 \angle_i0_carry__3_i_5\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(19),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(19),
-      I3 => Increments_Right(19),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(19),
+      I0 => Increments_Right(19),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(19),
+      I3 => Increments_Left(19),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(19),
       O => \angle_i0_carry__3_i_5_n_0\
     );
 \angle_i0_carry__3_i_6\: unisim.vcomponents.LUT6
@@ -1057,12 +1057,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(18),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(18),
-      I3 => Increments_Right(18),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(18),
+      I0 => Increments_Right(18),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(18),
+      I3 => Increments_Left(18),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(18),
       O => \angle_i0_carry__3_i_6_n_0\
     );
 \angle_i0_carry__3_i_7\: unisim.vcomponents.LUT6
@@ -1070,12 +1070,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(17),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(17),
-      I3 => Increments_Right(17),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(17),
+      I0 => Increments_Right(17),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(17),
+      I3 => Increments_Left(17),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(17),
       O => \angle_i0_carry__3_i_7_n_0\
     );
 \angle_i0_carry__3_i_8\: unisim.vcomponents.LUT6
@@ -1083,12 +1083,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(16),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(16),
-      I3 => Increments_Right(16),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(16),
+      I0 => Increments_Right(16),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(16),
+      I3 => Increments_Left(16),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(16),
       O => \angle_i0_carry__3_i_8_n_0\
     );
 \angle_i0_carry__4\: unisim.vcomponents.CARRY4
@@ -1099,7 +1099,7 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       CO(1) => \angle_i0_carry__4_n_2\,
       CO(0) => \angle_i0_carry__4_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => \data2__0\(23 downto 20),
+      DI(3 downto 0) => \data3__0\(23 downto 20),
       O(3 downto 0) => angle_i0(23 downto 20),
       S(3) => \angle_i0_carry__4_i_5_n_0\,
       S(2) => \angle_i0_carry__4_i_6_n_0\,
@@ -1111,52 +1111,52 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(23),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(23),
-      O => \data2__0\(23)
+      I0 => slv_reg3(23),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(23),
+      O => \data3__0\(23)
     );
 \angle_i0_carry__4_i_2\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(22),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(22),
-      O => \data2__0\(22)
+      I0 => slv_reg3(22),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(22),
+      O => \data3__0\(22)
     );
 \angle_i0_carry__4_i_3\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(21),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(21),
-      O => \data2__0\(21)
+      I0 => slv_reg3(21),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(21),
+      O => \data3__0\(21)
     );
 \angle_i0_carry__4_i_4\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(20),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(20),
-      O => \data2__0\(20)
+      I0 => slv_reg3(20),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(20),
+      O => \data3__0\(20)
     );
 \angle_i0_carry__4_i_5\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(23),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(23),
-      I3 => Increments_Right(23),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(23),
+      I0 => Increments_Right(23),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(23),
+      I3 => Increments_Left(23),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(23),
       O => \angle_i0_carry__4_i_5_n_0\
     );
 \angle_i0_carry__4_i_6\: unisim.vcomponents.LUT6
@@ -1164,12 +1164,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(22),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(22),
-      I3 => Increments_Right(22),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(22),
+      I0 => Increments_Right(22),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(22),
+      I3 => Increments_Left(22),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(22),
       O => \angle_i0_carry__4_i_6_n_0\
     );
 \angle_i0_carry__4_i_7\: unisim.vcomponents.LUT6
@@ -1177,12 +1177,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(21),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(21),
-      I3 => Increments_Right(21),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(21),
+      I0 => Increments_Right(21),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(21),
+      I3 => Increments_Left(21),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(21),
       O => \angle_i0_carry__4_i_7_n_0\
     );
 \angle_i0_carry__4_i_8\: unisim.vcomponents.LUT6
@@ -1190,12 +1190,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(20),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(20),
-      I3 => Increments_Right(20),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(20),
+      I0 => Increments_Right(20),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(20),
+      I3 => Increments_Left(20),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(20),
       O => \angle_i0_carry__4_i_8_n_0\
     );
 \angle_i0_carry__5\: unisim.vcomponents.CARRY4
@@ -1206,7 +1206,7 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       CO(1) => \angle_i0_carry__5_n_2\,
       CO(0) => \angle_i0_carry__5_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => \data2__0\(27 downto 24),
+      DI(3 downto 0) => \data3__0\(27 downto 24),
       O(3 downto 0) => angle_i0(27 downto 24),
       S(3) => \angle_i0_carry__5_i_5_n_0\,
       S(2) => \angle_i0_carry__5_i_6_n_0\,
@@ -1218,52 +1218,52 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(27),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(27),
-      O => \data2__0\(27)
+      I0 => slv_reg3(27),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(27),
+      O => \data3__0\(27)
     );
 \angle_i0_carry__5_i_2\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(26),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(26),
-      O => \data2__0\(26)
+      I0 => slv_reg3(26),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(26),
+      O => \data3__0\(26)
     );
 \angle_i0_carry__5_i_3\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(25),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(25),
-      O => \data2__0\(25)
+      I0 => slv_reg3(25),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(25),
+      O => \data3__0\(25)
     );
 \angle_i0_carry__5_i_4\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(24),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(24),
-      O => \data2__0\(24)
+      I0 => slv_reg3(24),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(24),
+      O => \data3__0\(24)
     );
 \angle_i0_carry__5_i_5\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(27),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(27),
-      I3 => Increments_Right(27),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(27),
+      I0 => Increments_Right(27),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(27),
+      I3 => Increments_Left(27),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(27),
       O => \angle_i0_carry__5_i_5_n_0\
     );
 \angle_i0_carry__5_i_6\: unisim.vcomponents.LUT6
@@ -1271,12 +1271,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(26),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(26),
-      I3 => Increments_Right(26),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(26),
+      I0 => Increments_Right(26),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(26),
+      I3 => Increments_Left(26),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(26),
       O => \angle_i0_carry__5_i_6_n_0\
     );
 \angle_i0_carry__5_i_7\: unisim.vcomponents.LUT6
@@ -1284,12 +1284,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(25),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(25),
-      I3 => Increments_Right(25),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(25),
+      I0 => Increments_Right(25),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(25),
+      I3 => Increments_Left(25),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(25),
       O => \angle_i0_carry__5_i_7_n_0\
     );
 \angle_i0_carry__5_i_8\: unisim.vcomponents.LUT6
@@ -1297,12 +1297,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(24),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(24),
-      I3 => Increments_Right(24),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(24),
+      I0 => Increments_Right(24),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(24),
+      I3 => Increments_Left(24),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(24),
       O => \angle_i0_carry__5_i_8_n_0\
     );
 \angle_i0_carry__6\: unisim.vcomponents.CARRY4
@@ -1314,7 +1314,7 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       CO(0) => \angle_i0_carry__6_n_3\,
       CYINIT => '0',
       DI(3) => '0',
-      DI(2 downto 0) => \data2__0\(30 downto 28),
+      DI(2 downto 0) => \data3__0\(30 downto 28),
       O(3 downto 0) => angle_i0(31 downto 28),
       S(3) => \angle_i0_carry__6_i_4_n_0\,
       S(2) => \angle_i0_carry__6_i_5_n_0\,
@@ -1326,42 +1326,42 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(30),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(30),
-      O => \data2__0\(30)
+      I0 => slv_reg3(30),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(30),
+      O => \data3__0\(30)
     );
 \angle_i0_carry__6_i_2\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(29),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(29),
-      O => \data2__0\(29)
+      I0 => slv_reg3(29),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(29),
+      O => \data3__0\(29)
     );
 \angle_i0_carry__6_i_3\: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(28),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(28),
-      O => \data2__0\(28)
+      I0 => slv_reg3(28),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(28),
+      O => \data3__0\(28)
     );
 \angle_i0_carry__6_i_4\: unisim.vcomponents.LUT6
     generic map(
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(31),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(31),
-      I3 => Increments_Right(31),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(31),
+      I0 => Increments_Right(31),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(31),
+      I3 => Increments_Left(31),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(31),
       O => \angle_i0_carry__6_i_4_n_0\
     );
 \angle_i0_carry__6_i_5\: unisim.vcomponents.LUT6
@@ -1369,12 +1369,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(30),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(30),
-      I3 => Increments_Right(30),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(30),
+      I0 => Increments_Right(30),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(30),
+      I3 => Increments_Left(30),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(30),
       O => \angle_i0_carry__6_i_5_n_0\
     );
 \angle_i0_carry__6_i_6\: unisim.vcomponents.LUT6
@@ -1382,12 +1382,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(29),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(29),
-      I3 => Increments_Right(29),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(29),
+      I0 => Increments_Right(29),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(29),
+      I3 => Increments_Left(29),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(29),
       O => \angle_i0_carry__6_i_6_n_0\
     );
 \angle_i0_carry__6_i_7\: unisim.vcomponents.LUT6
@@ -1395,12 +1395,12 @@ angle_i0_carry: unisim.vcomponents.CARRY4
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(28),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(28),
-      I3 => Increments_Right(28),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(28),
+      I0 => Increments_Right(28),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(28),
+      I3 => Increments_Left(28),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(28),
       O => \angle_i0_carry__6_i_7_n_0\
     );
 angle_i0_carry_i_1: unisim.vcomponents.LUT3
@@ -1408,52 +1408,52 @@ angle_i0_carry_i_1: unisim.vcomponents.LUT3
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(3),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(3),
-      O => \data2__0\(3)
+      I0 => slv_reg3(3),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(3),
+      O => \data3__0\(3)
     );
 angle_i0_carry_i_2: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(2),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(2),
-      O => \data2__0\(2)
+      I0 => slv_reg3(2),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(2),
+      O => \data3__0\(2)
     );
 angle_i0_carry_i_3: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(1),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(1),
-      O => \data2__0\(1)
+      I0 => slv_reg3(1),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(1),
+      O => \data3__0\(1)
     );
 angle_i0_carry_i_4: unisim.vcomponents.LUT3
     generic map(
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg2(0),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => Increments_Left(0),
-      O => \data2__0\(0)
+      I0 => slv_reg3(0),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => Increments_Right(0),
+      O => \data3__0\(0)
     );
 angle_i0_carry_i_5: unisim.vcomponents.LUT6
     generic map(
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(3),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(3),
-      I3 => Increments_Right(3),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(3),
+      I0 => Increments_Right(3),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(3),
+      I3 => Increments_Left(3),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(3),
       O => angle_i0_carry_i_5_n_0
     );
 angle_i0_carry_i_6: unisim.vcomponents.LUT6
@@ -1461,12 +1461,12 @@ angle_i0_carry_i_6: unisim.vcomponents.LUT6
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(2),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(2),
-      I3 => Increments_Right(2),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(2),
+      I0 => Increments_Right(2),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(2),
+      I3 => Increments_Left(2),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(2),
       O => angle_i0_carry_i_6_n_0
     );
 angle_i0_carry_i_7: unisim.vcomponents.LUT6
@@ -1474,12 +1474,12 @@ angle_i0_carry_i_7: unisim.vcomponents.LUT6
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(1),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(1),
-      I3 => Increments_Right(1),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(1),
+      I0 => Increments_Right(1),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(1),
+      I3 => Increments_Left(1),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(1),
       O => angle_i0_carry_i_7_n_0
     );
 angle_i0_carry_i_8: unisim.vcomponents.LUT6
@@ -1487,12 +1487,12 @@ angle_i0_carry_i_8: unisim.vcomponents.LUT6
       INIT => X"E2E2E21D1D1DE21D"
     )
         port map (
-      I0 => Increments_Left(0),
-      I1 => \slv_reg0_reg_n_0_[0]\,
-      I2 => slv_reg2(0),
-      I3 => Increments_Right(0),
-      I4 => \slv_reg0_reg_n_0_[1]\,
-      I5 => slv_reg3(0),
+      I0 => Increments_Right(0),
+      I1 => \slv_reg0_reg_n_0_[1]\,
+      I2 => slv_reg3(0),
+      I3 => Increments_Left(0),
+      I4 => \slv_reg0_reg_n_0_[0]\,
+      I5 => slv_reg2(0),
       O => angle_i0_carry_i_8_n_0
     );
 \angle_i_reg[0]\: unisim.vcomponents.FDRE
@@ -1962,10 +1962,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(0),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(0),
-      O => \data3__0\(0)
+      I0 => slv_reg2(0),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(0),
+      O => \data2__0\(0)
     );
 \axi_rdata[0]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2009,10 +2009,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(10),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(10),
-      O => \data3__0\(10)
+      I0 => slv_reg2(10),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(10),
+      O => \data2__0\(10)
     );
 \axi_rdata[10]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2056,10 +2056,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(11),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(11),
-      O => \data3__0\(11)
+      I0 => slv_reg2(11),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(11),
+      O => \data2__0\(11)
     );
 \axi_rdata[11]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2103,10 +2103,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(12),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(12),
-      O => \data3__0\(12)
+      I0 => slv_reg2(12),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(12),
+      O => \data2__0\(12)
     );
 \axi_rdata[12]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2150,10 +2150,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(13),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(13),
-      O => \data3__0\(13)
+      I0 => slv_reg2(13),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(13),
+      O => \data2__0\(13)
     );
 \axi_rdata[13]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2197,10 +2197,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(14),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(14),
-      O => \data3__0\(14)
+      I0 => slv_reg2(14),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(14),
+      O => \data2__0\(14)
     );
 \axi_rdata[14]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2244,10 +2244,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(15),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(15),
-      O => \data3__0\(15)
+      I0 => slv_reg2(15),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(15),
+      O => \data2__0\(15)
     );
 \axi_rdata[15]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2291,10 +2291,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(16),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(16),
-      O => \data3__0\(16)
+      I0 => slv_reg2(16),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(16),
+      O => \data2__0\(16)
     );
 \axi_rdata[16]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2338,10 +2338,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(17),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(17),
-      O => \data3__0\(17)
+      I0 => slv_reg2(17),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(17),
+      O => \data2__0\(17)
     );
 \axi_rdata[17]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2385,10 +2385,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(18),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(18),
-      O => \data3__0\(18)
+      I0 => slv_reg2(18),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(18),
+      O => \data2__0\(18)
     );
 \axi_rdata[18]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2432,10 +2432,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(19),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(19),
-      O => \data3__0\(19)
+      I0 => slv_reg2(19),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(19),
+      O => \data2__0\(19)
     );
 \axi_rdata[19]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2479,10 +2479,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(1),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(1),
-      O => \data3__0\(1)
+      I0 => slv_reg2(1),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(1),
+      O => \data2__0\(1)
     );
 \axi_rdata[1]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2526,10 +2526,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(20),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(20),
-      O => \data3__0\(20)
+      I0 => slv_reg2(20),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(20),
+      O => \data2__0\(20)
     );
 \axi_rdata[20]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2573,10 +2573,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(21),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(21),
-      O => \data3__0\(21)
+      I0 => slv_reg2(21),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(21),
+      O => \data2__0\(21)
     );
 \axi_rdata[21]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2620,10 +2620,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(22),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(22),
-      O => \data3__0\(22)
+      I0 => slv_reg2(22),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(22),
+      O => \data2__0\(22)
     );
 \axi_rdata[22]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2667,10 +2667,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(23),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(23),
-      O => \data3__0\(23)
+      I0 => slv_reg2(23),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(23),
+      O => \data2__0\(23)
     );
 \axi_rdata[23]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2714,10 +2714,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(24),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(24),
-      O => \data3__0\(24)
+      I0 => slv_reg2(24),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(24),
+      O => \data2__0\(24)
     );
 \axi_rdata[24]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2761,10 +2761,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(25),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(25),
-      O => \data3__0\(25)
+      I0 => slv_reg2(25),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(25),
+      O => \data2__0\(25)
     );
 \axi_rdata[25]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2808,10 +2808,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(26),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(26),
-      O => \data3__0\(26)
+      I0 => slv_reg2(26),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(26),
+      O => \data2__0\(26)
     );
 \axi_rdata[26]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2855,10 +2855,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(27),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(27),
-      O => \data3__0\(27)
+      I0 => slv_reg2(27),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(27),
+      O => \data2__0\(27)
     );
 \axi_rdata[27]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2902,10 +2902,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(28),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(28),
-      O => \data3__0\(28)
+      I0 => slv_reg2(28),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(28),
+      O => \data2__0\(28)
     );
 \axi_rdata[28]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2949,10 +2949,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(29),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(29),
-      O => \data3__0\(29)
+      I0 => slv_reg2(29),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(29),
+      O => \data2__0\(29)
     );
 \axi_rdata[29]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -2996,10 +2996,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(2),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(2),
-      O => \data3__0\(2)
+      I0 => slv_reg2(2),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(2),
+      O => \data2__0\(2)
     );
 \axi_rdata[2]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -3043,10 +3043,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(30),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(30),
-      O => \data3__0\(30)
+      I0 => slv_reg2(30),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(30),
+      O => \data2__0\(30)
     );
 \axi_rdata[30]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -3157,10 +3157,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(3),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(3),
-      O => \data3__0\(3)
+      I0 => slv_reg2(3),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(3),
+      O => \data2__0\(3)
     );
 \axi_rdata[3]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -3204,10 +3204,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(4),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(4),
-      O => \data3__0\(4)
+      I0 => slv_reg2(4),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(4),
+      O => \data2__0\(4)
     );
 \axi_rdata[4]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -3251,10 +3251,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(5),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(5),
-      O => \data3__0\(5)
+      I0 => slv_reg2(5),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(5),
+      O => \data2__0\(5)
     );
 \axi_rdata[5]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -3298,10 +3298,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(6),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(6),
-      O => \data3__0\(6)
+      I0 => slv_reg2(6),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(6),
+      O => \data2__0\(6)
     );
 \axi_rdata[6]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -3345,10 +3345,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(7),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(7),
-      O => \data3__0\(7)
+      I0 => slv_reg2(7),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(7),
+      O => \data2__0\(7)
     );
 \axi_rdata[7]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -3392,10 +3392,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(8),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(8),
-      O => \data3__0\(8)
+      I0 => slv_reg2(8),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(8),
+      O => \data2__0\(8)
     );
 \axi_rdata[8]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -3439,10 +3439,10 @@ axi_bvalid_reg: unisim.vcomponents.FDRE
       INIT => X"B8"
     )
         port map (
-      I0 => slv_reg3(9),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(9),
-      O => \data3__0\(9)
+      I0 => slv_reg2(9),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(9),
+      O => \data2__0\(9)
     );
 \axi_rdata[9]_i_5\: unisim.vcomponents.LUT5
     generic map(
@@ -3981,7 +3981,7 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       CO(1) => distance_i3_carry_n_2,
       CO(0) => distance_i3_carry_n_3,
       CYINIT => '0',
-      DI(3 downto 0) => \data2__0\(3 downto 0),
+      DI(3 downto 0) => \data3__0\(3 downto 0),
       O(3) => distance_i3_carry_n_4,
       O(2) => distance_i3_carry_n_5,
       O(1) => distance_i3_carry_n_6,
@@ -3999,7 +3999,7 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       CO(1) => \distance_i3_carry__0_n_2\,
       CO(0) => \distance_i3_carry__0_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => \data2__0\(7 downto 4),
+      DI(3 downto 0) => \data3__0\(7 downto 4),
       O(3) => \distance_i3_carry__0_n_4\,
       O(2) => \distance_i3_carry__0_n_5\,
       O(1) => \distance_i3_carry__0_n_6\,
@@ -4014,12 +4014,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(7),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(7),
-      I3 => slv_reg2(7),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(7),
+      I0 => slv_reg2(7),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(7),
+      I3 => slv_reg3(7),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(7),
       O => \distance_i3_carry__0_i_1_n_0\
     );
 \distance_i3_carry__0_i_2\: unisim.vcomponents.LUT6
@@ -4027,12 +4027,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(6),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(6),
-      I3 => slv_reg2(6),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(6),
+      I0 => slv_reg2(6),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(6),
+      I3 => slv_reg3(6),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(6),
       O => \distance_i3_carry__0_i_2_n_0\
     );
 \distance_i3_carry__0_i_3\: unisim.vcomponents.LUT6
@@ -4040,12 +4040,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(5),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(5),
-      I3 => slv_reg2(5),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(5),
+      I0 => slv_reg2(5),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(5),
+      I3 => slv_reg3(5),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(5),
       O => \distance_i3_carry__0_i_3_n_0\
     );
 \distance_i3_carry__0_i_4\: unisim.vcomponents.LUT6
@@ -4053,12 +4053,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(4),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(4),
-      I3 => slv_reg2(4),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(4),
+      I0 => slv_reg2(4),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(4),
+      I3 => slv_reg3(4),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(4),
       O => \distance_i3_carry__0_i_4_n_0\
     );
 \distance_i3_carry__1\: unisim.vcomponents.CARRY4
@@ -4069,7 +4069,7 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       CO(1) => \distance_i3_carry__1_n_2\,
       CO(0) => \distance_i3_carry__1_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => \data2__0\(11 downto 8),
+      DI(3 downto 0) => \data3__0\(11 downto 8),
       O(3) => \distance_i3_carry__1_n_4\,
       O(2) => \distance_i3_carry__1_n_5\,
       O(1) => \distance_i3_carry__1_n_6\,
@@ -4084,12 +4084,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(11),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(11),
-      I3 => slv_reg2(11),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(11),
+      I0 => slv_reg2(11),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(11),
+      I3 => slv_reg3(11),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(11),
       O => \distance_i3_carry__1_i_1_n_0\
     );
 \distance_i3_carry__1_i_2\: unisim.vcomponents.LUT6
@@ -4097,12 +4097,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(10),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(10),
-      I3 => slv_reg2(10),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(10),
+      I0 => slv_reg2(10),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(10),
+      I3 => slv_reg3(10),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(10),
       O => \distance_i3_carry__1_i_2_n_0\
     );
 \distance_i3_carry__1_i_3\: unisim.vcomponents.LUT6
@@ -4110,12 +4110,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(9),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(9),
-      I3 => slv_reg2(9),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(9),
+      I0 => slv_reg2(9),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(9),
+      I3 => slv_reg3(9),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(9),
       O => \distance_i3_carry__1_i_3_n_0\
     );
 \distance_i3_carry__1_i_4\: unisim.vcomponents.LUT6
@@ -4123,12 +4123,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(8),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(8),
-      I3 => slv_reg2(8),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(8),
+      I0 => slv_reg2(8),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(8),
+      I3 => slv_reg3(8),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(8),
       O => \distance_i3_carry__1_i_4_n_0\
     );
 \distance_i3_carry__2\: unisim.vcomponents.CARRY4
@@ -4139,7 +4139,7 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       CO(1) => \distance_i3_carry__2_n_2\,
       CO(0) => \distance_i3_carry__2_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => \data2__0\(15 downto 12),
+      DI(3 downto 0) => \data3__0\(15 downto 12),
       O(3) => \distance_i3_carry__2_n_4\,
       O(2) => \distance_i3_carry__2_n_5\,
       O(1) => \distance_i3_carry__2_n_6\,
@@ -4154,12 +4154,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(15),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(15),
-      I3 => slv_reg2(15),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(15),
+      I0 => slv_reg2(15),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(15),
+      I3 => slv_reg3(15),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(15),
       O => \distance_i3_carry__2_i_1_n_0\
     );
 \distance_i3_carry__2_i_2\: unisim.vcomponents.LUT6
@@ -4167,12 +4167,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(14),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(14),
-      I3 => slv_reg2(14),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(14),
+      I0 => slv_reg2(14),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(14),
+      I3 => slv_reg3(14),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(14),
       O => \distance_i3_carry__2_i_2_n_0\
     );
 \distance_i3_carry__2_i_3\: unisim.vcomponents.LUT6
@@ -4180,12 +4180,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(13),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(13),
-      I3 => slv_reg2(13),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(13),
+      I0 => slv_reg2(13),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(13),
+      I3 => slv_reg3(13),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(13),
       O => \distance_i3_carry__2_i_3_n_0\
     );
 \distance_i3_carry__2_i_4\: unisim.vcomponents.LUT6
@@ -4193,12 +4193,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(12),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(12),
-      I3 => slv_reg2(12),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(12),
+      I0 => slv_reg2(12),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(12),
+      I3 => slv_reg3(12),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(12),
       O => \distance_i3_carry__2_i_4_n_0\
     );
 \distance_i3_carry__3\: unisim.vcomponents.CARRY4
@@ -4209,7 +4209,7 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       CO(1) => \distance_i3_carry__3_n_2\,
       CO(0) => \distance_i3_carry__3_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => \data2__0\(19 downto 16),
+      DI(3 downto 0) => \data3__0\(19 downto 16),
       O(3) => \distance_i3_carry__3_n_4\,
       O(2) => \distance_i3_carry__3_n_5\,
       O(1) => \distance_i3_carry__3_n_6\,
@@ -4224,12 +4224,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(19),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(19),
-      I3 => slv_reg2(19),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(19),
+      I0 => slv_reg2(19),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(19),
+      I3 => slv_reg3(19),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(19),
       O => \distance_i3_carry__3_i_1_n_0\
     );
 \distance_i3_carry__3_i_2\: unisim.vcomponents.LUT6
@@ -4237,12 +4237,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(18),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(18),
-      I3 => slv_reg2(18),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(18),
+      I0 => slv_reg2(18),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(18),
+      I3 => slv_reg3(18),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(18),
       O => \distance_i3_carry__3_i_2_n_0\
     );
 \distance_i3_carry__3_i_3\: unisim.vcomponents.LUT6
@@ -4250,12 +4250,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(17),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(17),
-      I3 => slv_reg2(17),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(17),
+      I0 => slv_reg2(17),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(17),
+      I3 => slv_reg3(17),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(17),
       O => \distance_i3_carry__3_i_3_n_0\
     );
 \distance_i3_carry__3_i_4\: unisim.vcomponents.LUT6
@@ -4263,12 +4263,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(16),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(16),
-      I3 => slv_reg2(16),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(16),
+      I0 => slv_reg2(16),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(16),
+      I3 => slv_reg3(16),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(16),
       O => \distance_i3_carry__3_i_4_n_0\
     );
 \distance_i3_carry__4\: unisim.vcomponents.CARRY4
@@ -4279,7 +4279,7 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       CO(1) => \distance_i3_carry__4_n_2\,
       CO(0) => \distance_i3_carry__4_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => \data2__0\(23 downto 20),
+      DI(3 downto 0) => \data3__0\(23 downto 20),
       O(3) => \distance_i3_carry__4_n_4\,
       O(2) => \distance_i3_carry__4_n_5\,
       O(1) => \distance_i3_carry__4_n_6\,
@@ -4294,12 +4294,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(23),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(23),
-      I3 => slv_reg2(23),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(23),
+      I0 => slv_reg2(23),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(23),
+      I3 => slv_reg3(23),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(23),
       O => \distance_i3_carry__4_i_1_n_0\
     );
 \distance_i3_carry__4_i_2\: unisim.vcomponents.LUT6
@@ -4307,12 +4307,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(22),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(22),
-      I3 => slv_reg2(22),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(22),
+      I0 => slv_reg2(22),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(22),
+      I3 => slv_reg3(22),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(22),
       O => \distance_i3_carry__4_i_2_n_0\
     );
 \distance_i3_carry__4_i_3\: unisim.vcomponents.LUT6
@@ -4320,12 +4320,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(21),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(21),
-      I3 => slv_reg2(21),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(21),
+      I0 => slv_reg2(21),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(21),
+      I3 => slv_reg3(21),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(21),
       O => \distance_i3_carry__4_i_3_n_0\
     );
 \distance_i3_carry__4_i_4\: unisim.vcomponents.LUT6
@@ -4333,12 +4333,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(20),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(20),
-      I3 => slv_reg2(20),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(20),
+      I0 => slv_reg2(20),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(20),
+      I3 => slv_reg3(20),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(20),
       O => \distance_i3_carry__4_i_4_n_0\
     );
 \distance_i3_carry__5\: unisim.vcomponents.CARRY4
@@ -4349,7 +4349,7 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       CO(1) => \distance_i3_carry__5_n_2\,
       CO(0) => \distance_i3_carry__5_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => \data2__0\(27 downto 24),
+      DI(3 downto 0) => \data3__0\(27 downto 24),
       O(3) => \distance_i3_carry__5_n_4\,
       O(2) => \distance_i3_carry__5_n_5\,
       O(1) => \distance_i3_carry__5_n_6\,
@@ -4364,12 +4364,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(27),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(27),
-      I3 => slv_reg2(27),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(27),
+      I0 => slv_reg2(27),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(27),
+      I3 => slv_reg3(27),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(27),
       O => \distance_i3_carry__5_i_1_n_0\
     );
 \distance_i3_carry__5_i_2\: unisim.vcomponents.LUT6
@@ -4377,12 +4377,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(26),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(26),
-      I3 => slv_reg2(26),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(26),
+      I0 => slv_reg2(26),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(26),
+      I3 => slv_reg3(26),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(26),
       O => \distance_i3_carry__5_i_2_n_0\
     );
 \distance_i3_carry__5_i_3\: unisim.vcomponents.LUT6
@@ -4390,12 +4390,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(25),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(25),
-      I3 => slv_reg2(25),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(25),
+      I0 => slv_reg2(25),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(25),
+      I3 => slv_reg3(25),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(25),
       O => \distance_i3_carry__5_i_3_n_0\
     );
 \distance_i3_carry__5_i_4\: unisim.vcomponents.LUT6
@@ -4403,12 +4403,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(24),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(24),
-      I3 => slv_reg2(24),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(24),
+      I0 => slv_reg2(24),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(24),
+      I3 => slv_reg3(24),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(24),
       O => \distance_i3_carry__5_i_4_n_0\
     );
 \distance_i3_carry__6\: unisim.vcomponents.CARRY4
@@ -4420,7 +4420,7 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       CO(0) => \distance_i3_carry__6_n_3\,
       CYINIT => '0',
       DI(3) => '0',
-      DI(2 downto 0) => \data2__0\(30 downto 28),
+      DI(2 downto 0) => \data3__0\(30 downto 28),
       O(3) => \distance_i3_carry__6_n_4\,
       O(2) => \distance_i3_carry__6_n_5\,
       O(1) => \distance_i3_carry__6_n_6\,
@@ -4435,12 +4435,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(31),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(31),
-      I3 => slv_reg2(31),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(31),
+      I0 => slv_reg2(31),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(31),
+      I3 => slv_reg3(31),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(31),
       O => \distance_i3_carry__6_i_1_n_0\
     );
 \distance_i3_carry__6_i_2\: unisim.vcomponents.LUT6
@@ -4448,12 +4448,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(30),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(30),
-      I3 => slv_reg2(30),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(30),
+      I0 => slv_reg2(30),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(30),
+      I3 => slv_reg3(30),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(30),
       O => \distance_i3_carry__6_i_2_n_0\
     );
 \distance_i3_carry__6_i_3\: unisim.vcomponents.LUT6
@@ -4461,12 +4461,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(29),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(29),
-      I3 => slv_reg2(29),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(29),
+      I0 => slv_reg2(29),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(29),
+      I3 => slv_reg3(29),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(29),
       O => \distance_i3_carry__6_i_3_n_0\
     );
 \distance_i3_carry__6_i_4\: unisim.vcomponents.LUT6
@@ -4474,12 +4474,12 @@ distance_i3_carry: unisim.vcomponents.CARRY4
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(28),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(28),
-      I3 => slv_reg2(28),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(28),
+      I0 => slv_reg2(28),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(28),
+      I3 => slv_reg3(28),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(28),
       O => \distance_i3_carry__6_i_4_n_0\
     );
 distance_i3_carry_i_1: unisim.vcomponents.LUT6
@@ -4487,12 +4487,12 @@ distance_i3_carry_i_1: unisim.vcomponents.LUT6
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(3),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(3),
-      I3 => slv_reg2(3),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(3),
+      I0 => slv_reg2(3),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(3),
+      I3 => slv_reg3(3),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(3),
       O => distance_i3_carry_i_1_n_0
     );
 distance_i3_carry_i_2: unisim.vcomponents.LUT6
@@ -4500,12 +4500,12 @@ distance_i3_carry_i_2: unisim.vcomponents.LUT6
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(2),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(2),
-      I3 => slv_reg2(2),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(2),
+      I0 => slv_reg2(2),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(2),
+      I3 => slv_reg3(2),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(2),
       O => distance_i3_carry_i_2_n_0
     );
 distance_i3_carry_i_3: unisim.vcomponents.LUT6
@@ -4513,12 +4513,12 @@ distance_i3_carry_i_3: unisim.vcomponents.LUT6
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(1),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(1),
-      I3 => slv_reg2(1),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(1),
+      I0 => slv_reg2(1),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(1),
+      I3 => slv_reg3(1),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(1),
       O => distance_i3_carry_i_3_n_0
     );
 distance_i3_carry_i_4: unisim.vcomponents.LUT6
@@ -4526,12 +4526,12 @@ distance_i3_carry_i_4: unisim.vcomponents.LUT6
       INIT => X"47B8474747B8B8B8"
     )
         port map (
-      I0 => slv_reg3(0),
-      I1 => \slv_reg0_reg_n_0_[1]\,
-      I2 => Increments_Right(0),
-      I3 => slv_reg2(0),
-      I4 => \slv_reg0_reg_n_0_[0]\,
-      I5 => Increments_Left(0),
+      I0 => slv_reg2(0),
+      I1 => \slv_reg0_reg_n_0_[0]\,
+      I2 => Increments_Left(0),
+      I3 => slv_reg3(0),
+      I4 => \slv_reg0_reg_n_0_[1]\,
+      I5 => Increments_Right(0),
       O => distance_i3_carry_i_4_n_0
     );
 distance_i4_carry: unisim.vcomponents.CARRY4
@@ -6391,12 +6391,12 @@ distance_i4_carry_i_8: unisim.vcomponents.LUT2
       I2 => p_0_in(0),
       I3 => p_0_in(2),
       I4 => s00_axi_wstrb(0),
-      O => p_1_in(1)
+      O => p_1_in(0)
     );
 \slv_reg0_reg[0]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => p_1_in(1),
+      CE => p_1_in(0),
       D => s00_axi_wdata(0),
       Q => \slv_reg0_reg_n_0_[0]\,
       R => axi_awready_i_1_n_0
@@ -6484,7 +6484,7 @@ distance_i4_carry_i_8: unisim.vcomponents.LUT2
 \slv_reg0_reg[1]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => p_1_in(1),
+      CE => p_1_in(0),
       D => s00_axi_wdata(1),
       Q => \slv_reg0_reg_n_0_[1]\,
       R => axi_awready_i_1_n_0
@@ -6572,7 +6572,7 @@ distance_i4_carry_i_8: unisim.vcomponents.LUT2
 \slv_reg0_reg[2]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => p_1_in(1),
+      CE => p_1_in(0),
       D => s00_axi_wdata(2),
       Q => \slv_reg0_reg_n_0_[2]\,
       R => axi_awready_i_1_n_0
@@ -6596,7 +6596,7 @@ distance_i4_carry_i_8: unisim.vcomponents.LUT2
 \slv_reg0_reg[3]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => p_1_in(1),
+      CE => p_1_in(0),
       D => s00_axi_wdata(3),
       Q => \slv_reg0_reg_n_0_[3]\,
       R => axi_awready_i_1_n_0
@@ -6604,7 +6604,7 @@ distance_i4_carry_i_8: unisim.vcomponents.LUT2
 \slv_reg0_reg[4]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => p_1_in(1),
+      CE => p_1_in(0),
       D => s00_axi_wdata(4),
       Q => \slv_reg0_reg_n_0_[4]\,
       R => axi_awready_i_1_n_0
@@ -6612,7 +6612,7 @@ distance_i4_carry_i_8: unisim.vcomponents.LUT2
 \slv_reg0_reg[5]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => p_1_in(1),
+      CE => p_1_in(0),
       D => s00_axi_wdata(5),
       Q => \slv_reg0_reg_n_0_[5]\,
       R => axi_awready_i_1_n_0
@@ -6620,7 +6620,7 @@ distance_i4_carry_i_8: unisim.vcomponents.LUT2
 \slv_reg0_reg[6]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => p_1_in(1),
+      CE => p_1_in(0),
       D => s00_axi_wdata(6),
       Q => \slv_reg0_reg_n_0_[6]\,
       R => axi_awready_i_1_n_0
@@ -6628,7 +6628,7 @@ distance_i4_carry_i_8: unisim.vcomponents.LUT2
 \slv_reg0_reg[7]\: unisim.vcomponents.FDRE
      port map (
       C => s00_axi_aclk,
-      CE => p_1_in(1),
+      CE => p_1_in(0),
       D => s00_axi_wdata(7),
       Q => \slv_reg0_reg_n_0_[7]\,
       R => axi_awready_i_1_n_0
@@ -8187,8 +8187,8 @@ entity Test_Odometer_0_0_Odometer_v1_0 is
     s00_axi_awvalid : in STD_LOGIC;
     s00_axi_wvalid : in STD_LOGIC;
     s00_axi_arvalid : in STD_LOGIC;
-    Increments_Right : in STD_LOGIC_VECTOR ( 31 downto 0 );
     Increments_Left : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    Increments_Right : in STD_LOGIC_VECTOR ( 31 downto 0 );
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );

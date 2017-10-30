@@ -86,7 +86,7 @@ int Derivator_Initialize(Derivator * InstancePtr, u16 DeviceId)
 		return (XST_DEVICE_NOT_FOUND);
 	}
 
-	return Derivator_CfgInitialize(InstancePtr, ConfigPtr, ConfigPtr->BaseAddress);
+	return Derivator_CfgInitialize(InstancePtr, ConfigPtr->BaseAddress);
 }
 
 /****************************************************************************/
@@ -121,7 +121,7 @@ int Derivator_Initialize(Derivator * InstancePtr, u16 DeviceId)
 * @note		None.
 *
 *****************************************************************************/
-int Derivator_CfgInitialize(Derivator * InstancePtr, Derivator_Config * Config, UINTPTR EffectiveAddr)
+int Derivator_CfgInitialize(Derivator * InstancePtr, UINTPTR EffectiveAddr)
 {
 	/* Assert arguments */
 	Xil_AssertNonvoid(InstancePtr != NULL);

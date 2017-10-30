@@ -110,7 +110,7 @@ XStatus SUBTRACTOR_Reg_SelfTest(void * baseaddr_p);
  */
 Subtractor_Config *Subtractor_LookupConfig(u16 DeviceId);
 int Subtractor_Initialize(Subtractor *InstancePtr, u16 DeviceId);
-int Subtractor_CfgInitialize(Subtractor *InstancePtr, Subtractor_Config * Config, UINTPTR EffectiveAddr);
+int Subtractor_CfgInitialize(Subtractor *InstancePtr, UINTPTR EffectiveAddr);
 
 /*
  * API Basic functions implemented

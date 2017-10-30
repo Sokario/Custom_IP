@@ -109,7 +109,7 @@ XStatus DERIVATOR_Reg_SelfTest(void * baseaddr_p);
  */
 Derivator_Config *Derivator_LookupConfig(u16 DeviceId);
 int Derivator_Initialize(Derivator *InstancePtr, u16 DeviceId);
-int Derivator_CfgInitialize(Derivator *InstancePtr, Derivator_Config * Config, UINTPTR EffectiveAddr);
+int Derivator_CfgInitialize(Derivator *InstancePtr, UINTPTR EffectiveAddr);
 
 /*
  * API Basic functions implemented

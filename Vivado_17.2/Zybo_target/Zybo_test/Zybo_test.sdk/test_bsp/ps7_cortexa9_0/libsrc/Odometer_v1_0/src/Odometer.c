@@ -86,7 +86,7 @@ int Odometer_Initialize(Odometer * InstancePtr, u16 DeviceId)
 		return (XST_DEVICE_NOT_FOUND);
 	}
 
-	return Odometer_CfgInitialize(InstancePtr, ConfigPtr, ConfigPtr->BaseAddress);
+	return Odometer_CfgInitialize(InstancePtr, ConfigPtr->BaseAddress);
 }
 
 /****************************************************************************/
@@ -121,7 +121,7 @@ int Odometer_Initialize(Odometer * InstancePtr, u16 DeviceId)
 * @note		None.
 *
 *****************************************************************************/
-int Odometer_CfgInitialize(Odometer * InstancePtr, Odometer_Config * Config, UINTPTR EffectiveAddr)
+int Odometer_CfgInitialize(Odometer * InstancePtr, UINTPTR EffectiveAddr)
 {
 	/* Assert arguments */
 	Xil_AssertNonvoid(InstancePtr != NULL);
@@ -234,4 +234,142 @@ u32 Odometer_GetDistance(Odometer *InstancePtr)
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
     return ODOMETER_mReadReg(InstancePtr->BaseAddress, ODOMETER_S00_AXI_SLV_REG5_OFFSET);
+}
+
+////////////////////
+
+void Odometer_PS_OverRide_Left(Odometer *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = Odometer_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~ODOMETER_OVERRIDE_MASK_LEFT) | (1 << ODOMETER_OVERRIDE_INDICE_LEFT);
+    
+    Odometer_SetOverRide(InstancePtr, reg_value);
+}
+
+void Odometer_PS_OverRide_DataLeft(Odometer *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    Odometer_PS_OverRide_Left(InstancePtr);
+    Odometer_SetIncrementsLeft(InstancePtr, Data);
+}
+
+void Odometer_PL_OverRide_Left(Odometer *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = Odometer_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~ODOMETER_OVERRIDE_MASK_LEFT) & ~(1 << ODOMETER_OVERRIDE_INDICE_LEFT);
+    
+    Odometer_SetOverRide(InstancePtr, reg_value);
+}
+
+void Odometer_PS_OverRide_Right(Odometer *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = Odometer_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~ODOMETER_OVERRIDE_MASK_RIGHT) | (1 << ODOMETER_OVERRIDE_INDICE_RIGHT);
+    
+    Odometer_SetOverRide(InstancePtr, reg_value);
+}
+
+void Odometer_PS_OverRide_DataRight(Odometer *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    Odometer_PS_OverRide_Right(InstancePtr);
+    Odometer_SetIncrementsRight(InstancePtr, Data);
+}
+
+void Odometer_PL_OverRide_Right(Odometer *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = Odometer_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~ODOMETER_OVERRIDE_MASK_RIGHT) & ~(1 << ODOMETER_OVERRIDE_INDICE_RIGHT);
+    
+    Odometer_SetOverRide(InstancePtr, reg_value);
+}
+
+void Odometer_PS_OverRide_Reset(Odometer *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = Odometer_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~ODOMETER_OVERRIDE_MASK_RESET) | (1 << ODOMETER_OVERRIDE_INDICE_RESET);
+    
+    Odometer_SetOverRide(InstancePtr, reg_value);
+}
+
+void Odometer_PS_OverRide_DataReset(Odometer *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    Odometer_PS_OverRide_Reset(InstancePtr);
+    Odometer_SetReset(InstancePtr, Data);
+}
+
+void Odometer_PL_OverRide_Reset(Odometer *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = Odometer_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~ODOMETER_OVERRIDE_MASK_RESET) & ~(1 << ODOMETER_OVERRIDE_INDICE_RESET);
+    
+    Odometer_SetOverRide(InstancePtr, reg_value);
+}
+
+void Odometer_PS_OverRide_Lap(Odometer *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = Odometer_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~ODOMETER_OVERRIDE_MASK_LAP) | (1 << ODOMETER_OVERRIDE_INDICE_LAP);
+    
+    Odometer_SetOverRide(InstancePtr, reg_value);
+}
+
+void Odometer_PS_OverRide_DataLap(Odometer *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    Odometer_PS_OverRide_Lap(InstancePtr);
+    Odometer_SetLap(InstancePtr, Data);
+}
+
+void Odometer_PL_OverRide_Lap(Odometer *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    u32 reg_value = Odometer_GetOverRide(InstancePtr);
+    reg_value = (reg_value & ~ODOMETER_OVERRIDE_MASK_LAP) & ~(1 << ODOMETER_OVERRIDE_INDICE_LAP);
+    
+    Odometer_SetOverRide(InstancePtr, reg_value);
 }

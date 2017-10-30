@@ -362,7 +362,7 @@ void Odometer_PS_OverRide_DataLap(Odometer *InstancePtr, u32 Data)
     Odometer_SetLap(InstancePtr, Data);
 }
 
-void Odometer_PL_OverRide_Lap(Odometer *InstancePtr);
+void Odometer_PL_OverRide_Lap(Odometer *InstancePtr)
 {
     /* Asserts */
     Xil_AssertNonvoid(InstancePtr != NULL);

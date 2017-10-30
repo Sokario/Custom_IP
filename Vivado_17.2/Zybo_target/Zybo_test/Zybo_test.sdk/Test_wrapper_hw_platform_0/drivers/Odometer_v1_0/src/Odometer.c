@@ -86,7 +86,7 @@ int Odometer_Initialize(Odometer * InstancePtr, u16 DeviceId)
 		return (XST_DEVICE_NOT_FOUND);
 	}
 
-	return Odometer_CfgInitialize(InstancePtr, ConfigPtr, ConfigPtr->BaseAddress);
+	return Odometer_CfgInitialize(InstancePtr, ConfigPtr->BaseAddress);
 }
 
 /****************************************************************************/
@@ -121,7 +121,7 @@ int Odometer_Initialize(Odometer * InstancePtr, u16 DeviceId)
 * @note		None.
 *
 *****************************************************************************/
-int Odometer_CfgInitialize(Odometer * InstancePtr, Odometer_Config * Config, UINTPTR EffectiveAddr)
+int Odometer_CfgInitialize(Odometer * InstancePtr, UINTPTR EffectiveAddr)
 {
 	/* Assert arguments */
 	Xil_AssertNonvoid(InstancePtr != NULL);
@@ -362,7 +362,7 @@ void Odometer_PS_OverRide_DataLap(Odometer *InstancePtr, u32 Data)
     Odometer_SetLap(InstancePtr, Data);
 }
 
-void Odometer_PL_OverRide_Lap(Odometer *InstancePtr);
+void Odometer_PL_OverRide_Lap(Odometer *InstancePtr)
 {
     /* Asserts */
     Xil_AssertNonvoid(InstancePtr != NULL);
