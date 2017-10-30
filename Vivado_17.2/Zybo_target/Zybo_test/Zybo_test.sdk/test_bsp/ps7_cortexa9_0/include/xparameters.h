@@ -34,6 +34,28 @@
 
 /******************************************************************/
 
+/* Definitions for driver ENCODER */
+#define XPAR_ENCODER_NUM_INSTANCES 1
+
+/* Definitions for peripheral ENCODER_0 */
+#define XPAR_ENCODER_0_DEVICE_ID 0
+#define XPAR_ENCODER_0_S00_AXI_BASEADDR 0x43C10000
+#define XPAR_ENCODER_0_S00_AXI_HIGHADDR 0x43C1FFFF
+
+
+/******************************************************************/
+
+/* Definitions for driver MOTOR */
+#define XPAR_MOTOR_NUM_INSTANCES 1
+
+/* Definitions for peripheral MOTOR_0 */
+#define XPAR_MOTOR_0_DEVICE_ID 0
+#define XPAR_MOTOR_0_S00_AXI_BASEADDR 0x43C00000
+#define XPAR_MOTOR_0_S00_AXI_HIGHADDR 0x43C0FFFF
+
+
+/******************************************************************/
+
 /* Definitions for driver ODOMETER */
 #define XPAR_ODOMETER_NUM_INSTANCES 1
 
@@ -41,6 +63,17 @@
 #define XPAR_ODOMETER_0_DEVICE_ID 0
 #define XPAR_ODOMETER_0_S00_AXI_BASEADDR 0x43C50000
 #define XPAR_ODOMETER_0_S00_AXI_HIGHADDR 0x43C5FFFF
+
+
+/******************************************************************/
+
+/* Definitions for driver PID */
+#define XPAR_PID_NUM_INSTANCES 1
+
+/* Definitions for peripheral PID_0 */
+#define XPAR_PID_0_DEVICE_ID 0
+#define XPAR_PID_0_S00_AXI_BASEADDR 0x43C30000
+#define XPAR_PID_0_S00_AXI_HIGHADDR 0x43C3FFFF
 
 
 /******************************************************************/
@@ -142,17 +175,6 @@
 #define XPAR_XEMACPS_0_ENET_SLCR_100Mbps_DIV1 5
 #define XPAR_XEMACPS_0_ENET_SLCR_10Mbps_DIV0 8
 #define XPAR_XEMACPS_0_ENET_SLCR_10Mbps_DIV1 50
-
-
-/******************************************************************/
-
-/* Definitions for driver ENCODER */
-#define XPAR_ENCODER_NUM_INSTANCES 1
-
-/* Definitions for peripheral ENCODER_0 */
-#define XPAR_ENCODER_0_DEVICE_ID 0
-#define XPAR_ENCODER_0_S00_AXI_BASEADDR 0x43C10000
-#define XPAR_ENCODER_0_S00_AXI_HIGHADDR 0x43C1FFFF
 
 
 /******************************************************************/
@@ -290,28 +312,6 @@
 #define XPAR_XGPIOPS_0_DEVICE_ID XPAR_PS7_GPIO_0_DEVICE_ID
 #define XPAR_XGPIOPS_0_BASEADDR 0xE000A000
 #define XPAR_XGPIOPS_0_HIGHADDR 0xE000AFFF
-
-
-/******************************************************************/
-
-/* Definitions for driver MOTOR */
-#define XPAR_MOTOR_NUM_INSTANCES 1
-
-/* Definitions for peripheral MOTOR_0 */
-#define XPAR_MOTOR_0_DEVICE_ID 0
-#define XPAR_MOTOR_0_S00_AXI_BASEADDR 0x43C00000
-#define XPAR_MOTOR_0_S00_AXI_HIGHADDR 0x43C0FFFF
-
-
-/******************************************************************/
-
-/* Definitions for driver PID */
-#define XPAR_PID_NUM_INSTANCES 1
-
-/* Definitions for peripheral PID_0 */
-#define XPAR_PID_0_DEVICE_ID 0
-#define XPAR_PID_0_S00_AXI_BASEADDR 0x43C30000
-#define XPAR_PID_0_S00_AXI_HIGHADDR 0x43C3FFFF
 
 
 /******************************************************************/

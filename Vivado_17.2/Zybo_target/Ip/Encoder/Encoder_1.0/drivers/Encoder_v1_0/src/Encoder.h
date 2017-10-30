@@ -12,9 +12,9 @@ extern "C" {
 #include "xstatus.h"
 #include "xil_io.h"
 
-#define ENCODER_S00_AXI_SLV_REG0_OFFSET 0   // Increments
-#define ENCODER_S00_AXI_SLV_REG1_OFFSET 4   // REG1
-#define ENCODER_S00_AXI_SLV_REG2_OFFSET 8   // REG2
+#define ENCODER_S00_AXI_SLV_REG0_OFFSET 0   // OverRide
+#define ENCODER_S00_AXI_SLV_REG1_OFFSET 4   // Reset
+#define ENCODER_S00_AXI_SLV_REG2_OFFSET 8   // Increments
 #define ENCODER_S00_AXI_SLV_REG3_OFFSET 12  // REG3
 
 
@@ -109,11 +109,16 @@ XStatus ENCODER_Reg_SelfTest(void * baseaddr_p);
  */
 Encoder_Config *Encoder_LookupConfig(u16 DeviceId);
 int Encoder_Initialize(Encoder *InstancePtr, u16 DeviceId);
-int Encoder_CfgInitialize(Encoder *InstancePtr, Encoder_Config * Config, UINTPTR EffectiveAddr);
+int Encoder_CfgInitialize(Encoder *InstancePtr, UINTPTR EffectiveAddr);
 
 /*
  * API Basic functions implemented
  */
+void Encoder_SetOverRide(Encoder *InstancePtr, u32 Data);
+u32 Encoder_GetOverRide(Encoder *InstancePtr);
+
+void Encoder_SetReset(Encoder *InstancePtr, u32 Data);
+
 u32 Encoder_GetIncrements(Encoder *InstancePtr);
 
 #ifdef _cplusplus

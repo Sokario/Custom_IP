@@ -1,4 +1,4 @@
-10:59:42 **** Auto Build of project test_bsp ****
+11:25:25 **** Auto Build of project test_bsp ****
 make -k all 
 "Running Make include in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src"
 make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
@@ -14,18 +14,18 @@ make -C ps7_cortexa9_0/libsrc/devcfg_v3_4/src -s include  "SHELL=CMD" "COMPILER=
 make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/emacps_v3_4/src"
 make -C ps7_cortexa9_0/libsrc/emacps_v3_4/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/encoder_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/encoder_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/Encoder_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Encoder_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
 make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
 make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/motor_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/motor_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/Motor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Motor_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/Odometer_v1_0/src"
 make -C ps7_cortexa9_0/libsrc/Odometer_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/pid_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/pid_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make include in ps7_cortexa9_0/libsrc/PID_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/PID_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_3/src"
 make -C ps7_cortexa9_0/libsrc/qspips_v3_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/scugic_v3_7/src"
@@ -127,25 +127,88 @@ make -C ps7_cortexa9_0/libsrc/dmaps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-
 "Running Make libs in ps7_cortexa9_0/libsrc/emacps_v3_4/src"
 make -C ps7_cortexa9_0/libsrc/emacps_v3_4/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling emacps"
-"Running Make libs in ps7_cortexa9_0/libsrc/encoder_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/encoder_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/Encoder_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Encoder_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling Encoder..."
-Encoder.c: In function 'Encoder_CfgInitialize':
-Encoder.c:124:67: warning: unused parameter 'Config' [-Wunused-parameter]
- int Encoder_CfgInitialize(Encoder * InstancePtr, Encoder_Config * Config, UINTPTR EffectiveAddr)
-                                                                   ^~~~~~
+In file included from Encoder.h:11:0,
+                 from Encoder.c:4:
+Encoder.c: In function 'Encoder_SetOverRide':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Encoder.c:142:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Encoder.c:139:6: note: declared here
+ void Encoder_SetOverRide(Encoder *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~
+In file included from Encoder.h:11:0,
+                 from Encoder.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Encoder.c:143:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Encoder.c:139:6: note: declared here
+ void Encoder_SetOverRide(Encoder *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~~~~
+Encoder.c:145:80: error: macro "ENCODER_mWriteReg" requires 3 arguments, but only 2 given
+     ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG0_OFFSET);
+                                                                                ^
+Encoder.c:145:5: error: 'ENCODER_mWriteReg' undeclared (first use in this function)
+     ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG0_OFFSET);
+     ^~~~~~~~~~~~~~~~~
+Encoder.c:145:5: note: each undeclared identifier is reported only once for each function it appears in
+Encoder.c:139:52: warning: unused parameter 'Data' [-Wunused-parameter]
+ void Encoder_SetOverRide(Encoder *InstancePtr, u32 Data)
+                                                    ^~~~
+In file included from Encoder.h:11:0,
+                 from Encoder.c:4:
+Encoder.c: In function 'Encoder_SetReset':
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Encoder.c:160:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr != NULL);
+     ^~~~~~~~~~~~~~~~~
+Encoder.c:157:6: note: declared here
+ void Encoder_SetReset(Encoder *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+In file included from Encoder.h:11:0,
+                 from Encoder.c:4:
+../../../include/xil_assert.h:137:16: warning: 'return' with a value, in function returning void
+         return 0;                                  \
+                ^
+Encoder.c:161:5: note: in expansion of macro 'Xil_AssertNonvoid'
+     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+     ^~~~~~~~~~~~~~~~~
+Encoder.c:157:6: note: declared here
+ void Encoder_SetReset(Encoder *InstancePtr, u32 Data)
+      ^~~~~~~~~~~~~~~~
+Encoder.c:163:80: error: macro "ENCODER_mWriteReg" requires 3 arguments, but only 2 given
+     ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG1_OFFSET);
+                                                                                ^
+Encoder.c:163:5: error: 'ENCODER_mWriteReg' undeclared (first use in this function)
+     ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG1_OFFSET);
+     ^~~~~~~~~~~~~~~~~
+Encoder.c:157:49: warning: unused parameter 'Data' [-Wunused-parameter]
+ void Encoder_SetReset(Encoder *InstancePtr, u32 Data)
+                                                 ^~~~
 Encoder_selftest.c: In function 'ENCODER_Reg_SelfTest':
 Encoder_selftest.c:51:56: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
     if ( ENCODER_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
                                                         ^~
+make[1]: *** [libs] Erreur 1
+make: *** [ps7_cortexa9_0/libsrc/Encoder_v1_0/src/make.libs] Erreur 2
 "Running Make libs in ps7_cortexa9_0/libsrc/gpio_v4_3/src"
 make -C ps7_cortexa9_0/libsrc/gpio_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling gpio"
 "Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_3/src"
 make -C ps7_cortexa9_0/libsrc/gpiops_v3_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling gpiops"
-"Running Make libs in ps7_cortexa9_0/libsrc/motor_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/motor_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/Motor_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/Motor_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling Motor..."
 In file included from Motor.h:11:0,
                  from motor.c:4:
@@ -349,8 +412,8 @@ Odometer_selftest.c:52:57: warning: comparison between signed and unsigned integ
 Odometer_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
   int Index;
       ^~~~~
-"Running Make libs in ps7_cortexa9_0/libsrc/pid_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/pid_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
+"Running Make libs in ps7_cortexa9_0/libsrc/PID_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/PID_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling PID..."
 PID.c: In function 'PID_CfgInitialize':
 PID.c:124:55: warning: unused parameter 'Config' [-Wunused-parameter]
@@ -690,7 +753,7 @@ make -C ps7_cortexa9_0/libsrc/usbps_v2_4/src -s libs  "SHELL=CMD" "COMPILER=arm-
 "Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_2/src"
 make -C ps7_cortexa9_0/libsrc/xadcps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -Wall -Wextra"
 "Compiling xadcps"
-'Finished building libraries'
+make: La cible « all » n'a pas pu être refabriquée à cause d'erreurs.
 
-11:00:05 Build Finished (took 23s.346ms)
+11:25:48 Build Finished (took 23s.107ms)
 

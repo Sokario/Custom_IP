@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Mon Oct 30 10:53:40 2017">
+<application name="pa" timeStamp="Mon Oct 30 11:18:16 2017">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="b218a7e3302e462291c55b3761c01653" type="ProjectID"/>
-<property name="ProjectIteration" value="38" type="ProjectIteration"/>
+<property name="ProjectIteration" value="39" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -34,27 +34,27 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="RecustomizeCore" value="3" type="JavaHandler"/>
 <property name="RegenerateRSBLayout" value="8" type="JavaHandler"/>
 <property name="ReportIPStatus" value="7" type="JavaHandler"/>
-<property name="RunBitgen" value="25" type="JavaHandler"/>
+<property name="RunBitgen" value="26" type="JavaHandler"/>
 <property name="RunImplementation" value="13" type="JavaHandler"/>
 <property name="SaveRSBDesign" value="1" type="JavaHandler"/>
 <property name="ShowView" value="3" type="JavaHandler"/>
 <property name="ToolsSettings" value="7" type="JavaHandler"/>
-<property name="UpgradeIP" value="25" type="JavaHandler"/>
+<property name="UpgradeIP" value="26" type="JavaHandler"/>
 <property name="ViewTaskIPIntegrator" value="2" type="JavaHandler"/>
 <property name="ViewTaskImplementation" value="1" type="JavaHandler"/>
 <property name="ViewTaskProjectManager" value="3" type="JavaHandler"/>
-<property name="ZoomFit" value="2" type="JavaHandler"/>
+<property name="ZoomFit" value="3" type="JavaHandler"/>
 </item>
 <item name="Gui Resources Info">
 <property name="AddRepositoryInfoDialog_OK" value="1" type="GuiResourceData"/>
 <property name="BaseDialog_APPLY" value="4" type="GuiResourceData"/>
 <property name="BaseDialog_CANCEL" value="9" type="GuiResourceData"/>
 <property name="BaseDialog_NO" value="3" type="GuiResourceData"/>
-<property name="BaseDialog_OK" value="69" type="GuiResourceData"/>
+<property name="BaseDialog_OK" value="70" type="GuiResourceData"/>
 <property name="BaseDialog_YES" value="2" type="GuiResourceData"/>
-<property name="BaseReportTab_RERUN" value="49" type="GuiResourceData"/>
+<property name="BaseReportTab_RERUN" value="50" type="GuiResourceData"/>
 <property name="BoardTreePanel_BOARD_TREE_PANEL" value="2" type="GuiResourceData"/>
-<property name="CmdMsgDialog_OK" value="11" type="GuiResourceData"/>
+<property name="CmdMsgDialog_OK" value="12" type="GuiResourceData"/>
 <property name="ConstraintsChooserPanel_CREATE_FILE" value="2" type="GuiResourceData"/>
 <property name="CoreAndInterfacesBaseTreeTablePanel_ADD_REPOSITORY" value="1" type="GuiResourceData"/>
 <property name="CoreAndInterfacesBaseTreeTablePanel_REFRESH_ALL_REPOSITORIES" value="11" type="GuiResourceData"/>
@@ -66,10 +66,10 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="CustomizeCoreDialog_IP_LOCATION" value="1" type="GuiResourceData"/>
 <property name="ExpRunTreePanel_EXP_RUN_TREE_TABLE" value="1" type="GuiResourceData"/>
 <property name="FileSetPanel_FILE_SET_PANEL_TREE" value="40" type="GuiResourceData"/>
-<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="89" type="GuiResourceData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="90" type="GuiResourceData"/>
 <property name="GettingStartedView_CREATE_NEW_PROJECT" value="1" type="GuiResourceData"/>
 <property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="1" type="GuiResourceData"/>
-<property name="IPStatusSectionPanel_UPGRADE_SELECTED" value="28" type="GuiResourceData"/>
+<property name="IPStatusSectionPanel_UPGRADE_SELECTED" value="29" type="GuiResourceData"/>
 <property name="IPStatusTablePanel_IP_STATUS_TABLE" value="7" type="GuiResourceData"/>
 <property name="InstanceTablePanel_INSTANCE_TABLE" value="1" type="GuiResourceData"/>
 <property name="MainMenuMgr_EXPORT" value="13" type="GuiResourceData"/>
@@ -96,7 +96,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PACommandNames_RECUSTOMIZE_CORE" value="1" type="GuiResourceData"/>
 <property name="PACommandNames_REGENERATE_LAYOUT" value="8" type="GuiResourceData"/>
 <property name="PACommandNames_SAVE_RSB_DESIGN" value="1" type="GuiResourceData"/>
-<property name="PACommandNames_ZOOM_FIT" value="2" type="GuiResourceData"/>
+<property name="PACommandNames_ZOOM_FIT" value="3" type="GuiResourceData"/>
 <property name="PAViews_CODE" value="1" type="GuiResourceData"/>
 <property name="PAViews_DEVICE" value="4" type="GuiResourceData"/>
 <property name="PartChooser_BOARDS" value="3" type="GuiResourceData"/>
@@ -115,7 +115,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="SaveProjectUtils_SAVE" value="7" type="GuiResourceData"/>
 <property name="SelectMenu_HIGHLIGHT" value="3" type="GuiResourceData"/>
 <property name="SettingsDialog_PROJECT_TREE" value="5" type="GuiResourceData"/>
-<property name="SimpleOutputProductDialog_CLOSE_DIALOG_UNSAVED_CHANGES_WILL" value="25" type="GuiResourceData"/>
+<property name="SimpleOutputProductDialog_CLOSE_DIALOG_UNSAVED_CHANGES_WILL" value="26" type="GuiResourceData"/>
 <property name="SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY" value="1" type="GuiResourceData"/>
 <property name="SrcMenu_IP_HIERARCHY" value="3" type="GuiResourceData"/>
 <property name="SrcMenu_REFRESH_HIERARCHY" value="1" type="GuiResourceData"/>

@@ -86,7 +86,7 @@ int Encoder_Initialize(Encoder * InstancePtr, u16 DeviceId)
 		return (XST_DEVICE_NOT_FOUND);
 	}
 
-	return Encoder_CfgInitialize(InstancePtr, ConfigPtr, ConfigPtr->BaseAddress);
+	return Encoder_CfgInitialize(InstancePtr, ConfigPtr->BaseAddress);
 }
 
 /****************************************************************************/
@@ -121,7 +121,7 @@ int Encoder_Initialize(Encoder * InstancePtr, u16 DeviceId)
 * @note		None.
 *
 *****************************************************************************/
-int Encoder_CfgInitialize(Encoder * InstancePtr, Encoder_Config * Config, UINTPTR EffectiveAddr)
+int Encoder_CfgInitialize(Encoder * InstancePtr, UINTPTR EffectiveAddr)
 {
 	/* Assert arguments */
 	Xil_AssertNonvoid(InstancePtr != NULL);
@@ -136,11 +136,38 @@ int Encoder_CfgInitialize(Encoder * InstancePtr, Encoder_Config * Config, UINTPT
 	return (XST_SUCCESS);
 }
 
-u32 Encoder_GetRapport(Encoder *InstancePtr)
+void Encoder_SetOverRide(Encoder *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG0_OFFSET);
+}
+
+u32 Encoder_GetOverRide(Encoder *InstancePtr)
 {
     /* Asserts */
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
     return ENCODER_mReadReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG0_OFFSET);
+}
+
+void Encoder_SetReset(Encoder *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    ENCODER_mWriteReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG1_OFFSET);
+}
+
+u32 Encoder_GetIncrements(Encoder *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    return ENCODER_mReadReg(InstancePtr->BaseAddress, ENCODER_S00_AXI_SLV_REG2_OFFSET);
 }
