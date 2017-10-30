@@ -86,7 +86,7 @@ int Subtractor_Initialize(Subtractor * InstancePtr, u16 DeviceId)
 		return (XST_DEVICE_NOT_FOUND);
 	}
 
-	return Subtractor_CfgInitialize(InstancePtr, ConfigPtr, ConfigPtr->BaseAddress);
+	return Subtractor_CfgInitialize(InstancePtr, ConfigPtr->BaseAddress);
 }
 
 /****************************************************************************/
@@ -121,7 +121,7 @@ int Subtractor_Initialize(Subtractor * InstancePtr, u16 DeviceId)
 * @note		None.
 *
 *****************************************************************************/
-int Subtractor_CfgInitialize(Subtractor * InstancePtr, Subtractor_Config * Config, UINTPTR EffectiveAddr)
+int Subtractor_CfgInitialize(Subtractor * InstancePtr, UINTPTR EffectiveAddr)
 {
 	/* Assert arguments */
 	Xil_AssertNonvoid(InstancePtr != NULL);
