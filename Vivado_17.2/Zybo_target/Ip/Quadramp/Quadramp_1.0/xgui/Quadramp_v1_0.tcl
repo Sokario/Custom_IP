@@ -9,6 +9,11 @@ proc init_gui { IPINST } {
   set_property tooltip {Width of S_AXI address bus} ${C_S00_AXI_ADDR_WIDTH}
   ipgui::add_param $IPINST -name "C_S00_AXI_BASEADDR" -parent ${Page_0}
   ipgui::add_param $IPINST -name "C_S00_AXI_HIGHADDR" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "FIRST_ORDER_POSITIVE" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "FIRST_ORDER_NEGATIVE" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "SECOND_ORDER_POSITIVE" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "SECOND_ORDER_NEGATIVE" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "DIVIDER" -parent ${Page_0}
 
 
 }

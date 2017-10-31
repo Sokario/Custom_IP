@@ -9,8 +9,8 @@ entity PID_v1_0 is
 		KI        : integer range 0 to 2147483647 := 1;   -- Integral constant
 		KD        : integer range 0 to 2147483647 := 1;   -- Derivative constant
         DEADBAND  : integer range 0 to 2147483647 := 1;   -- Negligible error limit
-        MIN       : integer range -2147483647 to 2147483647 := 1;   -- Minimum command limit
-        MAX       : integer range -2147483647 to 2147483647 := 1;   -- Maximum command limit
+        MIN       : integer range -2147483647 to 2147483647 := -2500;   -- Minimum command limit
+        MAX       : integer range -2147483647 to 2147483647 := 2500;   -- Maximum command limit
 		DIVIDER   : integer   := 390625;                  -- 100 MHz / 390625 = 256 Hz
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
@@ -64,8 +64,8 @@ architecture arch_imp of PID_v1_0 is
         KI        : integer range 0 to 2147483647 := 1;
         KD        : integer range 0 to 2147483647 := 1;
         DEADBAND  : integer range 0 to 2147483647 := 1;
-        MIN       : integer range -2147483647 to 2147483647 := 1;
-        MAX       : integer range -2147483647 to 2147483647 := 1;
+        MIN       : integer range -2147483647 to 2147483647 := -2500;
+        MAX       : integer range -2147483647 to 2147483647 := 2500;
         DIVIDER   : integer   := 390625;
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S_AXI_ADDR_WIDTH	: integer	:= 6
