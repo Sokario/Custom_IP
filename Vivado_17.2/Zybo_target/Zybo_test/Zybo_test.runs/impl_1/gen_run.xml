@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1509376434">
-  <File Type="PWROPT-DRC" Name="Test_wrapper_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="Test_wrapper_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="Test_wrapper_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="Test_wrapper_power_routed.rpx"/>
   <File Type="PA-TCL" Name="Test_wrapper.tcl"/>
-  <File Type="OPT-HWDEF" Name="Test_wrapper.hwdef"/>
+  <File Type="INIT-TIMING" Name="Test_wrapper_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="Test_wrapper_methodology_drc_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="Test_wrapper_drc_pwropted.rpt"/>
   <File Type="RDI-RDI" Name="Test_wrapper.vdi"/>
   <File Type="OPT-DCP" Name="Test_wrapper_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="Test_wrapper.hwdef"/>
   <File Type="OPT-DRC" Name="Test_wrapper_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="Test_wrapper_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="Test_wrapper_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="Test_wrapper_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="Test_wrapper_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="Test_wrapper_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="Test_wrapper.bin"/>
   <File Type="ROUTE-DRC-RPX" Name="Test_wrapper_drc_routed.rpx"/>
-  <File Type="BG-DRC" Name="Test_wrapper.drc"/>
+  <File Type="BG-BIN" Name="Test_wrapper.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="Test_wrapper_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-MSK" Name="Test_wrapper.msk"/>
+  <File Type="BG-DRC" Name="Test_wrapper.drc"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Test_wrapper_methodology_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="Test_wrapper.bgn"/>
+  <File Type="BITSTR-MSK" Name="Test_wrapper.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Test_wrapper_methodology_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="Test_wrapper.bgn"/>
   <File Type="ROUTE-PWR" Name="Test_wrapper_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="Test_wrapper_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="Test_wrapper_route_status.rpt"/>
@@ -106,14 +106,14 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="Test_axi_gpio_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Test_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Test_Motor_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="Test_axi_gpio_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="Test_PID_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Test_rst_ps7_0_100M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="Test_Derivator_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="Test_Encoder_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_PID_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Test_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_Encoder_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Test_Derivator_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Test_Subtractor_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="Test_Odometer_0_0"/>
 </GenRun>
