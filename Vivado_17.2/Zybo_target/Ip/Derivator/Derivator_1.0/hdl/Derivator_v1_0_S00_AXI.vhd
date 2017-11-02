@@ -354,7 +354,7 @@ begin
 	-- and the slave is ready to accept the read address.
 	slv_reg_rden <= axi_arready and S_AXI_ARVALID and (not axi_rvalid) ;
 
-	process (slv_reg0, slv_reg2, slv_reg3, axi_araddr, S_AXI_ARESETN, slv_reg_rden, increments_i)
+	process (slv_reg0, axi_araddr, S_AXI_ARESETN, slv_reg_rden, increments_i, speed_i)
 	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0);
 	begin
 	    -- Address decoding for reading registers
@@ -365,9 +365,9 @@ begin
 	      when b"01" =>
 	        reg_data_out <= std_logic_vector(increments_i);
 	      when b"10" =>
-	        reg_data_out <= slv_reg2;
+	        reg_data_out <= std_logic_vector(speed_i);
 	      when b"11" =>
-	        reg_data_out <= slv_reg3;
+	        reg_data_out <= std_logic_vector(to_unsigned(FREQUENCE_ACK, C_S_AXI_DATA_WIDTH));
 	      when others =>
 	        reg_data_out  <= (others => '0');
 	    end case;
@@ -396,7 +396,7 @@ begin
     --REG0 OverRide     (IN)
     --REG1 Increments   (INOUT)
     --REG2 Speed        (OUT)
-    --REG3 NULL
+    --REG3 Frequence    (OUT)
     
     process( S_AXI_ACLK ) is
     begin
