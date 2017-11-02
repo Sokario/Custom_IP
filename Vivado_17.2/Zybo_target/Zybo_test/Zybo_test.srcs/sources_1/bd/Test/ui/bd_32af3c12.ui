@@ -20,7 +20,7 @@ preplace netloc processing_system7_0_DDR 1 1 3 NJ 560 NJ 560 NJ
 preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 800
 preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 N
 preplace netloc Derivator_0_Speed 1 2 2 880 740 1190
-preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 2 500 1110 850
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 2 500 1100 850
 preplace netloc ps7_0_axi_periph_M07_AXI 1 2 1 800
 preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 30 790 470
 preplace netloc ps7_0_axi_periph_M03_AXI 1 2 1 870
@@ -35,10 +35,10 @@ preplace netloc axi_gpio_0_GPIO 1 3 1 NJ
 preplace netloc ps7_0_axi_periph_M05_AXI 1 2 1 830
 preplace netloc ps7_0_axi_periph_M04_AXI 1 2 1 830
 preplace netloc Quadramp_0_Ramp 1 2 2 890 1100 1190
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 970 490 1100 840
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 3 20 490 490 490 840
 preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 820
 preplace netloc rst_ps7_0_100M_interconnect_aresetn 1 1 1 480
-levelinfo -pg 1 0 250 650 1040 1220 -top 0 -bot 1410
+levelinfo -pg 1 0 250 650 1040 1230 -top 0 -bot 1410
 ",
 }
 {
