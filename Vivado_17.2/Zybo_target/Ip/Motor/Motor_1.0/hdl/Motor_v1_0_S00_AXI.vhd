@@ -365,7 +365,7 @@ begin
 	      when b"01" =>
 	        reg_data_out <= slv_reg1;
 	      when b"10" =>
-	        reg_data_out <= std_logic_vector(to_signed(compare_i, C_S_AXI_DATA_WIDTH));
+	        reg_data_out <= std_logic_vector(to_unsigned(compare_i, C_S_AXI_DATA_WIDTH));
 	      when b"11" =>
 	        if (speed_i < 0) then
 	           reg_data_out <= "00000000000000000000000000000001";
