@@ -365,7 +365,7 @@ begin
 	      when b"01" =>
 	        reg_data_out <= slv_reg1;
 	      when b"10" =>
-	        reg_data_out <= std_logic_vector(to_signed(compare_i, C_S_AXI_DATA_WIDTH));
+	        reg_data_out <= std_logic_vector(to_unsigned(compare_i, C_S_AXI_DATA_WIDTH));
 	      when b"11" =>
 	        if (speed_i < 0) then
 	           reg_data_out <= "00000000000000000000000000000001";
@@ -400,7 +400,7 @@ begin
 	--reg0 = OverRide  (IN)
 	--reg1 = Enable    (IN)
 	--reg2 = Speed     (INOUT)
-	--reg4 = Sens      (OUT)
+	--reg3 = Sens      (OUT)
 
     process( S_AXI_ACLK ) is
     begin
@@ -413,11 +413,11 @@ begin
         end if;
     end process;
 
-    speed_i     <= to_integer(signed(slv_reg1)) when (to_integer(unsigned(slv_reg0)) = 1) else to_integer(signed(Speed));
+    speed_i     <= to_integer(signed(slv_reg2)) when (to_integer(unsigned(slv_reg0)) = 1) else to_integer(signed(Speed));
     compare_i   <= -speed_i when(speed_i < 0) else speed_i;
     pwm_i       <= '1' when (counter_i < compare_i) else '0';
     
-    Enable  <= '1' when (to_integer(unsigned(slv_reg3)) = 1) else '0';
+    Enable  <= '1' when (to_integer(unsigned(slv_reg1)) = 1) else '0';
     Sens    <= '1' when (speed_i < 0) else '0';
     PWM     <= not(pwm_i) when (speed_i < 0) else pwm_i;
 

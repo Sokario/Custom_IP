@@ -42,6 +42,12 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Test_Odometer_0
 # IP: bd/Test/ip/Test_Quadramp_0_0/Test_Quadramp_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Test_Quadramp_0_0 || ORIG_REF_NAME==Test_Quadramp_0_0}]
 
+# IP: bd/Test/ip/Test_xlconcat_0_0/Test_xlconcat_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Test_xlconcat_0_0 || ORIG_REF_NAME==Test_xlconcat_0_0}]
+
+# IP: bd/Test/ip/Test_Gpio_IRQ_0_0/Test_Gpio_IRQ_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Test_Gpio_IRQ_0_0 || ORIG_REF_NAME==Test_Gpio_IRQ_0_0}]
+
 # IP: bd/Test/ip/Test_auto_pc_0/Test_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==Test_auto_pc_0 || ORIG_REF_NAME==Test_auto_pc_0}]
 

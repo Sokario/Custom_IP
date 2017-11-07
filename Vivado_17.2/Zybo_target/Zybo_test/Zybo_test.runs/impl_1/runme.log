@@ -17,6 +17,7 @@ Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 INFO: [Project 1-454] Reading design checkpoint 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Derivator_0_0/Test_Derivator_0_0.dcp' for cell 'Test_i/Derivator_0'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Encoder_0_0/Test_Encoder_0_0.dcp' for cell 'Test_i/Encoder_0'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Gpio_IRQ_0_0/Test_Gpio_IRQ_0_0.dcp' for cell 'Test_i/Gpio_IRQ_0'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Motor_0_1/Test_Motor_0_1.dcp' for cell 'Test_i/Motor_0'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_Odometer_0_0/Test_Odometer_0_0.dcp' for cell 'Test_i/Odometer_0'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_PID_0_0/Test_PID_0_0.dcp' for cell 'Test_i/PID_0'
@@ -25,6 +26,7 @@ INFO: [Project 1-454] Reading design checkpoint 'c:/Projet/Vivado/Custom_IP/Viva
 INFO: [Project 1-454] Reading design checkpoint 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_axi_gpio_0_0/Test_axi_gpio_0_0.dcp' for cell 'Test_i/axi_gpio_0'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_processing_system7_0_0/Test_processing_system7_0_0.dcp' for cell 'Test_i/processing_system7_0'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_rst_ps7_0_100M_0/Test_rst_ps7_0_100M_0.dcp' for cell 'Test_i/rst_ps7_0_100M'
+INFO: [Project 1-454] Reading design checkpoint 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_xlconcat_0_0/Test_xlconcat_0_0.dcp' for cell 'Test_i/xlconcat_0'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_xbar_0/Test_xbar_0.dcp' for cell 'Test_i/ps7_0_axi_periph/xbar'
 INFO: [Project 1-454] Reading design checkpoint 'c:/Projet/Vivado/Custom_IP/Vivado_17.2/Zybo_target/Zybo_test/Zybo_test.srcs/sources_1/bd/Test/ip/Test_auto_pc_0/Test_auto_pc_0.dcp' for cell 'Test_i/ps7_0_axi_periph/s00_couplers/auto_pc'
 INFO: [Netlist 29-17] Analyzing 214 Unisim elements for replacement
@@ -49,7 +51,7 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 4 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 4 instances
 
-link_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 626.504 ; gain = 298.137
+link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 629.023 ; gain = 299.813
 Command: opt_design
 Attempting to get a license for feature 'Implementation' and/or device 'xc7z010-clg400'
 INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010-clg400'
@@ -62,7 +64,7 @@ report_drc (run_mandatory_drcs) completed successfully
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.748 . Memory (MB): peak = 636.148 ; gain = 9.645
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.725 . Memory (MB): peak = 639.668 ; gain = 10.645
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Starting Logic Optimization Task
@@ -165,37 +167,41 @@ WARNING: [Opt 31-155] Driverless net Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_
 WARNING: [Opt 31-155] Driverless net Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/Add[0] is driving LUT input pin I0 which is used by the LUT equation. If the LUT is not removed or a driver added, this warning will become an error. LUT cell name: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry_i_8
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: 100483988
+Phase 1 Retarget | Checksum: 2114b15e3
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.507 . Memory (MB): peak = 1124.285 ; gain = 0.000
-INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 112 cells
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.504 . Memory (MB): peak = 1125.797 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 111 cells
 
 Phase 2 Constant propagation
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Phase 2 Constant propagation | Checksum: 10b1069f5
+Phase 2 Constant propagation | Checksum: 21809a4fc
 
-Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.953 . Memory (MB): peak = 1124.285 ; gain = 0.000
-INFO: [Opt 31-389] Phase Constant propagation created 290 cells and removed 417 cells
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1125.797 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 311 cells and removed 436 cells
 
 Phase 3 Sweep
-Phase 3 Sweep | Checksum: 17e2f38be
+Phase 3 Sweep | Checksum: 1e4cdcfcf
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1124.285 ; gain = 0.000
-INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 294 cells
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1125.797 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 257 cells
 
 Phase 4 BUFG optimization
-Phase 4 BUFG optimization | Checksum: 17e2f38be
+Phase 4 BUFG optimization | Checksum: 1e4cdcfcf
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1124.285 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1125.797 ; gain = 0.000
 INFO: [Opt 31-389] Phase BUFG optimization created 0 cells and removed 0 cells
 
 Phase 5 Shift Register Optimization
-Phase 5 Shift Register Optimization | Checksum: 17e2f38be
+Phase 5 Shift Register Optimization | Checksum: 1e4cdcfcf
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1124.285 ; gain = 0.000
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1125.797 ; gain = 0.000
 INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Starting Connectivity Check Task
+ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__1_i_4.
+Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
+ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__1_i_3.
+Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__1_i_2.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__1_i_1.
@@ -204,15 +210,11 @@ ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__0_i_3.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
+ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__2_i_1.
+Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__0_i_2.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__0_i_1.
-Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
-ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__1_i_3.
-Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
-ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__3_i_3.
-Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
-ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__3_i_4.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__4_i_1.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
@@ -244,10 +246,6 @@ ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry_i_4.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
-ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__1_i_4.
-Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
-ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__2_i_1.
-Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__2_i_2.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__2_i_3.
@@ -258,7 +256,9 @@ ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__3_i_2.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
-ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry_i_6.
+ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__3_i_3.
+Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
+ERROR: [Opt 31-67] Problem: A LUT3 cell in the design is missing a connection on input pin I2, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__3_i_4.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I4, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/axi_rdata[0]_i_3.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
@@ -324,19 +324,21 @@ ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I4, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/axi_rdata[9]_i_3.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
-ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry_i_8.
-Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
-ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry_i_7.
-Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
-ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry_i_5.
-Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
-ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__0_i_8.
-Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__0_i_5.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__0_i_6.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__0_i_7.
+Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
+ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__0_i_8.
+Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
+ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry_i_5.
+Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
+ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry_i_6.
+Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
+ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry_i_7.
+Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
+ERROR: [Opt 31-67] Problem: A LUT5 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry_i_8.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 ERROR: [Opt 31-67] Problem: A LUT6 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__1_i_5.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
@@ -387,13 +389,13 @@ Resolution: Please review the preceding OPT INFO messages that detail what has b
 ERROR: [Opt 31-67] Problem: A LUT6 cell in the design is missing a connection on input pin I0, which is used by the LUT equation. This pin has either been left unconnected in the design or the connection was removed due to the trimming of unused logic. The LUT cell name is: Test_i/Subtractor_0/U0/Subtractor_v1_0_S00_AXI_inst/result_i0_carry__6_i_7.
 Resolution: Please review the preceding OPT INFO messages that detail what has been trimmed in the design to determine if the removal of unused logic is causing this error. If opt_design is being specified directly, it will need to be rerun with opt_design -verbose to generate detailed INFO messages about trimming.
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1124.285 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 17e2f38be
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1125.797 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 1e4cdcfcf
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1124.285 ; gain = 0.000
-35 Infos, 96 Warnings, 0 Critical Warnings and 95 Errors encountered.
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1125.797 ; gain = 0.000
+37 Infos, 96 Warnings, 0 Critical Warnings and 95 Errors encountered.
 opt_design failed
-opt_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1124.285 ; gain = 497.781
+opt_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1125.797 ; gain = 496.773
 ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
 
-INFO: [Common 17-206] Exiting Vivado at Thu Nov  2 15:13:41 2017...
+INFO: [Common 17-206] Exiting Vivado at Tue Nov  7 15:55:26 2017...

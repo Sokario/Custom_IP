@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Thu Nov  2 15:12:55 2017
+| Date         : Tue Nov  7 15:54:41 2017
 | Host         : LogOut-AsusPro running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Test_wrapper_utilization_synth.rpt -pb Test_wrapper_utilization_synth.pb
 | Design       : Test_wrapper
@@ -176,6 +176,7 @@ Table of Contents
 +-----------------------------+------+
 |           Ref Name          | Used |
 +-----------------------------+------+
+| Test_xlconcat_0_0           |    1 |
 | Test_xbar_0                 |    1 |
 | Test_rst_ps7_0_100M_0       |    1 |
 | Test_processing_system7_0_0 |    1 |
@@ -186,6 +187,7 @@ Table of Contents
 | Test_PID_0_0                |    1 |
 | Test_Odometer_0_0           |    1 |
 | Test_Motor_0_1              |    1 |
+| Test_Gpio_IRQ_0_0           |    1 |
 | Test_Encoder_0_0            |    1 |
 | Test_Derivator_0_0          |    1 |
 +-----------------------------+------+
