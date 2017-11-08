@@ -460,13 +460,11 @@ begin
 	       if (interrupt_i = '1') then
 	           interrupt_i <= '0';
 	       else
-	           for indice in 0 to GPIO_DATA_WIDTH-1 loop
-	               if ((last_i(indice) = '0') and (gpio_i(indice) = '1')) then
-	                   interrupt_i <= '1';
-	               else
-	                   interrupt_i <= interrupt_i;
-	               end if;
-               end loop;
+	           if (unsigned(gpio_i) > unsigned(last_i)) then
+                   interrupt_i <= '1';
+               else
+                   interrupt_i <= interrupt_i;
+               end if;
        	       last_i <= gpio_i;
 	       end if;
 	   end if;
