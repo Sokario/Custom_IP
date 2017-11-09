@@ -454,22 +454,25 @@ begin
 	--REG6 NULL
 	--REG7 NULL
 	
-	process ( S_AXI_ACLK ) is
+    process ( S_AXI_ACLK ) is
 	begin
-	   if (rising_edge( S_AXI_ACLK )) then
-	       if (interrupt_i = '1') then
-	           interrupt_i <= '0';
-	       else
-	           for indice in 0 to GPIO_DATA_WIDTH-1 loop
-                   if ((gpio_i(indice) = '1') and (last_i(indice) = '0')) then
+        if (rising_edge( S_AXI_ACLK )) then
+            if (interrupt_i = '1') then
+               interrupt_i <= '0';
+           else
+               for indice in 0 to GPIO_DATA_WIDTH-1 loop
+                   if ((gpio_i(indice) = EDGE_POLARITY) and (last_i(indice) = not(EDGE_POLARITY))) then
                        interrupt_i <= '1';
                    else
                        interrupt_i <= interrupt_i;
                    end if;
                end loop;
-       	       last_i <= gpio_i;
-	       end if;
-	   end if;
+               last_i <= gpio_i;
+           end if;
+        else
+            interrupt_i <= interrupt_i;
+            last_i <= last_i;
+        end if;
 	end process;
 	
 	gpio_i <= slv_reg1(GPIO_DATA_WIDTH-1 downto 0) when (unsigned(slv_reg0) = 1) else Gpio;
