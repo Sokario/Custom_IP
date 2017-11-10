@@ -7,6 +7,7 @@ entity Gpio_IRQ_v1_0_S00_AXI is
 		-- Users to add parameters here
         GPIO_DATA_WIDTH : integer range 0 to 32 := 8;
         EDGE_POLARITY   : std_logic := '1';
+        DIVIDER         : integer range 0 to 100000000 := 390625;
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -88,6 +89,9 @@ end Gpio_IRQ_v1_0_S00_AXI;
 architecture arch_imp of Gpio_IRQ_v1_0_S00_AXI is
 
 	-- USER signals
+	signal counter_i   : integer range 0 to DIVIDER-1 := 0;
+    signal divider_i   : integer range 0 to 100000000 := 0;
+	signal enable_i    : std_logic;
 	signal gpio_i      : std_logic_vector(GPIO_DATA_WIDTH-1 downto 0);
 	signal last_i      : std_logic_vector(GPIO_DATA_WIDTH-1 downto 0);
 	signal interrupt_i : std_logic;
@@ -407,13 +411,13 @@ begin
 	      when b"000" =>
 	        reg_data_out <= slv_reg0;
 	      when b"001" =>
-	        reg_data_out <= zeros & gpio_i;
+	        reg_data_out <= std_logic_vector(to_unsigned(divider_i, C_S_AXI_DATA_WIDTH));
 	      when b"010" =>
-	        reg_data_out <= zeros & last_i;
+	        reg_data_out <= zeros & gpio_i;
 	      when b"011" =>
-	        reg_data_out <= "0000000000000000000000000000000" & interrupt_i;
+	        reg_data_out <= zeros & last_i;
 	      when b"100" =>
-	        reg_data_out <= slv_reg4;
+	        reg_data_out <= "0000000000000000000000000000000" & interrupt_i;
 	      when b"101" =>
 	        reg_data_out <= slv_reg5;
 	      when b"110" =>
@@ -446,36 +450,52 @@ begin
 
 	-- Add user logic here
 	--REG0 OverRide        (IN)
-	--REG1 Gpio            (INOUT)
-	--REG2 Last            (INOUT)
-	--REG3 Interrupt       (OUT)
-	--REG4 NULL
+	--REG1 Divider         (INOUT)
+	--REG2 Gpio            (INOUT)
+	--REG3 Last            (INOUT)
+	--REG4 Interrupt       (OUT)
 	--REG5 NULL
 	--REG6 NULL
 	--REG7 NULL
 	
+	process ( S_AXI_ACLK ) is
+	begin
+	   if (rising_edge( S_AXI_ACLK )) then
+	       if (counter_i = divider_i-1) then
+	           counter_i <= 0;
+	       else
+	           counter_i <= counter_i + 1;
+	       end if;
+	   end if;
+	end process;
+	
     process ( S_AXI_ACLK ) is
 	begin
         if (rising_edge( S_AXI_ACLK )) then
-            if (interrupt_i = '1') then
-               interrupt_i <= '0';
-           else
-               for indice in 0 to GPIO_DATA_WIDTH-1 loop
-                   if ((gpio_i(indice) = EDGE_POLARITY) and (last_i(indice) = not(EDGE_POLARITY))) then
-                       interrupt_i <= '1';
-                   else
-                       interrupt_i <= interrupt_i;
-                   end if;
-               end loop;
-               last_i <= gpio_i;
-           end if;
-        else
-            interrupt_i <= interrupt_i;
-            last_i <= last_i;
+            if (enable_i = '1') then
+                if (interrupt_i = '1') then
+                   interrupt_i <= '0';
+                else
+                   for indice in 0 to GPIO_DATA_WIDTH-1 loop
+                       if ((gpio_i(indice) = '1') and (last_i(indice) = '0')) then
+                           interrupt_i <= '1';
+                       else
+                           interrupt_i <= interrupt_i;
+                       end if;
+                   end loop;
+                   last_i <= gpio_i;
+                end if;
+            else
+                interrupt_i <= interrupt_i;
+                last_i <= last_i;
+            end if;
         end if;
 	end process;
 	
-	gpio_i <= slv_reg1(GPIO_DATA_WIDTH-1 downto 0) when (unsigned(slv_reg0) = 1) else Gpio;
+	enable_i   <= '1' when (counter_i = divider_i-1) else '0';
+	divider_i  <= to_integer(unsigned(slv_reg1)) when (slv_reg0(1) = '1') else DIVIDER;
+	
+	gpio_i <= slv_reg2(GPIO_DATA_WIDTH-1 downto 0) when (slv_reg0(0) = '1') else Gpio;
 	Interrupt  <= interrupt_i;
 
 	-- User logic ends
