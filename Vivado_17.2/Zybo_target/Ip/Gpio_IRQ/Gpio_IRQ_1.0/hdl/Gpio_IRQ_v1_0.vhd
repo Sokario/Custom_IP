@@ -7,7 +7,7 @@ entity Gpio_IRQ_v1_0 is
 		-- Users to add parameters here
         GPIO_DATA_WIDTH : integer range 0 to 32 := 8;
         EDGE_POLARITY   : std_logic := '1';
-        DIVIDER         : integer range 0 to 100000000 := 390625;
+        DIVIDER         : integer range 0 to 100000000 := 100;
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -56,7 +56,7 @@ architecture arch_imp of Gpio_IRQ_v1_0 is
 		generic (
         GPIO_DATA_WIDTH : integer range 0 to 32 := 8;
         EDGE_POLARITY   : std_logic := '1';
-        DIVIDER         : integer range 0 to 100000000 := 390625;
+        DIVIDER         : integer range 0 to 100000000 := 100;
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S_AXI_ADDR_WIDTH	: integer	:= 5
 		);
