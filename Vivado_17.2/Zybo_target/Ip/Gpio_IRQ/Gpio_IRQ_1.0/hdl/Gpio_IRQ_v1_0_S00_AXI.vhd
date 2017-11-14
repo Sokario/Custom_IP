@@ -7,7 +7,6 @@ entity Gpio_IRQ_v1_0_S00_AXI is
 		-- Users to add parameters here
         GPIO_DATA_WIDTH : integer range 0 to 32 := 8;
         EDGE_POLARITY   : std_logic := '1';
-        DIVIDER         : integer range 0 to 100000000 := 390625;
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -89,9 +88,6 @@ end Gpio_IRQ_v1_0_S00_AXI;
 architecture arch_imp of Gpio_IRQ_v1_0_S00_AXI is
 
 	-- USER signals
-    signal counter_i   : integer range 0 to 100000000 := 0;
-	signal divider_i   : integer range 0 to 100000000 := 0;
-    signal enable_i    : std_logic;
 	signal gpio_i      : unsigned(GPIO_DATA_WIDTH-1 downto 0);
 	signal last_i      : unsigned(GPIO_DATA_WIDTH-1 downto 0);
 	signal interrupt_i : std_logic;
@@ -458,17 +454,6 @@ begin
 	--REG6 NULL
 	--REG7 NULL
 	
---	process ( S_AXI_ACLK ) is
---    begin
---        if (rising_edge( S_AXI_ACLK )) then
---            if (counter_i = divider_i-1) then
---                counter_i <= 0;
---            else
---                counter_i <= counter_i + 1;
---            end if;
---        end if;
---    end process;
-	
     process ( S_AXI_ACLK ) is
 	begin
         if (rising_edge( S_AXI_ACLK )) then
@@ -488,9 +473,6 @@ begin
         end if;
 	end process;
 		
---    divider_i   <= to_integer(unsigned(slv_reg3)) when (slv_reg0(1) = '1') else DIVIDER;
---    enable_i    <= '1' when (counter_i = divider_i-1) else '0';
-    
 	gpio_i <= unsigned(slv_reg1(GPIO_DATA_WIDTH-1 downto 0)) when (slv_reg0(0) = '1') else unsigned(Gpio);
 	Interrupt  <= interrupt_i;
 
