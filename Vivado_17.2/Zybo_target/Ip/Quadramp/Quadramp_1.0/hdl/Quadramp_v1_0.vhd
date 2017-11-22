@@ -7,10 +7,9 @@ entity Quadramp_v1_0 is
 		-- Users to add parameters here
         UPPER_LIMIT         : integer range -2147483647 to 2147483647   := 2500;
         LOWER_LIMIT         : integer range -2147483647 to 2147483647   := -2500;
-        INCREMENT_POSITIVE  : integer range 0 to 2147483647   := 1;
-        INCREMENT_NEGATIVE  : integer range 0 to 2147483647   := 1;
-        VARIATION           : integer range 0 to 2147483647   := 1;
-        DIVIDER             : integer range 0 to 100000000  := 390625;  -- 100 MHz / 390625 = 256 Hz
+        INCREMENT_POSITIVE  : integer range 1 to 2147483647   := 1;
+        INCREMENT_NEGATIVE  : integer range 1 to 2147483647   := 1;
+        DIVIDER             : integer range 1 to 100000000  := 390625;  -- 100 MHz / 390625 = 256 Hz
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -60,10 +59,9 @@ architecture arch_imp of Quadramp_v1_0 is
 		generic (
         UPPER_LIMIT         : integer range -2147483647 to 2147483647   := 2500;
         LOWER_LIMIT         : integer range -2147483647 to 2147483647   := -2500;
-        INCREMENT_POSITIVE  : integer range 0 to 2147483647   := 1;
-        INCREMENT_NEGATIVE  : integer range 0 to 2147483647   := 1;
-        VARIATION           : integer range 0 to 2147483647   := 1;
-        DIVIDER             : integer range 0 to 100000000  := 390625;
+        INCREMENT_POSITIVE  : integer range 1 to 2147483647   := 1;
+        INCREMENT_NEGATIVE  : integer range 1 to 2147483647   := 1;
+        DIVIDER             : integer range 1 to 100000000  := 390625;
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S_AXI_ADDR_WIDTH	: integer	:= 6
 		);
@@ -104,7 +102,6 @@ Quadramp_v1_0_S00_AXI_inst : Quadramp_v1_0_S00_AXI
         LOWER_LIMIT => LOWER_LIMIT,
         INCREMENT_POSITIVE  => INCREMENT_POSITIVE,
         INCREMENT_NEGATIVE  => INCREMENT_NEGATIVE,
-        VARIATION   => VARIATION,
         DIVIDER => DIVIDER,
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH

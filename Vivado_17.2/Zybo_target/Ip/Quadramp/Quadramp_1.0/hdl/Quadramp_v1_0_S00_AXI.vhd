@@ -7,10 +7,9 @@ entity Quadramp_v1_0_S00_AXI is
 		-- Users to add parameters here
         UPPER_LIMIT         : integer range -2147483647 to 2147483647   := 2500;
         LOWER_LIMIT         : integer range -2147483647 to 2147483647   := -2500;
-        INCREMENT_POSITIVE  : integer range 0 to 2147483647   := 1;
-        INCREMENT_NEGATIVE  : integer range 0 to 2147483647   := 1;
-        VARIATION           : integer range 0 to 2147483647   := 1;
-        DIVIDER             : integer range 0 to 100000000  := 390625;
+        INCREMENT_POSITIVE  : integer range 1 to 2147483647   := 1;
+        INCREMENT_NEGATIVE  : integer range 1 to 2147483647   := 1;
+        DIVIDER             : integer range 1 to 100000000  := 390625;
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -105,7 +104,6 @@ architecture arch_imp of Quadramp_v1_0_S00_AXI is
     signal ramp_i           : integer range -2147483647 to 2147483647   := 0;
     signal increment_i      : integer range 0 to 2147483647 := 0;
     signal decrement_i      : integer range 0 to 2147483647 := 0;
-    signal variation_i      : integer range 0 to 2147483647 := 0;
     
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -499,7 +497,7 @@ begin
 	-- and the slave is ready to accept the read address.
 	slv_reg_rden <= axi_arready and S_AXI_ARVALID and (not axi_rvalid) ;
 
-	process (slv_reg0, slv_reg10, slv_reg11, slv_reg12, slv_reg13, slv_reg14, slv_reg15, axi_araddr, S_AXI_ARESETN, slv_reg_rden, reset_i, command_i, ramp_i, upper_i, lower_i, increment_i, decrement_i, variation_i, divider_i)
+	process (slv_reg0, slv_reg9, slv_reg10, slv_reg11, slv_reg12, slv_reg13, slv_reg14, slv_reg15, axi_araddr, S_AXI_ARESETN, slv_reg_rden, reset_i, command_i, ramp_i, upper_i, lower_i, increment_i, decrement_i, divider_i)
 	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0);
 	begin
 	    -- Address decoding for reading registers
@@ -522,9 +520,9 @@ begin
 	      when b"0111" =>
 	        reg_data_out <= std_logic_vector(to_unsigned(decrement_i, C_S_AXI_DATA_WIDTH));
 	      when b"1000" =>
-	        reg_data_out <= std_logic_vector(to_unsigned(variation_i, C_S_AXI_DATA_WIDTH));
-	      when b"1001" =>
 	        reg_data_out <= std_logic_vector(to_unsigned(divider_i, C_S_AXI_DATA_WIDTH));
+	      when b"1001" =>
+	        reg_data_out <= slv_reg9;
 	      when b"1010" =>
 	        reg_data_out <= slv_reg10;
 	      when b"1011" =>
@@ -570,8 +568,8 @@ begin
     --REG5 Lower limit         (INOUT)
     --REG6 Increment positive  (INOUT)
     --REG7 Increment negative  (INOUT)
-    --REG8 variation           (INOUT)
-    --REG9 divider             (INOUT)
+    --REG8 Divider             (INOUT)
+    --REG9 NULL
     --REG10 NULL
     --REG11 NULL
     --REG12 NULL
@@ -607,7 +605,7 @@ begin
         end if;
     end process;
     
-    divider_i   <= to_integer(unsigned(slv_reg9)) when (slv_reg0(7) = '0') else DIVIDER;
+    divider_i   <= to_integer(unsigned(slv_reg8)) when (slv_reg0(7) = '0') else DIVIDER;
     enable_i    <= '1' when (counter_i = divider_i-1) else '0';
     reset_i     <= slv_reg1(0) when (slv_reg0(0) = '1') else Reset;
     
@@ -616,7 +614,6 @@ begin
     lower_i         <= to_integer(unsigned(slv_reg5)) when (slv_reg0(3) = '1') else LOWER_LIMIT;
     increment_i     <= to_integer(unsigned(slv_reg6)) when (slv_reg0(4) = '1') else INCREMENT_POSITIVE;
     decrement_i     <= to_integer(unsigned(slv_reg7)) when (slv_reg0(5) = '1') else INCREMENT_NEGATIVE;
-    variation_i     <= to_integer(unsigned(slv_reg8)) when (slv_reg0(6) = '1') else VARIATION;
     command_i       <= upper_i when (command_i > upper_i) else
                        lower_i when (command_i < lower_i) else
                        command_i;

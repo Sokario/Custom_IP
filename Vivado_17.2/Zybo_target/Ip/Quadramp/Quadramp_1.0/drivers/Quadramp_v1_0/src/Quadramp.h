@@ -20,8 +20,8 @@ extern "C" {
 #define QUADRAMP_S00_AXI_SLV_REG5_OFFSET 20     // Lower limit
 #define QUADRAMP_S00_AXI_SLV_REG6_OFFSET 24     // Increment positive
 #define QUADRAMP_S00_AXI_SLV_REG7_OFFSET 28     // Increment negative
-#define QUADRAMP_S00_AXI_SLV_REG8_OFFSET 32     // Variation
-#define QUADRAMP_S00_AXI_SLV_REG9_OFFSET 36     // Divider
+#define QUADRAMP_S00_AXI_SLV_REG8_OFFSET 32     // Divider
+#define QUADRAMP_S00_AXI_SLV_REG9_OFFSET 36
 #define QUADRAMP_S00_AXI_SLV_REG10_OFFSET 40
 #define QUADRAMP_S00_AXI_SLV_REG11_OFFSET 44
 #define QUADRAMP_S00_AXI_SLV_REG12_OFFSET 48
@@ -140,8 +140,6 @@ void Quadramp_SetIncrementPositive(Quadramp *InstancePtr, u32 Data);
 u32 Quadramp_GetIncrementPositive(Quadramp *InstancePtr);
 void Quadramp_SetIncrementNegative(Quadramp *InstancePtr, u32 Data);
 u32 Quadramp_GetIncrementNegative(Quadramp *InstancePtr);
-void Quadramp_SetVariation(Quadramp *InstancePtr, u32 Data);
-u32 Quadramp_GetVariation(Quadramp *InstancePtr);
 void Quadramp_SetDivider(Quadramp *InstancePtr, u32 Data);
 u32 Quadramp_GetDivider(Quadramp *InstancePtr);
 

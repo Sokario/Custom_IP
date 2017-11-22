@@ -13,7 +13,6 @@ proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "LOWER_LIMIT" -parent ${Page_0}
   ipgui::add_param $IPINST -name "INCREMENT_POSITIVE" -parent ${Page_0}
   ipgui::add_param $IPINST -name "INCREMENT_NEGATIVE" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "VARIATION" -parent ${Page_0}
   ipgui::add_param $IPINST -name "DIVIDER" -parent ${Page_0}
 
 
@@ -61,15 +60,6 @@ proc update_PARAM_VALUE.UPPER_LIMIT { PARAM_VALUE.UPPER_LIMIT } {
 
 proc validate_PARAM_VALUE.UPPER_LIMIT { PARAM_VALUE.UPPER_LIMIT } {
 	# Procedure called to validate UPPER_LIMIT
-	return true
-}
-
-proc update_PARAM_VALUE.VARIATION { PARAM_VALUE.VARIATION } {
-	# Procedure called to update VARIATION when any of the dependent parameters in the arguments change
-}
-
-proc validate_PARAM_VALUE.VARIATION { PARAM_VALUE.VARIATION } {
-	# Procedure called to validate VARIATION
 	return true
 }
 
@@ -143,10 +133,5 @@ proc update_MODELPARAM_VALUE.INCREMENT_POSITIVE { MODELPARAM_VALUE.INCREMENT_POS
 proc update_MODELPARAM_VALUE.INCREMENT_NEGATIVE { MODELPARAM_VALUE.INCREMENT_NEGATIVE PARAM_VALUE.INCREMENT_NEGATIVE } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.INCREMENT_NEGATIVE}] ${MODELPARAM_VALUE.INCREMENT_NEGATIVE}
-}
-
-proc update_MODELPARAM_VALUE.VARIATION { MODELPARAM_VALUE.VARIATION PARAM_VALUE.VARIATION } {
-	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.VARIATION}] ${MODELPARAM_VALUE.VARIATION}
 }
 

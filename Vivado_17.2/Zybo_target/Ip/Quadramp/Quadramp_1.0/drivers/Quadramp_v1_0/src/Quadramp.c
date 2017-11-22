@@ -262,7 +262,7 @@ u32 Quadramp_GetIncrementNegative(Quadramp *InstancePtr)
     QUADRAMP_mReadReg(InstancePtr->BaseAddress, QUADRAMP_S00_AXI_SLV_REG7_OFFSET);
 }
 
-void Quadramp_SetVariation(Quadramp *InstancePtr, u32 Data)
+void Quadramp_SetDivider(Quadramp *InstancePtr, u32 Data)
 {
     /* Asserts */
     Xil_AssertNonvoid(InstancePtr != NULL);
@@ -271,31 +271,13 @@ void Quadramp_SetVariation(Quadramp *InstancePtr, u32 Data)
     QUADRAMP_mWriteReg(InstancePtr->BaseAddress, QUADRAMP_S00_AXI_SLV_REG8_OFFSET, Data);
 }
 
-u32 Quadramp_GetVariation(Quadramp *InstancePtr)
-{
-    /* Asserts */
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-    
-    QUADRAMP_mReadReg(InstancePtr->BaseAddress, QUADRAMP_S00_AXI_SLV_REG8_OFFSET);
-}
-
-void Quadramp_SetDivider(Quadramp *InstancePtr, u32 Data)
-{
-    /* Asserts */
-    Xil_AssertNonvoid(InstancePtr != NULL);
-    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
-    
-    QUADRAMP_mWriteReg(InstancePtr->BaseAddress, QUADRAMP_S00_AXI_SLV_REG9_OFFSET, Data);
-}
-
 u32 Quadramp_GetDivider(Quadramp *InstancePtr)
 {
     /* Asserts */
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
     
-    QUADRAMP_mReadReg(InstancePtr->BaseAddress, QUADRAMP_S00_AXI_SLV_REG9_OFFSET);
+    QUADRAMP_mReadReg(InstancePtr->BaseAddress, QUADRAMP_S00_AXI_SLV_REG8_OFFSET);
 }
 
 
