@@ -605,7 +605,7 @@ begin
         end if;
     end process;
     
-    divider_i   <= to_integer(unsigned(slv_reg8)) when (slv_reg0(7) = '0') else DIVIDER;
+    divider_i   <= to_integer(unsigned(slv_reg8)) when (slv_reg0(7) = '1') else DIVIDER;
     enable_i    <= '1' when (counter_i = divider_i-1) else '0';
     reset_i     <= slv_reg1(0) when (slv_reg0(0) = '1') else Reset;
     
