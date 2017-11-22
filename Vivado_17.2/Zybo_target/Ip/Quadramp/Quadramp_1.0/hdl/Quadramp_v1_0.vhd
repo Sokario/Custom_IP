@@ -5,11 +5,12 @@ use ieee.numeric_std.all;
 entity Quadramp_v1_0 is
 	generic (
 		-- Users to add parameters here
-        FIRST_ORDER_POSITIVE    : integer   := 0;
-        FIRST_ORDER_NEGATIVE    : integer   := 0;
-        SECOND_ORDER_POSITIVE   : integer   := 0;
-        SECOND_ORDER_NEGATIVE   : integer   := 0;
-        DIVIDER                 : integer   := 390625;  -- 100 MHz / 390625 = 256 Hz
+        UPPER_LIMIT         : integer range -2147483647 to 2147483647   := 2500;
+        LOWER_LIMIT         : integer range -2147483647 to 2147483647   := -2500;
+        INCREMENT_POSITIVE  : integer range 0 to 2147483647   := 1;
+        INCREMENT_NEGATIVE  : integer range 0 to 2147483647   := 1;
+        VARIATION           : integer range 0 to 2147483647   := 1;
+        DIVIDER             : integer range 0 to 100000000  := 390625;  -- 100 MHz / 390625 = 256 Hz
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -57,11 +58,12 @@ architecture arch_imp of Quadramp_v1_0 is
 	-- component declaration
 	component Quadramp_v1_0_S00_AXI is
 		generic (
-        FIRST_ORDER_POSITIVE    : integer   := 0;
-        FIRST_ORDER_NEGATIVE    : integer   := 0;
-        SECOND_ORDER_POSITIVE   : integer   := 0;
-        SECOND_ORDER_NEGATIVE   : integer   := 0;
-        DIVIDER                 : integer   := 390625;
+        UPPER_LIMIT         : integer range -2147483647 to 2147483647   := 2500;
+        LOWER_LIMIT         : integer range -2147483647 to 2147483647   := -2500;
+        INCREMENT_POSITIVE  : integer range 0 to 2147483647   := 1;
+        INCREMENT_NEGATIVE  : integer range 0 to 2147483647   := 1;
+        VARIATION           : integer range 0 to 2147483647   := 1;
+        DIVIDER             : integer range 0 to 100000000  := 390625;
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S_AXI_ADDR_WIDTH	: integer	:= 6
 		);
@@ -98,10 +100,11 @@ begin
 -- Instantiation of Axi Bus Interface S00_AXI
 Quadramp_v1_0_S00_AXI_inst : Quadramp_v1_0_S00_AXI
 	generic map (
-        FIRST_ORDER_POSITIVE    => FIRST_ORDER_POSITIVE,
-        FIRST_ORDER_NEGATIVE    => FIRST_ORDER_NEGATIVE,
-        SECOND_ORDER_POSITIVE   => SECOND_ORDER_POSITIVE,
-        SECOND_ORDER_NEGATIVE   => SECOND_ORDER_NEGATIVE,
+        UPPER_LIMIT => UPPER_LIMIT,
+        LOWER_LIMIT => LOWER_LIMIT,
+        INCREMENT_POSITIVE  => INCREMENT_POSITIVE,
+        INCREMENT_NEGATIVE  => INCREMENT_NEGATIVE,
+        VARIATION   => VARIATION,
         DIVIDER => DIVIDER,
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH

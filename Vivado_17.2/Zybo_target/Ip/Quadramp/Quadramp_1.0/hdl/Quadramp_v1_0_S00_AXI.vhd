@@ -5,11 +5,12 @@ use ieee.numeric_std.all;
 entity Quadramp_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
-        FIRST_ORDER_POSITIVE    : integer   := 0;
-        FIRST_ORDER_NEGATIVE    : integer   := 0;
-        SECOND_ORDER_POSITIVE   : integer   := 0;
-        SECOND_ORDER_NEGATIVE   : integer   := 0;
-        DIVIDER                 : integer   := 390625;  -- 100 MHz / 390625 = 256 Hz
+        UPPER_LIMIT         : integer range -2147483647 to 2147483647   := 2500;
+        LOWER_LIMIT         : integer range -2147483647 to 2147483647   := -2500;
+        INCREMENT_POSITIVE  : integer range 0 to 2147483647   := 1;
+        INCREMENT_NEGATIVE  : integer range 0 to 2147483647   := 1;
+        VARIATION           : integer range 0 to 2147483647   := 1;
+        DIVIDER             : integer range 0 to 100000000  := 390625;
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -91,6 +92,20 @@ end Quadramp_v1_0_S00_AXI;
 
 architecture arch_imp of Quadramp_v1_0_S00_AXI is
 
+    -- USER signals
+    signal counter_i        : integer range 0 to 100000000  := 0;
+    signal divider_i        : integer range 0 to 100000000  := 0;
+    signal enable_i         : std_logic;
+    signal reset_i          : std_logic;
+    
+    signal command_choice   : integer range -2147483647 to 2147483647   := 0;
+    signal command_i        : integer range -2147483647 to 2147483647   := 0;
+    signal upper_i          : integer range -2147483647 to 2147483647   := 0;
+    signal lower_i          : integer range -2147483647 to 2147483647   := 0;
+    signal ramp_i           : integer range -2147483647 to 2147483647   := 0;
+    signal increment_i      : integer range 0 to 2147483647 := 0;
+    signal decrement_i      : integer range 0 to 2147483647 := 0;
+    
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
 	signal axi_awready	: std_logic;
@@ -546,6 +561,65 @@ begin
 
 
 	-- Add user logic here
+	--REG0 OverRide            (IN)
+	--REG1 Reset               (INOUT)
+	--REG2 Command             (INOUT)
+	--REG3 Ramp                (OUT)
+	--REG4 Upper limit         (INOUT)
+    --REG5 Lower limit         (INOUT)
+    --REG6 Increment positive  (INOUT)
+    --REG7 Increment negative  (INOUT)
+    --REG8 variation           (INOUT)
+    --REG9 divider             (INOUT)
+    --REG10 NULL
+    --REG11 NULL
+    --REG12 NULL
+    --REG13 NULL
+    --REG14 NULL
+    --REG15 NULL
+
+    process ( S_AXI_ACLK ) is
+    begin
+        if (rising_edge( S_AXI_ACLK )) then
+            if (counter_i = divider_i-1) then
+                counter_i <= 0;
+            else
+                counter_i <= counter_i + 1;
+            end if;
+        end if;
+    end process;
+
+    process ( S_AXI_ACLK ) is
+    begin
+        if (rising_edge( S_AXI_ACLK )) then
+            if (enable_i = '1') then
+                if (command_i > ramp_i) then
+                    ramp_i <= ramp_i + increment_i;
+                elsif (command_i < ramp_i) then
+                    ramp_i <= ramp_i - decrement_i;
+                else
+                    ramp_i <= ramp_i;
+                end if;
+            else
+                ramp_i <= ramp_i;
+            end if;
+        end if;
+    end process;
+    
+    divider_i   <= to_integer(unsigned(slv_reg9)) when (slv_reg0(7) = '0') else DIVIDER;
+    enable_i    <= '1' when (counter_i = divider_i-1) else '0';
+    reset_i     <= slv_reg1(0) when (slv_reg0(0) = '1') else Reset;
+    
+    command_choice  <= to_integer(unsigned(slv_reg2)) when (slv_reg0(1) = '1') else to_integer(unsigned(Command));
+    upper_i         <= to_integer(unsigned(slv_reg4)) when (slv_reg0(2) = '1') else UPPER_LIMIT;
+    lower_i         <= to_integer(unsigned(slv_reg5)) when (slv_reg0(3) = '1') else LOWER_LIMIT;
+    increment_i     <= to_integer(unsigned(slv_reg6)) when (slv_reg0(4) = '1') else INCREMENT_POSITIVE;
+    decrement_i     <= to_integer(unsigned(slv_reg7)) when (slv_reg0(5) = '1') else INCREMENT_NEGATIVE;
+    command_i       <= upper_i when (command_i > upper_i) else
+                       lower_i when (command_i < lower_i) else
+                       command_i;
+                       
+    Ramp <= std_logic_vector(to_unsigned(ramp_i, C_S_AXI_DATA_WIDTH));
 
 	-- User logic ends
 
