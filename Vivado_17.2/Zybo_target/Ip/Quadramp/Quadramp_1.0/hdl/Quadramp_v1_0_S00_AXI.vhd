@@ -92,8 +92,8 @@ end Quadramp_v1_0_S00_AXI;
 architecture arch_imp of Quadramp_v1_0_S00_AXI is
 
     -- USER signals
-    signal counter_i        : integer range 0 to 100000000  := 0;
-    signal divider_i        : integer range 0 to 100000000  := 0;
+    signal counter_i        : integer range 0 to 2147483647  := 0;
+    signal divider_i        : integer range 0 to 2147483647  := 0;
     signal enable_i         : std_logic;
     signal reset_i          : std_logic;
     
@@ -497,7 +497,7 @@ begin
 	-- and the slave is ready to accept the read address.
 	slv_reg_rden <= axi_arready and S_AXI_ARVALID and (not axi_rvalid) ;
 
-	process (slv_reg0, slv_reg9, slv_reg10, slv_reg11, slv_reg12, slv_reg13, slv_reg14, slv_reg15, axi_araddr, S_AXI_ARESETN, slv_reg_rden, reset_i, command_i, ramp_i, upper_i, lower_i, increment_i, decrement_i, divider_i)
+	process (slv_reg0, slv_reg9, slv_reg10, slv_reg11, slv_reg12, slv_reg13, slv_reg14, slv_reg15, axi_araddr, S_AXI_ARESETN, slv_reg_rden, reset_i, command_i, ramp_i, upper_i, lower_i, increment_i, decrement_i, divider_i, command_choice)
 	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0);
 	begin
 	    -- Address decoding for reading registers
@@ -522,7 +522,7 @@ begin
 	      when b"1000" =>
 	        reg_data_out <= std_logic_vector(to_unsigned(divider_i, C_S_AXI_DATA_WIDTH));
 	      when b"1001" =>
-	        reg_data_out <= slv_reg9;
+	        reg_data_out <= std_logic_vector(to_unsigned(command_choice, C_S_AXI_DATA_WIDTH));
 	      when b"1010" =>
 	        reg_data_out <= slv_reg10;
 	      when b"1011" =>
@@ -569,7 +569,7 @@ begin
     --REG6 Increment positive  (INOUT)
     --REG7 Increment negative  (INOUT)
     --REG8 Divider             (INOUT)
-    --REG9 NULL
+    --REG9 Counter
     --REG10 NULL
     --REG11 NULL
     --REG12 NULL
@@ -580,7 +580,9 @@ begin
     process ( S_AXI_ACLK ) is
     begin
         if (rising_edge( S_AXI_ACLK )) then
-            if (counter_i = divider_i-1) then
+            if (reset_i = '1') then
+                counter_i <= 0;
+            elsif (counter_i = divider_i-1) then
                 counter_i <= 0;
             else
                 counter_i <= counter_i + 1;
@@ -591,7 +593,9 @@ begin
     process ( S_AXI_ACLK ) is
     begin
         if (rising_edge( S_AXI_ACLK )) then
-            if (enable_i = '1') then
+            if (reset_i = '1') then
+                ramp_i <= 0;
+            elsif (enable_i = '1') then
                 if (command_i > ramp_i) then
                     ramp_i <= ramp_i + increment_i;
                 elsif (command_i < ramp_i) then
@@ -609,16 +613,16 @@ begin
     enable_i    <= '1' when (counter_i = divider_i-1) else '0';
     reset_i     <= slv_reg1(0) when (slv_reg0(0) = '1') else Reset;
     
-    command_choice  <= to_integer(unsigned(slv_reg2)) when (slv_reg0(1) = '1') else to_integer(unsigned(Command));
-    upper_i         <= to_integer(unsigned(slv_reg4)) when (slv_reg0(2) = '1') else UPPER_LIMIT;
-    lower_i         <= to_integer(unsigned(slv_reg5)) when (slv_reg0(3) = '1') else LOWER_LIMIT;
+    command_choice  <= to_integer(signed(slv_reg2)) when (slv_reg0(1) = '1') else to_integer(signed(Command));
+    upper_i         <= to_integer(signed(slv_reg4)) when (slv_reg0(2) = '1') else UPPER_LIMIT;
+    lower_i         <= to_integer(signed(slv_reg5)) when (slv_reg0(3) = '1') else LOWER_LIMIT;
     increment_i     <= to_integer(unsigned(slv_reg6)) when (slv_reg0(4) = '1') else INCREMENT_POSITIVE;
     decrement_i     <= to_integer(unsigned(slv_reg7)) when (slv_reg0(5) = '1') else INCREMENT_NEGATIVE;
-    command_i       <= upper_i when (command_i > upper_i) else
-                       lower_i when (command_i < lower_i) else
-                       command_i;
+    command_i       <= upper_i when (command_choice > upper_i) else
+                       lower_i when (command_choice < lower_i) else
+                       command_choice;
                        
-    Ramp <= std_logic_vector(to_unsigned(ramp_i, C_S_AXI_DATA_WIDTH));
+    Ramp <= std_logic_vector(to_signed(ramp_i, C_S_AXI_DATA_WIDTH));
 
 	-- User logic ends
 
