@@ -9,8 +9,18 @@ proc init_gui { IPINST } {
   set_property tooltip {Width of S_AXI address bus} ${C_S00_AXI_ADDR_WIDTH}
   ipgui::add_param $IPINST -name "C_S00_AXI_BASEADDR" -parent ${Page_0}
   ipgui::add_param $IPINST -name "C_S00_AXI_HIGHADDR" -parent ${Page_0}
+  ipgui::add_param $IPINST -name "MAXIMUM" -parent ${Page_0}
 
 
+}
+
+proc update_PARAM_VALUE.MAXIMUM { PARAM_VALUE.MAXIMUM } {
+	# Procedure called to update MAXIMUM when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.MAXIMUM { PARAM_VALUE.MAXIMUM } {
+	# Procedure called to validate MAXIMUM
+	return true
 }
 
 proc update_PARAM_VALUE.C_S00_AXI_DATA_WIDTH { PARAM_VALUE.C_S00_AXI_DATA_WIDTH } {
@@ -58,5 +68,10 @@ proc update_MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH { MODELPARAM_VALUE.C_S00_AXI_D
 proc update_MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH { MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH PARAM_VALUE.C_S00_AXI_ADDR_WIDTH } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.C_S00_AXI_ADDR_WIDTH}] ${MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH}
+}
+
+proc update_MODELPARAM_VALUE.MAXIMUM { MODELPARAM_VALUE.MAXIMUM PARAM_VALUE.MAXIMUM } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.MAXIMUM}] ${MODELPARAM_VALUE.MAXIMUM}
 }
 

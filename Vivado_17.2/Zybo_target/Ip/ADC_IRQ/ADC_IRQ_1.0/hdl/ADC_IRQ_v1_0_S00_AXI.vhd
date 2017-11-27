@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity ADC_IRQ_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
-
+        MAXIMUM : integer   := 65536;
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -16,6 +16,7 @@ entity ADC_IRQ_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
+		Reset       : in std_logic;
         Data_ready  : in std_logic;                         -- Data ready signal
         Data        : in std_logic_vector(15 downto 0);     -- Data from XADC register
         Channel     : in std_logic_vector(4 downto 0);      -- Adc conversion channel
@@ -93,6 +94,56 @@ end ADC_IRQ_v1_0_S00_AXI;
 
 architecture arch_imp of ADC_IRQ_v1_0_S00_AXI is
 
+	-- USER signals
+	type state_type is (state_0, state_1, state_2, state_3);
+	signal state       : state_type;
+	signal next_state  : state_type;
+
+    signal reset_i     : std_logic;
+    signal enable_i    : std_logic;
+    signal data_i      : std_logic_vector(15 downto 0);
+    signal value_i     : unsigned(15 downto 0)    := (others => '0');
+	signal addr_i      : std_logic_vector(6 downto 0)   := (others => '0');
+	signal indice_i    : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal interrupt_i : std_logic;
+	
+	signal addr_out    : std_logic_vector(6 downto 0)  := (others => '0');
+	signal ready_i     : std_logic;
+	
+	signal threshold_0  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_1  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_2  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_3  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_4  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_5  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_6  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_7  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_8  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_9  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_10  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_11  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_12  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_13  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_14  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+	signal threshold_15  : unsigned(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+    
+    signal last_0  : unsigned(15 downto 0)   := (others => '0');
+    signal last_1  : unsigned(15 downto 0)   := (others => '0');
+    signal last_2  : unsigned(15 downto 0)   := (others => '0');
+    signal last_3  : unsigned(15 downto 0)   := (others => '0');
+    signal last_4  : unsigned(15 downto 0)   := (others => '0');
+    signal last_5  : unsigned(15 downto 0)   := (others => '0');
+    signal last_6  : unsigned(15 downto 0)   := (others => '0');
+    signal last_7  : unsigned(15 downto 0)   := (others => '0');
+    signal last_8  : unsigned(15 downto 0)   := (others => '0');
+    signal last_9  : unsigned(15 downto 0)   := (others => '0');
+    signal last_10  : unsigned(15 downto 0)   := (others => '0');
+    signal last_11  : unsigned(15 downto 0)   := (others => '0');
+    signal last_12  : unsigned(15 downto 0)   := (others => '0');
+    signal last_13  : unsigned(15 downto 0)   := (others => '0');
+    signal last_14  : unsigned(15 downto 0)   := (others => '0');
+    signal last_15  : unsigned(15 downto 0)   := (others => '0');
+	
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
 	signal axi_awready	: std_logic;
@@ -756,6 +807,334 @@ begin
 
 
 	-- Add user logic here
+	--REG 0 OverRide        (IN)
+    --REG 1 Threshold 0     (IN)
+	--REG 2 Threshold 1     (IN)
+	--REG 3 Threshold 2     (IN)
+	--REG 4 Threshold 3     (IN)
+	--REG 5 Threshold 4     (IN)
+	--REG 6 Threshold 5     (IN)
+	--REG 7 Threshold 6     (IN)
+	--REG 8 Threshold 7     (IN)
+	--REG 9 Threshold 8     (IN)
+    --REG 10 Threshold 9    (IN)
+    --REG 11 Threshold 10   (IN)
+    --REG 12 Threshold 11   (IN)
+    --REG 13 Threshold 12   (IN)
+    --REG 14 Threshold 13   (IN)
+    --REG 15 Threshold 14   (IN)
+    --REG 16 Threshold 15   (IN)
+    --REG 17 Reset          (INOUT)
+    --REG 18 Value          (INOUT)
+    --REG 19 Indice         (OUT)
+    --REG 20 Interrupt      (OUT)
+    --REG 21 IRQ MAnager    (INOUT)
+    --REG 22 NULL
+    --REG 23 NULL
+    --REG 24 NULL
+    --REG 25 NULL
+    --REG 26 NULL
+    --REG 27 NULL
+    --REG 28 NULL
+    --REG 29 NULL
+    --REG 30 NULL
+    --REG 31 NULL
+    
+    FSM_NextState: process ( S_AXI_ACLK, reset_i ) is
+    begin
+        if (reset_i = '1') then
+            state <= state_0;
+        elsif (rising_edge( S_AXI_ACLK )) then
+            state <= next_state;
+        end if;
+    end process;
+    
+    FSM_StateRegister: process (state, Eoc, Data_ready) is
+    begin
+        case state is
+            when state_0 =>
+                if (Eoc = '1') then
+                    next_state <= state_1;
+                else
+                    next_state <= state_0;
+                end if;
+            when state_1 =>
+                next_state <= state_2;
+            when state_2 =>
+                if (Data_ready = '1') then
+                    next_state <= state_3;
+                else
+                    next_state <= state_2;
+                end if;
+            when state_3 =>
+                next_state <= state_0;
+            when others =>
+                next_state <= state_0;
+        end case;
+    end process;
+
+    FSM_OutputFunction: process (state) is
+    begin
+        case state is
+            when state_0 =>
+                addr_out <= (others => '0');
+                ready_i <= '0';
+                enable_i <= '0';
+            when state_1 =>
+                addr_i <= "00" & Channel;
+                addr_out <= std_logic_vector(unsigned(addr_i) + 10);
+                ready_i <= '0';
+                enable_i <= '0';
+            when state_2 =>
+                ready_i <= '1';
+                enable_i <= '0';
+            when state_3 =>
+                value_i <= unsigned(data_i);
+                ready_i <= '0';
+                enable_i <= '1';
+            when others =>
+                addr_out <= (others => '0');
+                ready_i <= '0';
+                enable_i <= '0';
+        end case;
+    end process;
+    
+    process ( S_AXI_ACLK ) is
+    begin
+        if (rising_edge( S_AXI_ACLK )) then
+            if (slv_reg20(1) = '1') then
+                if (slv_reg20(0) = '1') then
+                    interrupt_i <= '0';
+                    indice_i <= (others => '0');
+                elsif (enable_i = '1') then
+                    case addr_i is
+                        when "00000" =>
+                            if (value_i = last_0) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(0) <= indice_i(0);
+                            elsif (value_i > threshold_0) then
+                                interrupt_i <= '1';
+                                indice_i(0) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(0) <= '0';
+                            end if;
+                            last_0 <= value_i;
+                        when "00001" =>
+                            if (value_i = last_1) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(1) <= indice_i(1);
+                            elsif (value_i > threshold_1) then
+                                interrupt_i <= '1';
+                                indice_i(1) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(1) <= '0';
+                            end if;
+                            last_1 <= value_i;
+                        when "00010" =>
+                            if (value_i = last_2) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(2) <= indice_i(2);
+                            elsif (value_i > threshold_2) then
+                                interrupt_i <= '1';
+                                indice_i(2) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(2) <= '0';
+                            end if;
+                            last_2 <= value_i;
+                        when "00011" =>
+                            if (value_i = last_3) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(3) <= indice_i(3);
+                            elsif (value_i > threshold_3) then
+                                interrupt_i <= '1';
+                                indice_i(3) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(3) <= '0';
+                            end if;
+                            last_3 <= value_i;
+                        when "00100" =>
+                            if (value_i = last_4) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(4) <= indice_i(4);
+                            elsif (value_i > threshold_4) then
+                                interrupt_i <= '1';
+                                indice_i(4) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(4) <= '0';
+                            end if;
+                            last_4 <= value_i;
+                        when "00101" =>
+                            if (value_i = last_5) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(5) <= indice_i(5);
+                            elsif (value_i > threshold_5) then
+                                interrupt_i <= '1';
+                                indice_i(5) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(5) <= '0';
+                            end if;
+                            last_5 <= value_i;
+                        when "00110" =>
+                            if (value_i = last_6) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(6) <= indice_i(6);
+                            elsif (value_i > threshold_6) then
+                                interrupt_i <= '1';
+                                indice_i(6) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(6) <= '0';
+                            end if;
+                            last_6 <= value_i;
+                        when "00111" =>
+                            if (value_i = last_7) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(7) <= indice_i(7);
+                            elsif (value_i > threshold_7) then
+                                interrupt_i <= '1';
+                                indice_i(7) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(7) <= '0';
+                            end if;
+                            last_7 <= value_i;
+                        when "01000" =>
+                            if (value_i = last_8) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(8) <= indice_i(8);
+                            elsif (value_i > threshold_8) then
+                                interrupt_i <= '1';
+                                indice_i(8) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(8) <= '0';
+                            end if;
+                            last_8 <= value_i;
+                        when "01001" =>
+                            if (value_i = last_9) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(9) <= indice_i(9);
+                            elsif (value_i > threshold_9) then
+                                interrupt_i <= '1';
+                                indice_i(9) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(9) <= '0';
+                            end if;
+                            last_9 <= value_i;
+                        when "01010" =>
+                            if (value_i = last_10) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(10) <= indice_i(10);
+                            elsif (value_i > threshold_10) then
+                                interrupt_i <= '1';
+                                indice_i(10) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(10) <= '0';
+                            end if;
+                            last_10 <= value_i;
+                        when "01011" =>
+                            if (value_i = last_11) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(11) <= indice_i(11);
+                            elsif (value_i > threshold_11) then
+                                interrupt_i <= '1';
+                                indice_i(11) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(11) <= '0';
+                            end if;
+                            last_11 <= value_i;
+                        when "01100" =>
+                            if (value_i = last_12) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(12) <= indice_i(12);
+                            elsif (value_i > threshold_12) then
+                                interrupt_i <= '1';
+                                indice_i(12) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(12) <= '0';
+                            end if;
+                            last_12 <= value_i;
+                        when "01101" =>
+                            if (value_i = last_13) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(13) <= indice_i(13);
+                            elsif (value_i > threshold_13) then
+                                interrupt_i <= '1';
+                                indice_i(13) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(13) <= '0';
+                            end if;
+                            last_13 <= value_i;
+                        when "01110" =>
+                            if (value_i = last_14) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(14) <= indice_i(14);
+                            elsif (value_i > threshold_14) then
+                                interrupt_i <= '1';
+                                indice_i(14) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(14) <= '0';
+                            end if;
+                            last_14 <= value_i;
+                        when "01111" =>
+                            if (value_i = last_15) then
+                                interrupt_i <= interrupt_i;
+                                indice_i(15) <= indice_i(15);
+                            elsif (value_i > threshold_15) then
+                                interrupt_i <= '1';
+                                indice_i(15) <= '1';
+                            else
+                                interrupt_i <= '0';
+                                indice_i(15) <= '0';
+                            end if;
+                            last_15 <= value_i;
+                        when others =>
+                            interrupt_i <= '0';
+                            indice_i <= indice_i;
+                    end case;
+                end if;
+            else
+                interrupt_i <= interrupt_i;
+                indice_i <= indice_i;
+            end if;
+        end if;
+    end process;
+    
+    threshold_0 <= unsigned(slv_reg1) when (slv_reg0(1) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_1 <= unsigned(slv_reg2) when (slv_reg0(2) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_2 <= unsigned(slv_reg3) when (slv_reg0(3) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_3 <= unsigned(slv_reg4) when (slv_reg0(4) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_4 <= unsigned(slv_reg5) when (slv_reg0(5) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_5 <= unsigned(slv_reg6) when (slv_reg0(6) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_6 <= unsigned(slv_reg7) when (slv_reg0(7) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_7 <= unsigned(slv_reg8) when (slv_reg0(8) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_8 <= unsigned(slv_reg9) when (slv_reg0(9) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_9 <= unsigned(slv_reg10) when (slv_reg0(10) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_10 <= unsigned(slv_reg11) when (slv_reg0(11) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_11 <= unsigned(slv_reg12) when (slv_reg0(12) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_12 <= unsigned(slv_reg13) when (slv_reg0(13) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_13 <= unsigned(slv_reg14) when (slv_reg0(14) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_14 <= unsigned(slv_reg15) when (slv_reg0(15) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    threshold_15 <= unsigned(slv_reg16) when (slv_reg0(16) = '1') else to_unsigned(MAXIMUM, C_S_AXI_DATA_WIDTH);
+    
+    reset_i <= slv_reg17(0) when (slv_reg0(0) = '1') else Reset;
+    data_i  <= Data;
+    
+    Addr        <= addr_out;
+    Addr_ready  <= ready_i;
+    Interrupt   <= interrupt_i;
 
 	-- User logic ends
 

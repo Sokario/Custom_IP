@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity ADC_IRQ_v1_0 is
 	generic (
 		-- Users to add parameters here
-
+        MAXIMUM : integer   := 65536;
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -16,6 +16,7 @@ entity ADC_IRQ_v1_0 is
 	);
 	port (
 		-- Users to add ports here
+        Reset       : in std_logic;
         Data_ready  : in std_logic;                         -- Data ready signal
         Data        : in std_logic_vector(15 downto 0);     -- Data from XADC register
         Channel     : in std_logic_vector(4 downto 0);      -- Adc conversion channel
@@ -60,10 +61,12 @@ architecture arch_imp of ADC_IRQ_v1_0 is
 	-- component declaration
 	component ADC_IRQ_v1_0_S00_AXI is
 		generic (
+        MAXIMUM : integer   := 65536;
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S_AXI_ADDR_WIDTH	: integer	:= 7
 		);
 		port (
+        Reset       : in std_logic;
         Data_ready  : in std_logic;
         Data        : in std_logic_vector(15 downto 0);
         Channel     : in std_logic_vector(4 downto 0);
@@ -101,10 +104,12 @@ begin
 -- Instantiation of Axi Bus Interface S00_AXI
 ADC_IRQ_v1_0_S00_AXI_inst : ADC_IRQ_v1_0_S00_AXI
 	generic map (
+        MAXIMUM => MAXIMUM,
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
 	)
 	port map (
+        Reset   => Reset,
         Data_ready  => Data_ready,
         Data        => Data,
         Channel     => Channel,
