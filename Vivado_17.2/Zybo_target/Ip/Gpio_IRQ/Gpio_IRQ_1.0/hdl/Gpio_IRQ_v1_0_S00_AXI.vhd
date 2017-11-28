@@ -461,9 +461,9 @@ begin
                 if (slv_reg4(0) = '1') then
                     interrupt_i <= '0';
                 elsif (gpio_i > last_i) then
-                   interrupt_i <= '1';
+                    interrupt_i <= '1';
                 else
-                   interrupt_i <= interrupt_i;
+                    interrupt_i <= interrupt_i;
                 end if;
                 last_i <= gpio_i;
             else
