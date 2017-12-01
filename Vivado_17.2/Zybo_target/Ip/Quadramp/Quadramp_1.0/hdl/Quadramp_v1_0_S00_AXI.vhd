@@ -593,6 +593,29 @@ begin
     process ( S_AXI_ACLK ) is
     begin
         if (rising_edge( S_AXI_ACLK )) then
+            if (slv_reg0(1) = '1') then
+                command_choice <= to_integer(signed(slv_reg2));
+            else
+                command_choice <= to_integer(signed(Command));
+            end if;
+            if (slv_reg0(2) = '1') then
+                upper_i <= to_integer(signed(slv_reg4));
+            else
+                upper_i <= UPPER_LIMIT;
+            end if;
+            if (slv_reg0(3) = '1') then
+                lower_i <= to_integer(signed(slv_reg5));
+            else
+                lower_i <= LOWER_LIMIT;
+            end if;
+            if (command_choice > upper_i) then
+                command_i <= upper_i;
+            elsif (command_choice < lower_i) then
+                command_i <= lower_i;
+            else
+                command_i <= command_choice;
+            end if;
+            
             if (reset_i = '1') then
                 ramp_i <= 0;
             elsif (enable_i = '1') then
@@ -608,19 +631,12 @@ begin
             end if;
         end if;
     end process;
-    
+        
     divider_i   <= to_integer(unsigned(slv_reg8)) when (slv_reg0(7) = '1') else DIVIDER;
     enable_i    <= '1' when (counter_i = divider_i-1) else '0';
-    reset_i     <= slv_reg1(0) when (slv_reg0(0) = '1') else Reset;
-    
-    command_choice  <= to_integer(signed(slv_reg2)) when (slv_reg0(1) = '1') else to_integer(signed(Command));
-    upper_i         <= to_integer(signed(slv_reg4)) when (slv_reg0(2) = '1') else UPPER_LIMIT;
-    lower_i         <= to_integer(signed(slv_reg5)) when (slv_reg0(3) = '1') else LOWER_LIMIT;
+    reset_i     <= slv_reg1(0) when (slv_reg0(0) = '1') else Reset;    
     increment_i     <= to_integer(unsigned(slv_reg6)) when (slv_reg0(4) = '1') else INCREMENT_POSITIVE;
     decrement_i     <= to_integer(unsigned(slv_reg7)) when (slv_reg0(5) = '1') else INCREMENT_NEGATIVE;
-    command_i       <= upper_i when (command_choice > upper_i) else
-                       lower_i when (command_choice < lower_i) else
-                       command_choice;
                        
     Ramp <= std_logic_vector(to_signed(ramp_i, C_S_AXI_DATA_WIDTH));
 
