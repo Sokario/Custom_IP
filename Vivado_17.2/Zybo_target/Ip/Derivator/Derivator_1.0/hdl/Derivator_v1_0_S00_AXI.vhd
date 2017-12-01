@@ -5,7 +5,6 @@ use ieee.numeric_std.all;
 entity Derivator_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
-        FREQUENCE_ACK   : integer   := 256;     -- 256 Hz
         DIVIDER         : integer   := 390625;  -- 100 MHz / 390625 = 256 Hz
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
@@ -88,11 +87,12 @@ end Derivator_v1_0_S00_AXI;
 architecture arch_imp of Derivator_v1_0_S00_AXI is
 
     -- USER signals
-    signal counter_i    : integer range 0 to DIVIDER-1  := 0;
+    signal counter_i    : integer range 0 to 100000000  := 0;
+    signal divider_i    : integer range 0 to 100000000  := 0;
     signal enable_i     : std_logic;
     signal increments_i : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
     signal previous_i   : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
-    signal speed_i      : signed(2*C_S_AXI_DATA_WIDTH-1 downto 0)           := (others => '0');
+    signal speed_i      : signed(C_S_AXI_DATA_WIDTH-1 downto 0)             := (others => '0');
 
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -354,7 +354,7 @@ begin
 	-- and the slave is ready to accept the read address.
 	slv_reg_rden <= axi_arready and S_AXI_ARVALID and (not axi_rvalid) ;
 
-	process (slv_reg0, axi_araddr, S_AXI_ARESETN, slv_reg_rden, increments_i, speed_i)
+	process (slv_reg0, axi_araddr, S_AXI_ARESETN, slv_reg_rden, increments_i, speed_i, divider_i)
 	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0);
 	begin
 	    -- Address decoding for reading registers
@@ -365,9 +365,9 @@ begin
 	      when b"01" =>
 	        reg_data_out <= std_logic_vector(increments_i);
 	      when b"10" =>
-	        reg_data_out <= std_logic_vector(speed_i(C_S_AXI_DATA_WIDTH-1 downto 0));
+	        reg_data_out <= std_logic_vector(speed_i);
 	      when b"11" =>
-	        reg_data_out <= std_logic_vector(to_unsigned(FREQUENCE_ACK, C_S_AXI_DATA_WIDTH));
+	        reg_data_out <= std_logic_vector(to_unsigned(divider_i, C_S_AXI_DATA_WIDTH));
 	      when others =>
 	        reg_data_out  <= (others => '0');
 	    end case;
@@ -396,12 +396,12 @@ begin
     --REG0 OverRide     (IN)
     --REG1 Increments   (INOUT)
     --REG2 Speed        (OUT)
-    --REG3 Frequence    (OUT)
+    --REG3 Divider      (INOUT)
     
     process( S_AXI_ACLK ) is
     begin
         if (rising_edge( S_AXI_ACLK )) then
-            if (counter_i = DIVIDER-1) then
+            if (counter_i = divider_i-1) then
                 counter_i <= 0;
             else
                 counter_i <= counter_i + 1;
@@ -413,7 +413,7 @@ begin
     begin
         if (rising_edge( S_AXI_ACLK )) then
             if (enable_i = '1') then
-                speed_i <= (signed(increments_i) - signed(previous_i)) * to_signed(FREQUENCE_ACK, C_S_AXI_DATA_WIDTH);
+                speed_i <= signed(increments_i) - signed(previous_i);
                 previous_i <= increments_i;
             else
                 speed_i <= speed_i;
@@ -422,10 +422,11 @@ begin
         end if;
     end process;
     
-    increments_i    <= slv_reg1 when (to_integer(unsigned(slv_reg0)) = 1) else Increments;
-    enable_i        <= '1' when (counter_i = DIVIDER-1) else '0';
+    increments_i    <= slv_reg1 when (slv_reg0(0) = '1') else Increments;
+    divider_i       <= to_integer(unsigned(slv_reg3)) when (slv_reg0(1) = '1') else DIVIDER;
+    enable_i        <= '1' when (counter_i = divider_i-1) else '0';
     
-    Speed   <= std_logic_vector(speed_i(C_S_AXI_DATA_WIDTH-1 downto 0));
+    Speed   <= std_logic_vector(speed_i);
 
 	-- User logic ends
 

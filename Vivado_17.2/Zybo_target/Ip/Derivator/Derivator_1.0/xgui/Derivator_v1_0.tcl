@@ -9,7 +9,6 @@ proc init_gui { IPINST } {
   set_property tooltip {Width of S_AXI address bus} ${C_S00_AXI_ADDR_WIDTH}
   ipgui::add_param $IPINST -name "C_S00_AXI_BASEADDR" -parent ${Page_0}
   ipgui::add_param $IPINST -name "C_S00_AXI_HIGHADDR" -parent ${Page_0}
-  ipgui::add_param $IPINST -name "FREQUENCE_ACK" -parent ${Page_0}
   ipgui::add_param $IPINST -name "DIVIDER" -parent ${Page_0}
 
 
@@ -21,15 +20,6 @@ proc update_PARAM_VALUE.DIVIDER { PARAM_VALUE.DIVIDER } {
 
 proc validate_PARAM_VALUE.DIVIDER { PARAM_VALUE.DIVIDER } {
 	# Procedure called to validate DIVIDER
-	return true
-}
-
-proc update_PARAM_VALUE.FREQUENCE_ACK { PARAM_VALUE.FREQUENCE_ACK } {
-	# Procedure called to update FREQUENCE_ACK when any of the dependent parameters in the arguments change
-}
-
-proc validate_PARAM_VALUE.FREQUENCE_ACK { PARAM_VALUE.FREQUENCE_ACK } {
-	# Procedure called to validate FREQUENCE_ACK
 	return true
 }
 
@@ -78,11 +68,6 @@ proc update_MODELPARAM_VALUE.C_S00_AXI_DATA_WIDTH { MODELPARAM_VALUE.C_S00_AXI_D
 proc update_MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH { MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH PARAM_VALUE.C_S00_AXI_ADDR_WIDTH } {
 	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
 	set_property value [get_property value ${PARAM_VALUE.C_S00_AXI_ADDR_WIDTH}] ${MODELPARAM_VALUE.C_S00_AXI_ADDR_WIDTH}
-}
-
-proc update_MODELPARAM_VALUE.FREQUENCE_ACK { MODELPARAM_VALUE.FREQUENCE_ACK PARAM_VALUE.FREQUENCE_ACK } {
-	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
-	set_property value [get_property value ${PARAM_VALUE.FREQUENCE_ACK}] ${MODELPARAM_VALUE.FREQUENCE_ACK}
 }
 
 proc update_MODELPARAM_VALUE.DIVIDER { MODELPARAM_VALUE.DIVIDER PARAM_VALUE.DIVIDER } {

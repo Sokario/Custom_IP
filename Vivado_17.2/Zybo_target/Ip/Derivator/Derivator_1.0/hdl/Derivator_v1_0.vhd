@@ -5,7 +5,6 @@ use ieee.numeric_std.all;
 entity Derivator_v1_0 is
 	generic (
 		-- Users to add parameters here
-        FREQUENCE_ACK   : integer   := 256;     -- 256 Hz
         DIVIDER         : integer   := 390625;  -- 100 MHz / 390625 = 256 Hz
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
@@ -53,7 +52,6 @@ architecture arch_imp of Derivator_v1_0 is
 	-- component declaration
 	component Derivator_v1_0_S00_AXI is
 		generic (
-		FREQUENCE_ACK : integer   := 256;
 		DIVIDER       : integer   := 390625;
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S_AXI_ADDR_WIDTH	: integer	:= 4
@@ -90,7 +88,6 @@ begin
 -- Instantiation of Axi Bus Interface S00_AXI
 Derivator_v1_0_S00_AXI_inst : Derivator_v1_0_S00_AXI
 	generic map (
-	    FREQUENCE_ACK  => FREQUENCE_ACK,
 	    DIVIDER    => DIVIDER,
 		C_S_AXI_DATA_WIDTH	=> C_S00_AXI_DATA_WIDTH,
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
