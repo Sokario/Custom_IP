@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity Stepper_v1_0 is
 	generic (
 		-- Users to add parameters here
-        DIVIDER : integer   := 390625; -- 256 Hz
+        DIVIDER : integer   := 200; -- 500 KHz
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -16,15 +16,13 @@ entity Stepper_v1_0 is
 	);
 	port (
 		-- Users to add ports here
-        MS1         : out std_logic;
-        MS2         : out std_logic;
-        MS3         : out std_logic;
         Enable      : out std_logic;
         Reset       : out std_logic;
         Sleep       : out std_logic;
+        Selection   : out std_logic_vector(2 downto 0);
         Step        : out std_logic;
         Direction   : out std_logic;
-        
+        Interrupt   : out std_logic;        
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -59,19 +57,18 @@ architecture arch_imp of Stepper_v1_0 is
 	-- component declaration
 	component Stepper_v1_0_S00_AXI is
 		generic (
-        DIVIDER : integer   := 390625;
+        DIVIDER : integer   := 200;
 		C_S_AXI_DATA_WIDTH	: integer	:= 32;
 		C_S_AXI_ADDR_WIDTH	: integer	:= 6
 		);
 		port (
-        MS1         : out std_logic;
-        MS2         : out std_logic;
-        MS3         : out std_logic;
         Enable      : out std_logic;
         Reset       : out std_logic;
         Sleep       : out std_logic;
+        Selection   : out std_logic_vector(2 downto 0);
         Step        : out std_logic;
         Direction   : out std_logic;
+        Interrupt   : out std_logic;
 		S_AXI_ACLK	: in std_logic;
 		S_AXI_ARESETN	: in std_logic;
 		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -106,14 +103,13 @@ Stepper_v1_0_S00_AXI_inst : Stepper_v1_0_S00_AXI
 		C_S_AXI_ADDR_WIDTH	=> C_S00_AXI_ADDR_WIDTH
 	)
 	port map (
-        MS1 => MS1,
-        MS2 => MS2,
-        MS3 => MS3,
         Enable  => Enable,
         Reset   => Reset,
         Sleep   => Sleep,
+        Selection   => Selection,
         Step    => Step,
         Direction   => Direction,
+        Interrupt   => Interrupt,
 		S_AXI_ACLK	=> s00_axi_aclk,
 		S_AXI_ARESETN	=> s00_axi_aresetn,
 		S_AXI_AWADDR	=> s00_axi_awaddr,

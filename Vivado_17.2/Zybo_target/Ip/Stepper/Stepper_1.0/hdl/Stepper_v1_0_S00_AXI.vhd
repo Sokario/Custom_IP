@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity Stepper_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
-        DIVIDER : integer   := 390625; -- 256 Hz
+        DIVIDER : integer   := 200; -- 500 kHz
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -16,14 +16,13 @@ entity Stepper_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
-        MS1         : out std_logic;
-        MS2         : out std_logic;
-        MS3         : out std_logic;
         Enable      : out std_logic;
         Reset       : out std_logic;
         Sleep       : out std_logic;
+        Selection   : out std_logic_vector(2 downto 0);
         Step        : out std_logic;
         Direction   : out std_logic;
+        Interrupt   : out std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -91,6 +90,22 @@ entity Stepper_v1_0_S00_AXI is
 end Stepper_v1_0_S00_AXI;
 
 architecture arch_imp of Stepper_v1_0_S00_AXI is
+
+    -- USER signals
+    signal step_reg     : std_logic_vector(1 downto 0);
+    signal rising_step  : std_logic;
+    signal hold_i       : std_logic;
+    signal hold_reg     : std_logic_vector(1 downto 0);
+    signal rising_hold  : std_logic;
+    signal cpt_step     : integer range 0 to 2147483647 := 0;
+    signal target_step  : integer range 0 to 2147483647 := 0;
+    
+    signal step_end     : std_logic;
+    
+    signal counter_i    : integer range 0 to 100000000  := 0;
+    signal divider_i    : integer range 0 to 100000000  := 0;
+    signal ended_i      : std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0)   := (others => '0');
+    signal interrupt_i  : std_logic;
 
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -484,7 +499,7 @@ begin
 	-- and the slave is ready to accept the read address.
 	slv_reg_rden <= axi_arready and S_AXI_ARVALID and (not axi_rvalid) ;
 
-	process (slv_reg0, slv_reg1, slv_reg2, slv_reg3, slv_reg4, slv_reg5, slv_reg6, slv_reg7, slv_reg8, slv_reg9, slv_reg10, slv_reg11, slv_reg12, slv_reg13, slv_reg14, slv_reg15, axi_araddr, S_AXI_ARESETN, slv_reg_rden)
+	process (slv_reg0, slv_reg1, slv_reg2, slv_reg3, slv_reg4, slv_reg5, slv_reg6, slv_reg8, slv_reg9, slv_reg10, slv_reg14, slv_reg15, axi_araddr, S_AXI_ARESETN, slv_reg_rden, divider_i, target_step, ended_i, step_end)
 	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0);
 	begin
 	    -- Address decoding for reading registers
@@ -505,7 +520,7 @@ begin
 	      when b"0110" =>
 	        reg_data_out <= slv_reg6;
 	      when b"0111" =>
-	        reg_data_out <= slv_reg7;
+	        reg_data_out <= std_logic_vector(to_unsigned(divider_i, C_S_AXI_DATA_WIDTH));
 	      when b"1000" =>
 	        reg_data_out <= slv_reg8;
 	      when b"1001" =>
@@ -513,11 +528,11 @@ begin
 	      when b"1010" =>
 	        reg_data_out <= slv_reg10;
 	      when b"1011" =>
-	        reg_data_out <= slv_reg11;
+	        reg_data_out <= std_logic_vector(to_unsigned(target_step, C_S_AXI_DATA_WIDTH));
 	      when b"1100" =>
-	        reg_data_out <= slv_reg12;
+	        reg_data_out <= ended_i;
 	      when b"1101" =>
-	        reg_data_out <= slv_reg13;
+	        reg_data_out <= "0000000000000000000000000000000" & step_end;
 	      when b"1110" =>
 	        reg_data_out <= slv_reg14;
 	      when b"1111" =>
@@ -547,7 +562,108 @@ begin
 
 
 	-- Add user logic here
-
+    --REG0 OverRide     (IN)
+    --REG1 Reset        (INOUT)
+    --REG2 Enable       (INOUT)
+    --REG3 Sleep        (INOUT)
+    --REG4 Direction    (INOUT)
+    --REG5 Step         (INOUT)
+    --REG6 Hold         (INOUT)
+    --REG7 Divider      (INOUT)
+    --REG8 MS1          (INOUT)
+    --REG9 MS2          (INOUT)
+    --REG10 MS3         (INOUT)
+    --REG11 Target      (OUT)
+    --REG12 Ended       (OUT)
+    --REG13 Step end    (OUT)
+    --REG14 IRQ MAnager (INOUT)
+    --REG15 NULL
+    
+    process ( S_AXI_ACLK ) is 
+    begin
+        if (rising_edge( S_AXI_ACLK )) then
+            if (counter_i = divider_i-1) then
+                ended_i(0) <= '1';
+                if (rising_hold = '1') then
+                    ended_i(1) <= '0';
+                    counter_i <= counter_i;
+                    cpt_step <= 0;
+                    interrupt_i <= interrupt_i;
+                    step_end <= '0';
+                elsif (hold_i = '1') then
+                    if (cpt_step = target_step-1) then
+                        ended_i(1) <= '1';
+                        counter_i <= counter_i;
+                        cpt_step <= cpt_step;
+                        if (slv_reg14(0) = '1') then
+                            interrupt_i <= '0';
+                        else
+                            interrupt_i <= '1';
+                        end if;
+                    else
+                        ended_i(1) <= '0';
+                        counter_i <= 0;
+                        cpt_step <= cpt_step + 1;
+                        interrupt_i <= interrupt_i;
+                    end if;
+                    step_end <= '0';
+                else
+                    ended_i(1) <= '0';
+                    if (rising_step = '1') then
+                        counter_i <= 0;
+                        cpt_step <= cpt_step;
+                        interrupt_i <= interrupt_i;
+                        step_end <= '0';
+                    else
+                        counter_i <= counter_i;
+                        cpt_step <= cpt_step;
+                        if (slv_reg14(0) = '1') then
+                            interrupt_i <= '0';
+                        elsif (step_end = '0') then
+                            interrupt_i <= '1';
+                        else
+                            interrupt_i <= interrupt_i;
+                        end if;
+                        step_end <= '1';
+                    end if;
+                end if;
+            else
+                ended_i(0) <= '0';
+                ended_i(1) <= '0';
+                counter_i <= counter_i + 1;
+                cpt_step <= cpt_step;
+                interrupt_i <= interrupt_i;
+                step_end <= step_end;
+            end if;
+        end if;
+    end process;
+    
+    process ( S_AXI_ACLK ) is 
+    begin
+        if (rising_edge( S_AXI_ACLK )) then
+            step_reg(1) <= step_reg(0);
+            step_reg(0) <= slv_reg5(0);
+            hold_reg(1) <= hold_reg(0);
+            hold_reg(0) <= slv_reg6(0);
+        end if;
+    end process;
+    
+    Reset       <= slv_reg1(0);
+    Enable      <= slv_reg2(0);
+    Sleep       <= slv_reg3(0);
+    Direction   <= slv_reg4(0);
+    Selection   <= slv_reg10(0) & slv_reg9(0) & slv_reg8(0);
+    
+    rising_step <= step_reg(0) and not(step_reg(1));
+    rising_hold <= hold_reg(0) and not(hold_reg(1));
+    
+    hold_i      <= slv_reg6(0);
+    target_step <= to_integer(unsigned(slv_reg5));
+    divider_i   <= to_integer(unsigned(slv_reg7)) when (slv_reg0(0) = '1') else DIVIDER;
+    
+    Step        <= '1' when ((2*counter_i) < divider_i) else '0';
+    Interrupt   <= interrupt_i;
+    
 	-- User logic ends
 
 end arch_imp;
