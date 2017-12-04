@@ -29,22 +29,6 @@ extern "C" {
 #define STEPPER_S00_AXI_SLV_REG14_OFFSET 56 // IRQ Manager  (INOUT)
 #define STEPPER_S00_AXI_SLV_REG15_OFFSET 60 // NULL
 
---REG0 OverRide     (IN)
-    --REG1 Reset        (INOUT)
-    --REG2 Enable       (INOUT)
-    --REG3 Sleep        (INOUT)
-    --REG4 Direction    (INOUT)
-    --REG5 Step         (INOUT)
-    --REG6 Hold         (INOUT)
-    --REG7 Divider      (INOUT)
-    --REG8 MS1          (INOUT)
-    --REG9 MS2          (INOUT)
-    --REG10 MS3         (INOUT)
-    --REG11 Target      (OUT)
-    --REG12 Ended       (OUT)
-    --REG13 Step end    (OUT)
-    --REG14 IRQ MAnager (INOUT)
-    --REG15 NULL
 /**************************** Type Definitions *****************************/
 /**
  *
@@ -94,7 +78,7 @@ extern "C" {
 typedef struct {
     u16 DeviceId;        /* Unique ID  of device */
     UINTPTR BaseAddress;    /* Device base address */
-} Encoder_Config;
+} Stepper_Config;
 
 /**
  * The Motor driver instance data. The user is required to allocate a
@@ -104,10 +88,10 @@ typedef struct {
 typedef struct {
     UINTPTR BaseAddress;    /* Device base address */
     u32 IsReady;        /* Device is initialized and ready */
-} Encoder;
+} Stepper;
 
 /************************** Variable Definitions ***************************/
-extern Encoder_Config Encoder_ConfigTable[];
+extern Stepper_Config Stepper_ConfigTable[];
 
 /************************** Function Prototypes ****************************/
 /**
@@ -134,16 +118,41 @@ XStatus STEPPER_Reg_SelfTest(void * baseaddr_p);
 /*
  * Initialization functions
  */
-Encoder_Config *Encoder_LookupConfig(u16 DeviceId);
-int Encoder_Initialize(Encoder *InstancePtr, u16 DeviceId);
-int Encoder_CfgInitialize(Encoder *InstancePtr, UINTPTR EffectiveAddr);
+Stepper_Config *Stepper_LookupConfig(u16 DeviceId);
+int Stepper_Initialize(Stepper *InstancePtr, u16 DeviceId);
+int Stepper_CfgInitialize(Stepper *InstancePtr, UINTPTR EffectiveAddr);
 
 /*
  * API Basic functions implemented
  */
-void Encoder_SetOverRide(Encoder *InstancePtr, u32 Data);
-u32 Encoder_GetOverRide(Encoder *InstancePtr);
+void Stepper_SetOverRide(Stepper *InstancePtr, u32 Data);
+u32 Stepper_GetOverRide(Stepper *InstancePtr);
+void Stepper_SetReset(Stepper *InstancePtr, u32 Data);
+u32 Stepper_GetReset(Stepper *InstancePtr);
+void Stepper_SetEnable(Stepper *InstancePtr, u32 Data);
+u32 Stepper_GetEnable(Stepper *InstancePtr);
+void Stepper_SetSleep(Stepper *InstancePtr, u32 Data);
+u32 Stepper_GetSleep(Stepper *InstancePtr);
+void Stepper_SetDirection(Stepper *InstancePtr, u32 Data);
+u32 Stepper_GetDirection(Stepper *InstancePtr);
+void Stepper_SetStep(Stepper *InstancePtr, u32 Data);
+u32 Stepper_GetStep(Stepper *InstancePtr);
+void Stepper_SetHold(Stepper *InstancePtr, u32 Data);
+u32 Stepper_GetHold(Stepper *InstancePtr);
+void Stepper_SetDivider(Stepper *InstancePtr, u32 Data);
+u32 Stepper_GetDivider(Stepper *InstancePtr);
+void Stepper_SetMs1(Stepper *InstancePtr, u32 Data);
+u32 Stepper_GetMs1(Stepper *InstancePtr);
+void Stepper_SetMs2(Stepper *InstancePtr, u32 Data);
+u32 Stepper_GetMs2(Stepper *InstancePtr);
+void Stepper_SetMs3(Stepper *InstancePtr, u32 Data);
+u32 Stepper_GetMs3(Stepper *InstancePtr);
+void Stepper_SetIrqManager(Stepper *InstancePtr, u32 Data);
+u32 Stepper_GetIrqManager(Stepper *InstancePtr);
 
+u32 Stepper_GetTarget(Stepper *InstancePtr);
+u32 Stepper_GetEnded(Stepper *InstancePtr);
+u32 Stepper_GetStepEnd(Stepper *InstancePtr);
 
 #ifdef _cplusplus
 }
