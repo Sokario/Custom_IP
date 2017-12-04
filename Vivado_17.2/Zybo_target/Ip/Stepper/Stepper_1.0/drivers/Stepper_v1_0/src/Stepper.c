@@ -378,3 +378,47 @@ u32 Stepper_GetStepEnd(Stepper *InstancePtr)
     
     return STEPPER_mReadReg(InstancePtr->BaseAddress, STEPPER_S00_AXI_SLV_REG13_OFFSET);
 }
+
+///////////////////////////////
+
+void Stepper_SetMode_Continuous(Stepper *InstancePtr)
+{
+    Stepper_SetHold(InstancePtr, 1);
+}
+
+void Stepper_SetMode_Step(Stepper *InstancePtr)
+{
+    Stepper_SetHold(InstancePtr, 0);
+}
+
+u32 Stepper_GetMode(Stepper *InstancePtr)
+{
+    return Stepper_GetHold(InstancePtr);
+}
+
+void Stepper_SetStep_Continuous(Stepper *InstancePtr, u32 Data)
+{
+    Stepper_SetStep(InstancePtr, Data);
+    Stepper_SetMode_Continuous(InstancePtr);
+}
+
+u32 Stepper_GetStep_Continuous(Stepper *InstancePtr)
+{    
+    return Stepper_GetTarget(InstancePtr);
+}
+
+void Stepper_PulseStep(Stepper *InstancePtr)
+{
+    Stepper_SetStep(InstancePtr, 0);
+    Stepper_SetStep(InstancePtr, 1);
+    Stepper_SetStep(InstancePtr, 0);
+}
+
+u32 Stepper_IrqAcquisition(Stepper *InstancePtr)
+{
+    u32 reg_value = Stepper_GetEnded(InstancePtr);
+    Stepper_SetIrqManager(InstancePtr, 1);
+    Stepper_SetIrqManager(InstancePtr, 0);
+
+    return reg_value;
+}

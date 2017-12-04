@@ -154,6 +154,20 @@ u32 Stepper_GetTarget(Stepper *InstancePtr);
 u32 Stepper_GetEnded(Stepper *InstancePtr);
 u32 Stepper_GetStepEnd(Stepper *InstancePtr);
 
+/*
+ * API MACRO functions implemented
+ */
+void Stepper_SetMode_Continuous(Stepper *InstancePtr);
+void Stepper_SetMode_Step(Stepper *InstancePtr);
+u32 Stepper_GetMode(Stepper *InstancePtr);
+
+void Stepper_SetStep_Continuous(Stepper *InstancePtr, u32 Data);
+u32 Stepper_GetStep_Continuous(Stepper *InstancePtr);
+
+void Stepper_PulseStep(Stepper *InstancePtr);
+
+u32 Stepper_IrqAcquisition(Stepper *InstancePtr);
+
 #ifdef _cplusplus
 }
 #endif
