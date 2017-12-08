@@ -591,7 +591,7 @@ begin
                     interrupt_i <= interrupt_i;
                     step_end <= '0';
                 elsif (hold_i = '1') then
-                    if (cpt_step = target_step-1) then
+                    if (cpt_step >= target_step-1) then
                         ended_i(1) <= '1';
                         counter_i <= counter_i;
                         cpt_step <= cpt_step;
