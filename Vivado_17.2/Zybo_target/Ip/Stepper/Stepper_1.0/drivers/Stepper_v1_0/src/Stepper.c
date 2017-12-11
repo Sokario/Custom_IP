@@ -262,7 +262,7 @@ u32 Stepper_GetHold(Stepper *InstancePtr)
     return STEPPER_mReadReg(InstancePtr->BaseAddress, STEPPER_S00_AXI_SLV_REG6_OFFSET);
 }
 
-void Stepper_SetDivider(Stepper *InstancePtr, u32 Data)
+void Stepper_SetTarget(Stepper *InstancePtr, u32 Data)
 {
     /* Asserts */
     Xil_AssertNonvoid(InstancePtr != NULL);
@@ -271,7 +271,7 @@ void Stepper_SetDivider(Stepper *InstancePtr, u32 Data)
     STEPPER_mWriteReg(InstancePtr->BaseAddress, STEPPER_S00_AXI_SLV_REG7_OFFSET, Data);
 }
 
-u32 Stepper_GetDivider(Stepper *InstancePtr)
+u32 Stepper_GetTarget(Stepper *InstancePtr)
 {
     /* Asserts */
     Xil_AssertNonvoid(InstancePtr != NULL);
@@ -352,7 +352,25 @@ u32 Stepper_GetIrqManager(Stepper *InstancePtr)
     return STEPPER_mReadReg(InstancePtr->BaseAddress, STEPPER_S00_AXI_SLV_REG14_OFFSET);
 }
 
-u32 Stepper_GetTarget(Stepper *InstancePtr)
+void Stepper_SetDivider(Stepper *InstancePtr, u32 Data)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    STEPPER_mWriteReg(InstancePtr->BaseAddress, STEPPER_S00_AXI_SLV_REG15_OFFSET, Data);
+}
+
+u32 Stepper_GetDivider(Stepper *InstancePtr)
+{
+    /* Asserts */
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+    
+    return STEPPER_mReadReg(InstancePtr->BaseAddress, STEPPER_S00_AXI_SLV_REG15_OFFSET);
+}
+
+u32 Stepper_GetTargetStep(Stepper *InstancePtr)
 {
     /* Asserts */
     Xil_AssertNonvoid(InstancePtr != NULL);
@@ -394,24 +412,6 @@ void Stepper_SetMode_Step(Stepper *InstancePtr)
 u32 Stepper_GetMode(Stepper *InstancePtr)
 {
     return Stepper_GetHold(InstancePtr);
-}
-
-void Stepper_SetStep_Continuous(Stepper *InstancePtr, u32 Data)
-{
-    Stepper_SetStep(InstancePtr, Data);
-    Stepper_SetMode_Continuous(InstancePtr);
-}
-
-u32 Stepper_GetStep_Continuous(Stepper *InstancePtr)
-{    
-    return Stepper_GetTarget(InstancePtr);
-}
-
-void Stepper_PulseStep(Stepper *InstancePtr)
-{
-    Stepper_SetStep(InstancePtr, 0);
-    Stepper_SetStep(InstancePtr, 1);
-    Stepper_SetStep(InstancePtr, 0);
 }
 
 u32 Stepper_IrqAcquisition(Stepper *InstancePtr)

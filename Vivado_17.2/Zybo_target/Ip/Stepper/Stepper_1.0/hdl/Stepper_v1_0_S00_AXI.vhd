@@ -101,6 +101,7 @@ architecture arch_imp of Stepper_v1_0_S00_AXI is
     signal target_step  : integer range 0 to 2147483647 := 0;
     
     signal step_end     : std_logic;
+    signal target_end   : std_logic;
     
     signal counter_i    : integer range 0 to 100000000  := 0;
     signal divider_i    : integer range 0 to 100000000  := 0;
@@ -499,7 +500,7 @@ begin
 	-- and the slave is ready to accept the read address.
 	slv_reg_rden <= axi_arready and S_AXI_ARVALID and (not axi_rvalid) ;
 
-	process (slv_reg0, slv_reg1, slv_reg2, slv_reg3, slv_reg4, slv_reg5, slv_reg6, slv_reg8, slv_reg9, slv_reg10, slv_reg14, slv_reg15, axi_araddr, S_AXI_ARESETN, slv_reg_rden, divider_i, target_step, ended_i, step_end)
+	process (slv_reg0, slv_reg1, slv_reg2, slv_reg3, slv_reg4, slv_reg5, slv_reg6, slv_reg8, slv_reg9, slv_reg10, slv_reg14, slv_reg15, axi_araddr, S_AXI_ARESETN, slv_reg_rden, target_step,cpt_step, ended_i, step_end, divider_i)
 	variable loc_addr :std_logic_vector(OPT_MEM_ADDR_BITS downto 0);
 	begin
 	    -- Address decoding for reading registers
@@ -520,7 +521,7 @@ begin
 	      when b"0110" =>
 	        reg_data_out <= slv_reg6;
 	      when b"0111" =>
-	        reg_data_out <= std_logic_vector(to_unsigned(divider_i, C_S_AXI_DATA_WIDTH));
+	        reg_data_out <= std_logic_vector(to_unsigned(target_step, C_S_AXI_DATA_WIDTH));
 	      when b"1000" =>
 	        reg_data_out <= slv_reg8;
 	      when b"1001" =>
@@ -528,15 +529,15 @@ begin
 	      when b"1010" =>
 	        reg_data_out <= slv_reg10;
 	      when b"1011" =>
-	        reg_data_out <= std_logic_vector(to_unsigned(target_step, C_S_AXI_DATA_WIDTH));
+	        reg_data_out <= std_logic_vector(to_unsigned(cpt_step, C_S_AXI_DATA_WIDTH));
 	      when b"1100" =>
 	        reg_data_out <= ended_i;
 	      when b"1101" =>
-	        reg_data_out <= "0000000000000000000000000000000" & step_end;
+	        reg_data_out <= "000000000000000000000000000000" & target_end & step_end;
 	      when b"1110" =>
 	        reg_data_out <= slv_reg14;
 	      when b"1111" =>
-	        reg_data_out <= slv_reg15;
+	        reg_data_out <= std_logic_vector(to_unsigned(divider_i, C_S_AXI_DATA_WIDTH));
 	      when others =>
 	        reg_data_out  <= (others => '0');
 	    end case;
@@ -569,15 +570,15 @@ begin
     --REG4 Direction    (INOUT)
     --REG5 Step         (INOUT)
     --REG6 Hold         (INOUT)
-    --REG7 Divider      (INOUT)
+    --REG7 Step target  (INOUT)
     --REG8 MS1          (INOUT)
     --REG9 MS2          (INOUT)
     --REG10 MS3         (INOUT)
-    --REG11 Target      (OUT)
+    --REG11 Cpt target  (OUT)
     --REG12 Ended       (OUT)
     --REG13 Step end    (OUT)
     --REG14 IRQ MAnager (INOUT)
-    --REG15 NULL
+    --REG15 Divider     (INOUT)
     
     process ( S_AXI_ACLK ) is 
     begin
@@ -590,6 +591,7 @@ begin
                     cpt_step <= 0;
                     interrupt_i <= interrupt_i;
                     step_end <= '0';
+                    target_end <= '0';
                 elsif (hold_i = '1') then
                     if (cpt_step >= target_step-1) then
                         ended_i(1) <= '1';
@@ -597,9 +599,12 @@ begin
                         cpt_step <= cpt_step;
                         if (slv_reg14(0) = '1') then
                             interrupt_i <= '0';
-                        else
+                        elsif (target_end = '0') then
                             interrupt_i <= '1';
+                        else
+                            interrupt_i <= interrupt_i;
                         end if;
+                        target_end <= '1';
                     else
                         ended_i(1) <= '0';
                         counter_i <= 0;
@@ -626,6 +631,7 @@ begin
                         end if;
                         step_end <= '1';
                     end if;
+                    target_end <= '0';
                 end if;
             else
                 ended_i(0) <= '0';
@@ -634,6 +640,7 @@ begin
                 cpt_step <= cpt_step;
                 interrupt_i <= interrupt_i;
                 step_end <= step_end;
+                target_end <= target_end;
             end if;
         end if;
     end process;
@@ -658,11 +665,11 @@ begin
     rising_hold <= hold_reg(0) and not(hold_reg(1));
     
     hold_i      <= slv_reg6(0);
-    target_step <= to_integer(unsigned(slv_reg5));
-    divider_i   <= to_integer(unsigned(slv_reg7)) when (slv_reg0(0) = '1') else DIVIDER;
+    target_step <= to_integer(unsigned(slv_reg7));
+    divider_i   <= to_integer(unsigned(slv_reg15)) when (slv_reg0(0) = '1') else DIVIDER;
     
     Step        <= '1' when ((2*counter_i) < divider_i) else '0';
-    Interrupt   <= interrupt_i;
+    Interrupt   <= '1' when (slv_reg14(1) = '1') else interrupt_i;
     
 	-- User logic ends
 
