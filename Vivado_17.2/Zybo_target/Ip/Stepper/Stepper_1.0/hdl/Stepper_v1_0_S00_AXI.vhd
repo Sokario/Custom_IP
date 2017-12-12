@@ -92,11 +92,9 @@ end Stepper_v1_0_S00_AXI;
 architecture arch_imp of Stepper_v1_0_S00_AXI is
 
     -- USER signals
-    signal begin_step   : std_logic;
     signal cpt_step     : integer range 0 to 2147483647 := 0;
     signal target_step  : integer range 0 to 2147483647 := 0;
     signal target_prev  : integer range 0 to 2147483647 := 0;
-    
     signal target_reach : std_logic;
     
     signal counter_i    : integer range 0 to 100000000  := 0;
@@ -586,7 +584,7 @@ begin
                 interrupt_i <= '0';
                 target_reach <= '1';
             elsif (counter_i = divider_i-1) then
-                if (begin_step = '1') then
+                if ((target_step /= target_prev) and (target_step /= 0)) then
                     ended_i <= '0';
                     counter_i <= 0;
                     cpt_step <= 0;
@@ -627,17 +625,6 @@ begin
                 cpt_step <= cpt_step;
                 interrupt_i <= interrupt_i;
                 target_reach <= target_reach;
-            end if;
-        end if;
-    end process;
-    
-    process ( S_AXI_ACLK ) is 
-    begin
-        if (rising_edge( S_AXI_ACLK )) then
-            if (target_step /= target_prev) then
-                begin_step <= '1';            
-            else
-                begin_step <= '0';
             end if;
             target_prev <= target_step;
         end if;

@@ -22,7 +22,7 @@ entity Stepper_v1_0 is
         Selection   : out std_logic_vector(2 downto 0);
         Step        : out std_logic;
         Direction   : out std_logic;
-        Interrupt   : out std_logic;        
+        Interrupt   : out std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -69,7 +69,7 @@ architecture arch_imp of Stepper_v1_0 is
         Step        : out std_logic;
         Direction   : out std_logic;
         Interrupt   : out std_logic;
-		S_AXI_ACLK	: in std_logic;
+		S_AXI_ACLK	: in std_logic;		
 		S_AXI_ARESETN	: in std_logic;
 		S_AXI_AWADDR	: in std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
 		S_AXI_AWPROT	: in std_logic_vector(2 downto 0);
